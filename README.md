@@ -16,7 +16,7 @@ This project aims to strengthen customer satisfaction, enhance operational agili
 **This project uses real data from the Consumer Complaint Database maintained by the Consumer Financial Protection Bureau.**
 
 ## Dataset Information 
-This is real world data sourced via [Consumer Financial Protection Bureau](https://www.consumerfinance.gov/data-research/consumer-complaints/#get-the-data). 
+This is real world data sourced via [Consumer Financial Protection Bureau](https://www.consumerfinance.gov/data-research/consumer-complaints/#get-the-data). The data is downloaded as bulk CSV file, added to a local MySQL server to then be imported in to Power BI. 
 
 ## Key Insights From Data
 
