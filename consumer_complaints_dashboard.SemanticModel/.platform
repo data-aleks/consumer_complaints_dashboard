@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "consumer_complaints_dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "96817e88-b9e7-40f5-a534-d7596831036b"
+  }
+}
