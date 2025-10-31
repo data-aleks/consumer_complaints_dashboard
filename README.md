@@ -8,30 +8,16 @@ A business intelligence case study using Power BI and data analytics
 - [Business Recommendation](#business-recommendation)
 
 ## Project Introduction
-Frame the project from the stakeholder’s perspective.
-- What problem are they facing?
-- Why does it matter to the business?
-- What decision or outcome are they hoping to achieve?
-- How does this project help them?
+There is a need for a tool that helps our company identify and address emerging issues before they become public complaints. The goal is to make smarter, data-driven decisions about where to improve service, how to communicate with customers, and how to stay ahead of reputational and regulatory risks.
+
+By building a Power BI dashboard using real-world data from the CFPB Consumer Complaint Database, the analytics team can uncover patterns in complaint volume, product categories, submission channels, geographic distribution, and company responsiveness—helping stakeholders visualize industry-wide friction points and anticipate potential vulnerabilities.
+This project aims to strengthen customer satisfaction, enhance operational agility, and ensure our company remains proactive in addressing consumer concerns.
+
+**This project uses real data from the Consumer Complaint Database maintained by the Consumer Financial Protection Bureau.**
 
 ## Dataset Information 
-Provide context without diving into technical minutiae.
-- Source of the data (e.g., INE, Bank of Spain, Kaggle, internal CRM)
-- Key features and variables
-- Brief mention of cleaning steps (e.g., missing values handled, date formats standardized)
-- Any assumptions or limitations
+This is real world data sourced via [Consumer Financial Protection Bureau](https://www.consumerfinance.gov/data-research/consumer-complaints/#get-the-data). We will be pulling this data using public API endpoint available directly in to power bi instead of csv file. 
 
 ## Key Insights From Data
-Use visuals and narrative to uncover patterns.
-- Highlight trends, outliers, and correlations
-- Use charts, maps, and KPIs to tell the story
-- Avoid technical jargon—focus on what the data reveals
-- Include stakeholder-relevant metrics (e.g., approval rate by region, churn by tenure)
 
 ## Business Recommendation
-Translate insights into actionable strategies.
-- What should the stakeholder do next?
-- What’s the expected impact?
-- Prioritize recommendations (quick wins vs long-term strategies)
-- Optionally include a KPI dashboard or summary table
-
