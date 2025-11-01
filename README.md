@@ -18,6 +18,27 @@ This project aims to strengthen customer satisfaction, enhance operational agili
 ## Dataset Information 
 This is real world data sourced via [Consumer Financial Protection Bureau](https://www.consumerfinance.gov/data-research/consumer-complaints/#get-the-data). The data is downloaded as bulk CSV file, added to a local MySQL server to then be imported in to Power BI. 
 
+### Dataset Structure
+| Feature Name                 | Description                                |
+|------------------------------|--------------------------------------------|
+| date_received                | date complain received                     |
+| product                      | product category                           |
+| sub_product                  |  sub-product type                          |
+| issue                        | Description of the consumer’s issue        |
+| sub_issue                    | More specific issue detail (if available)  |
+| consumer_narrative           | Consent status                             |
+| company_public_response      | Loan amount                                |
+| company_name                 | Interest rate                              |
+| state_code                   | U.S. state or territory code               |
+| zip_code                     | ZIP code                                   |
+| tags                         | Special population flags                   |
+| submitted_via                | Submission channel                         |
+| date_sent_to_company         | Credit history length                      |
+| company_response             | Company’s response status                  |
+| timely_response              | Whether the company responded in time      |
+| consumer_disputed            | Whether the consumer disputed the response |
+| complaint_id                 | Unique identifier for each complaint       |
+
 ## Key Insights From Data
 
 ## Business Recommendation

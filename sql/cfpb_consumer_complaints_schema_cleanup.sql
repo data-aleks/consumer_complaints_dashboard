@@ -6,7 +6,7 @@ ALTER TABLE consumer_complaints
   CHANGE COLUMN `Company` company_name TEXT,
   CHANGE COLUMN `Company public response` company_public_response TEXT,
   CHANGE COLUMN `Company response to consumer` company_response TEXT,
-  CHANGE COLUMN `Complaint ID` complaint_id BIGINT,
+  CHANGE COLUMN `Complaint ID` complaint_id INT,
   CHANGE COLUMN `Consumer complaint narrative` consumer_narrative TEXT,
   CHANGE COLUMN `Consumer consent provided?` consumer_consent TEXT,
   CHANGE COLUMN `Consumer disputed?` consumer_disputed TEXT,
