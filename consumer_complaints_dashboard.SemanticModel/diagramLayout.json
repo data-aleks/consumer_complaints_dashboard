@@ -5,11 +5,207 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 51.666666666666671
       },
-      "nodes": [],
+      "nodes": [
+        {
+          "location": {
+            "x": 1040.2422375206881,
+            "y": 487.95885209985852
+          },
+          "nodeIndex": "cfpb dim_company",
+          "nodeLineageTag": "5b36a673-3633-4c82-86a8-dc2e0c72f491",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 401.57247162284858,
+            "y": -23.962535807210315
+          },
+          "nodeIndex": "cfpb dim_consent",
+          "nodeLineageTag": "d9ee02ad-e0bb-4ed1-adf2-af3f1f21fd25",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 363.1501825243879,
+            "y": 711.56640877476138
+          },
+          "nodeIndex": "cfpb dim_date",
+          "nodeLineageTag": "6c6ee946-2455-4cd4-94a3-767d594baf33",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 902.77846663108039,
+            "y": 129.25560172393443
+          },
+          "nodeIndex": "cfpb dim_disputed",
+          "nodeLineageTag": "2dd1fc45-bed1-4c5d-8f2e-2aa40227ebc4",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1040.209138364618,
+            "y": 308.42371431024765
+          },
+          "nodeIndex": "cfpb dim_issue",
+          "nodeLineageTag": "c80aab27-75f1-4b00-90fb-19202fa532b4",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1040.207762790347,
+            "y": 667.38162198523344
+          },
+          "nodeIndex": "cfpb dim_origin",
+          "nodeLineageTag": "8293cb89-2e59-4bf4-9134-3b97d66d4f72",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 673.53538741207251,
+            "y": 932.60222691297224
+          },
+          "nodeIndex": "cfpb dim_product",
+          "nodeLineageTag": "e07affc2-efc0-4ccb-9870-20a095b21fc4",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50.063862042457913,
+            "y": 784.67946402140342
+          },
+          "nodeIndex": "cfpb dim_public_response",
+          "nodeLineageTag": "de6e96b1-f312-4d4d-ba87-891af8ec43c7",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 605.30359375273611
+          },
+          "nodeIndex": "cfpb dim_state",
+          "nodeLineageTag": "5184906f-b01c-40ec-b343-3d8c021751b9",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 111.73295393617195,
+            "y": 334.70596993477784
+          },
+          "nodeIndex": "cfpb dim_status",
+          "nodeLineageTag": "27f24d08-5941-49ea-9f9d-f0afb2283b5e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 100.18371323596853,
+            "y": 1014.2039854888504
+          },
+          "nodeIndex": "cfpb dim_sub_issue",
+          "nodeLineageTag": "dffe9ac8-b1d7-4c12-9148-a184955a768a",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 686.90178262022562,
+            "y": -50
+          },
+          "nodeIndex": "cfpb dim_sub_product",
+          "nodeLineageTag": "97e2cbc4-f149-477d-a837-850d4c730abc",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 386.53046514881169,
+            "y": 1047.9002249541441
+          },
+          "nodeIndex": "cfpb dim_tag",
+          "nodeLineageTag": "59eec96d-8a72-47ef-a1ce-d5371ef118f2",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 162.79433298852564,
+            "y": 155.17189317185137
+          },
+          "nodeIndex": "cfpb dim_zip_code",
+          "nodeLineageTag": "961af87a-671f-4c7c-a4f5-c9dd06ac0497",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 405.87269219999166,
+            "y": 336.062211676238
+          },
+          "nodeIndex": "cfpb fact_complaints",
+          "nodeLineageTag": "a43a55d0-99b8-4057-b7cd-2d16fbeb8ead",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
       "name": "All tables",
-      "zoomValue": 100,
+      "zoomValue": 60,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

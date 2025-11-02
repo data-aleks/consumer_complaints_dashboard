@@ -1,0 +1,29 @@
+table 'cfpb dim_tag'
+	lineageTag: 59eec96d-8a72-47ef-a1ce-d5371ef118f2
+
+	column tag_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b6a2cd1-7fbc-48fb-833b-8a03e6394013
+		summarizeBy: none
+		sourceColumn: tag_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tag
+		dataType: string
+		lineageTag: 83e9d608-d30c-4382-b980-930bc52a4cbf
+		summarizeBy: none
+		sourceColumn: tag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'cfpb dim_tag' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    cfpb_dim_tag = Source{[Schema="cfpb",Item="dim_tag"]}[Data]
+				in
+				    cfpb_dim_tag
+

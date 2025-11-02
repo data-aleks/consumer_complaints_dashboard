@@ -1,0 +1,173 @@
+table 'cfpb fact_complaints'
+	lineageTag: a43a55d0-99b8-4057-b7cd-2d16fbeb8ead
+
+	column complaint_id
+		dataType: int64
+		formatString: 0
+		lineageTag: e31ccfc5-b6d4-4997-9d21-0360032bd3b8
+		summarizeBy: sum
+		sourceColumn: complaint_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_received_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d68ef4b-0f21-4ed5-83bc-8b4dd163aa8e
+		summarizeBy: none
+		sourceColumn: date_received_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_sent_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 57f56c5a-7bc7-426c-a738-c1354915d3b6
+		summarizeBy: sum
+		sourceColumn: date_sent_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: e7dc4301-75a3-462f-b8e0-dd35148e32ab
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d38481f-d5ab-48cf-af48-89aca747432f
+		summarizeBy: none
+		sourceColumn: sub_product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column issue_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2dc07030-bba2-4525-aa16-de83a4de0958
+		summarizeBy: none
+		sourceColumn: issue_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_issue_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ea5fa9e3-290d-4350-8c90-4d785c2e6bd1
+		summarizeBy: none
+		sourceColumn: sub_issue_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e00de59-b82a-4f31-964d-369157ae7e44
+		summarizeBy: none
+		sourceColumn: company_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 74157021-52fd-4899-b452-0201ffe1a118
+		summarizeBy: none
+		sourceColumn: state_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column zip_code_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 57625d62-99db-4858-8678-b89fae2a1548
+		summarizeBy: none
+		sourceColumn: zip_code_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column origin_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 254df96d-a1c6-43af-8032-872786cfb61d
+		summarizeBy: none
+		sourceColumn: origin_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column public_response_id
+		dataType: int64
+		formatString: 0
+		lineageTag: bf96087c-163c-448c-93f6-3779d87124f8
+		summarizeBy: none
+		sourceColumn: public_response_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column status_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a3a802c8-2ba0-4c0f-a383-c1ee18f23999
+		summarizeBy: none
+		sourceColumn: status_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column consent_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b7be0777-a44a-4e9e-b97e-7f8620376a3d
+		summarizeBy: none
+		sourceColumn: consent_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tag_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c58e90d-daaa-4555-8bd2-7e24bac898ac
+		summarizeBy: none
+		sourceColumn: tag_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column disputed_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9fbeb9a5-ed97-4fb8-8ec7-7d400f2861fc
+		summarizeBy: none
+		sourceColumn: disputed_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column consumer_narrative
+		dataType: string
+		lineageTag: 8a804b15-c9da-4e23-aa8f-a74241327ba4
+		summarizeBy: none
+		sourceColumn: consumer_narrative
+
+		annotation SummarizationSetBy = Automatic
+
+	column timely_response_flag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cd81dd38-3bd9-482f-8ea2-0f929d54acc3
+		summarizeBy: none
+		sourceColumn: timely_response_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'cfpb fact_complaints' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    cfpb_fact_complaints = Source{[Schema="cfpb",Item="fact_complaints"]}[Data]
+				in
+				    cfpb_fact_complaints
+

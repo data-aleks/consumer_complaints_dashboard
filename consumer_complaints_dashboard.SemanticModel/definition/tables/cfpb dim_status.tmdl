@@ -1,0 +1,29 @@
+table 'cfpb dim_status'
+	lineageTag: 27f24d08-5941-49ea-9f9d-f0afb2283b5e
+
+	column status_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 36ec8353-865a-4f03-93b4-6b1944d4aa8c
+		summarizeBy: none
+		sourceColumn: status_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column complaint_status
+		dataType: string
+		lineageTag: bdda29d5-db65-4357-92f8-dfc85f3916ce
+		summarizeBy: none
+		sourceColumn: complaint_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'cfpb dim_status' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    cfpb_dim_status = Source{[Schema="cfpb",Item="dim_status"]}[Data]
+				in
+				    cfpb_dim_status
+
