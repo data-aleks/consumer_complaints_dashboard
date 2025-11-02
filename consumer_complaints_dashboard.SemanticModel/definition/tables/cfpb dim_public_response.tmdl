@@ -1,0 +1,29 @@
+table 'cfpb dim_public_response'
+	lineageTag: de6e96b1-f312-4d4d-ba87-891af8ec43c7
+
+	column public_response_id
+		dataType: int64
+		formatString: 0
+		lineageTag: af1368db-c1f6-4aa6-aa58-6873f278f8f8
+		summarizeBy: none
+		sourceColumn: public_response_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column public_response
+		dataType: string
+		lineageTag: b3d5b1dd-c2ae-42c7-8521-3d59c6d51b2b
+		summarizeBy: none
+		sourceColumn: public_response
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'cfpb dim_public_response' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    cfpb_dim_public_response = Source{[Schema="cfpb",Item="dim_public_response"]}[Data]
+				in
+				    cfpb_dim_public_response
+

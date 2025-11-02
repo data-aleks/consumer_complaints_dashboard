@@ -1,0 +1,29 @@
+table 'cfpb dim_disputed'
+	lineageTag: 2dd1fc45-bed1-4c5d-8f2e-2aa40227ebc4
+
+	column disputed_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e402205-ee24-4797-8761-1fd3923e7b6f
+		summarizeBy: none
+		sourceColumn: disputed_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column disputed
+		dataType: string
+		lineageTag: 3677fd10-3671-4a2c-852f-5a6048470c0c
+		summarizeBy: none
+		sourceColumn: disputed
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'cfpb dim_disputed' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    cfpb_dim_disputed = Source{[Schema="cfpb",Item="dim_disputed"]}[Data]
+				in
+				    cfpb_dim_disputed
+

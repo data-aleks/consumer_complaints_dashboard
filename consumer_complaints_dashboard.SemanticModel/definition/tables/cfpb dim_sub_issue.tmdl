@@ -1,0 +1,29 @@
+table 'cfpb dim_sub_issue'
+	lineageTag: dffe9ac8-b1d7-4c12-9148-a184955a768a
+
+	column sub_issue_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d45df2a4-b010-441c-9383-89762c0cb6ff
+		summarizeBy: none
+		sourceColumn: sub_issue_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_issue_description
+		dataType: string
+		lineageTag: b91cd3ff-69ed-445c-9115-a866ca4c4f00
+		summarizeBy: none
+		sourceColumn: sub_issue_description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'cfpb dim_sub_issue' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    cfpb_dim_sub_issue = Source{[Schema="cfpb",Item="dim_sub_issue"]}[Data]
+				in
+				    cfpb_dim_sub_issue
+

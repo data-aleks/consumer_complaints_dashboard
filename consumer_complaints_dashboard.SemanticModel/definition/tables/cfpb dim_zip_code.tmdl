@@ -1,0 +1,29 @@
+table 'cfpb dim_zip_code'
+	lineageTag: 961af87a-671f-4c7c-a4f5-c9dd06ac0497
+
+	column zip_code_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ee4f76d-86d9-4d17-9efd-956a77d2ece7
+		summarizeBy: none
+		sourceColumn: zip_code_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column zip_code
+		dataType: string
+		lineageTag: a6a36c0f-f1d9-4da6-802f-a0c8f8c4f3e0
+		summarizeBy: none
+		sourceColumn: zip_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'cfpb dim_zip_code' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    cfpb_dim_zip_code = Source{[Schema="cfpb",Item="dim_zip_code"]}[Data]
+				in
+				    cfpb_dim_zip_code
+

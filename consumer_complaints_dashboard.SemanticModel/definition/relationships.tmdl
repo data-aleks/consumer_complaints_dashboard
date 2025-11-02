@@ -1,0 +1,96 @@
+relationship 547d8206-9276-4745-a8c8-e170668414aa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'cfpb dim_date'.full_date
+	toColumn: LocalDateTable_d8dd39f4-cca6-49f7-94c7-20d4cdd4b811.Date
+
+relationship d8bb188a-ae9d-4558-8d61-986337b8f327
+	fromColumn: 'cfpb fact_complaints'.company_id
+	toColumn: 'cfpb dim_company'.company_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1e415ddc-0904-4b03-8745-164c62922d2d
+	fromColumn: 'cfpb fact_complaints'.consent_id
+	toColumn: 'cfpb dim_consent'.consent_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 54c8170f-38b7-47e7-9fad-ce2d15c21258
+	fromColumn: 'cfpb fact_complaints'.date_received_id
+	toColumn: 'cfpb dim_date'.date_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 19546af7-4cca-4d8d-b7b2-c3f08b36b3a1
+	isActive: false
+	fromColumn: 'cfpb fact_complaints'.date_sent_id
+	toColumn: 'cfpb dim_date'.date_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1f56a72d-04fb-4aef-85ac-d787878d6200
+	fromColumn: 'cfpb fact_complaints'.disputed_id
+	toColumn: 'cfpb dim_disputed'.disputed_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1ccdc9f1-5506-49a8-bb13-dd3a3f8cbff5
+	fromColumn: 'cfpb fact_complaints'.issue_id
+	toColumn: 'cfpb dim_issue'.issue_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship a11fb4fc-d9bd-45cd-b306-17771136c58a
+	fromColumn: 'cfpb fact_complaints'.origin_id
+	toColumn: 'cfpb dim_origin'.origin_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 9d375461-b71d-40b7-b7f6-2a88213d9a21
+	fromColumn: 'cfpb fact_complaints'.product_id
+	toColumn: 'cfpb dim_product'.product_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 581d0ca0-9e81-49a9-bfec-b22da137bc1a
+	fromColumn: 'cfpb fact_complaints'.public_response_id
+	toColumn: 'cfpb dim_public_response'.public_response_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 76d1d2b7-52ae-4999-88c3-7c0b270506d5
+	fromColumn: 'cfpb fact_complaints'.state_id
+	toColumn: 'cfpb dim_state'.state_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship cc11d4f6-c7a6-435c-b412-1dd604165cb0
+	fromColumn: 'cfpb fact_complaints'.status_id
+	toColumn: 'cfpb dim_status'.status_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship bf5c5aec-6e7f-4c04-92d6-c0abc040f71e
+	fromColumn: 'cfpb fact_complaints'.sub_issue_id
+	toColumn: 'cfpb dim_sub_issue'.sub_issue_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship b8b5a9fe-5dc5-480d-bd10-b251035df4ae
+	fromColumn: 'cfpb fact_complaints'.sub_product_id
+	toColumn: 'cfpb dim_sub_product'.sub_product_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1d42f8e5-7797-4a28-ba65-17219f256efd
+	fromColumn: 'cfpb fact_complaints'.tag_id
+	toColumn: 'cfpb dim_tag'.tag_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 425282fe-dc16-478d-bab9-c638701617a9
+	fromColumn: 'cfpb fact_complaints'.zip_code_id
+	toColumn: 'cfpb dim_zip_code'.zip_code_id
+
+	annotation PBI_IsFromSource = FS
+

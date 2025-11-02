@@ -1,0 +1,90 @@
+table 'cfpb dim_date'
+	lineageTag: 6c6ee946-2455-4cd4-94a3-767d594baf33
+
+	column date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d02d10f7-85bd-4388-9f2b-e3a019f02e6c
+		summarizeBy: none
+		sourceColumn: date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f98e79e5-efd6-469d-b351-db1c7c26e297
+		summarizeBy: none
+		sourceColumn: full_date
+
+		variation Variation
+			isDefault
+			relationship: 547d8206-9276-4745-a8c8-e170668414aa
+			defaultHierarchy: LocalDateTable_d8dd39f4-cca6-49f7-94c7-20d4cdd4b811.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: bac0a2aa-4652-4974-95b4-d9c8592b56c2
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 68e9d6ec-9b63-427d-95a9-df601cb16a3a
+		summarizeBy: sum
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		formatString: 0
+		lineageTag: a05e36f1-eae8-48ef-abaf-d942c1050678
+		summarizeBy: sum
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column day
+		dataType: int64
+		formatString: 0
+		lineageTag: b171cda5-43b5-4478-93a0-9814a64ecc2d
+		summarizeBy: sum
+		sourceColumn: day
+
+		annotation SummarizationSetBy = Automatic
+
+	column weekday_name
+		dataType: string
+		lineageTag: f51fed0c-5519-4e32-8cae-095ccd590a57
+		summarizeBy: none
+		sourceColumn: weekday_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0a90cf34-af3a-47ee-906e-7ae8a5ce75dd
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'cfpb dim_date' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    cfpb_dim_date = Source{[Schema="cfpb",Item="dim_date"]}[Data]
+				in
+				    cfpb_dim_date
+
