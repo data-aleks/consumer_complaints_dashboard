@@ -1,18 +1,16 @@
-# Consumer Complaints Dashboard
+# Consumer Complaint Intelligence Dashboard
 A business intelligence case study using Power BI and data analytics
 
 ## Table of Contents
-- [Project Introduction](#project-introduction)
+- [Executive Summary](#executive-summary)
 - [Dataset Information](#dataset-information)
 - [Key Insights From Data](#key-insights-from-data)
 - [Business Recommendation](#business-recommendation)
 
-## Project Introduction
-There is a need for a tool that helps our company identify and address emerging issues before they become public complaints. The goal is to make smarter, data-driven decisions about where to improve service, how to communicate with customers, and how to stay ahead of reputational and regulatory risks.
+## Executive Summary
+This project delivers a Power BI dashboard designed to help financial service institutions proactively identify and address emerging consumer complaint trends. Using real-world data from the CFPB Consumer Complaint Database, the dashboard analyzes complaint volume, issue types, submission channels, and company responsiveness - excluding credit reference agencies to focus on operationally relevant entities.
 
-By building a Power BI dashboard using real-world data from the CFPB Consumer Complaint Database, the analytics team can uncover patterns in complaint volume, product categories, submission channels, geographic distribution, and company responsiveness—helping stakeholders visualize industry-wide friction points and anticipate potential vulnerabilities.
-
-This project aims to strengthen customer satisfaction, enhance operational agility, and ensure our company remains proactive in addressing consumer concerns.
+By surfacing friction points across products and geographies, the dashboard enables stakeholders to prioritize service improvements, enhance customer communication, and mitigate reputational and regulatory risk. The goal is to transform reactive compliance into strategic foresight - strengthening customer satisfaction and positioning institutions as proactive, data-driven leaders in consumer protection.
 
 **This project uses real data from the Consumer Complaint Database maintained by the Consumer Financial Protection Bureau.**
 
@@ -65,5 +63,19 @@ This is how it looks like when imported in to Power BI via MySQL connector:
 ![Dashboard Data Model](./screenshots/star_schema_data_model.png "Dashboard star schema data model")
 
 ## Key Insights From Data
+
+### Rationale for Excluding Credit Reference Agencies
+Credit reference agencies (CRAs) act as data intermediaries, not direct financial service providers. They do not engage in customer-facing operations like lending, servicing, or account management. In 2025, CRAs accounted for over 85% of all credit reporting complaints, primarily related to data accuracy and identity theft. Including them would skew complaint distribution and obscure patterns from operationally relevant institutions. Our goal is to help financial institutions — banks, lenders, and servicers. Identify service gaps and improve customer satisfaction. CRA complaints reflect systemic data issues, not service delivery failures. By excluding CRAs, we ensure the dashboard surfaces actionable insights tied to customer experience, dispute resolution, and operational agility, areas where institutions can directly intervene.
+
+### What is the current consumer complaints landscape.
+
+### Which complaint areas have the highest volume of consumer complaints.
+
+### What are the key issues being experienced by consumers
+
+### What are current complaint resolution, response timeliness and consumer complaint satisfaction benchmarks
+
+
+
 
 ## Business Recommendation
