@@ -1,6 +1,113 @@
 table 'cfpb fact_complaints'
 	lineageTag: a43a55d0-99b8-4057-b7cd-2d16fbeb8ead
 
+	measure Total_Complaints_Today =
+			
+			CALCULATE(
+			    COUNTROWS('cfpb fact_complaints'),
+			    FILTER(
+			        ALL('cfpb dim_date'),
+			        'cfpb dim_date'[full_date] <= TODAY()
+			    )
+			)
+		displayFolder: [complaints]
+		lineageTag: ef7cdd6a-c7ae-4830-8b64-841599fed968
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Total_Complaints_30_Days_Ago =
+			
+			CALCULATE(
+			    COUNTROWS('cfpb fact_complaints'),
+			    FILTER(
+			        ALL('cfpb dim_date'),
+			        'cfpb dim_date'[full_date] <= TODAY() - 30
+			    )
+			)
+		formatString: 0
+		displayFolder: [complaints]
+		lineageTag: d4df4910-f3a0-434b-8446-387964b10eb3
+
+	measure Total_Complaints_60_Days_Ago =
+			
+			CALCULATE(
+			    COUNTROWS('cfpb fact_complaints'),
+			    FILTER(
+			        ALL('cfpb dim_date'),
+			        'cfpb dim_date'[full_date] <= TODAY() - 60
+			    )
+			)
+		formatString: 0
+		displayFolder: [complaints]
+		lineageTag: 6c54f96e-41c9-446c-8ffe-edf22771ea25
+
+	measure Complaints_Same_Period_Last_Year =
+			
+			CALCULATE(
+			    COUNTROWS('cfpb fact_complaints'),
+			    FILTER(
+			        'cfpb dim_date',
+			        'cfpb dim_date'[full_date] >= TODAY() - 395 &&
+			        'cfpb dim_date'[full_date] <= TODAY() - 365
+			    )
+			)
+		formatString: 0
+		displayFolder: [complaints]
+		lineageTag: c73ab5f8-c694-4150-bf6a-b088a533cdff
+
+	measure 'Complaints Vs 30 Days' = ```
+			
+			VAR t = [Total_Complaints_Today] // Complaints today
+			VAR p = [Total_Complaints_30_Days_Ago] // Complaints previous 30 days
+			VAR r = t - p // Complaint difference betweet today and prev 30 days
+			VAR pc = DIVIDE(r, t, 0) // Percentage change
+			VAR direction = IF(r >= 0, "↑", "↓")
+			
+			RETURN
+			direction & " " & FORMAT(ABS(r), "#,0") & " vs 30 days (" & FORMAT(ABS(pc), "0.0%") & " change)"
+			
+			
+			```
+		displayFolder: [complaints][comparison]
+		lineageTag: 3aecdccb-fe12-43f5-ad98-823d045c4ed7
+
+	measure Complaints_Change_Color_Code = IF([Total_Complaints_Today] - [Total_Complaints_30_Days_Ago] >= 0, 1, 0)
+		formatString: 0
+		displayFolder: [complaints][color_coding]
+		lineageTag: d758efd7-fb53-4d43-ac94-0535f93e188e
+
+	measure 'Complaints Vs 60 Days' = ```
+			
+			VAR t = [Total_Complaints_Today] // Complaints today
+			VAR p = [Total_Complaints_60_Days_Ago] // Complaints previous 60 days
+			VAR r = t - p // Complaint difference betweet today and prev 60 days
+			VAR pc = DIVIDE(r, t, 0) // Percentage change
+			VAR direction = IF(r >= 0, "↑", "↓")
+			
+			RETURN
+			direction & " " & FORMAT(ABS(r), "#,0") & " vs 60 days (" & FORMAT(ABS(pc), "0.0%") & " change)"
+			
+			
+			```
+		displayFolder: [complaints][comparison]
+		lineageTag: d2dc4cf9-e709-4ac4-adaa-58eb0325f0b7
+
+	measure 'Complaints Vs Same Period Last Year' = ```
+			
+			VAR t = [Total_Complaints_Today] // Complaints today
+			VAR p = [Complaints_Same_Period_Last_Year] // Complaints previous year
+			VAR r = t - p // Complaint difference betweet today and prev year
+			VAR pc = DIVIDE(r, t, 0) // Percentage change
+			VAR direction = IF(r >= 0, "↑", "↓")
+			
+			RETURN
+			direction & " " & FORMAT(ABS(r), "#,0") & " vs Same Period Last Year (" & FORMAT(ABS(pc), "0.0%") & " change)"
+			
+			
+			```
+		displayFolder: [complaints][comparison]
+		lineageTag: dbae2ff2-953e-433d-99e1-16ead1da1f09
+
 	column complaint_id
 		dataType: int64
 		formatString: 0
@@ -167,7 +274,12 @@ table 'cfpb fact_complaints'
 		source =
 				let
 				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
-				    cfpb_fact_complaints = Source{[Schema="cfpb",Item="fact_complaints"]}[Data]
+				    cfpb_fact_complaints = Source{[Schema="cfpb",Item="fact_complaints"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(cfpb_fact_complaints, each ([company_id] <> 1 and [company_id] <> 2 and [company_id] <> 3))
 				in
-				    cfpb_fact_complaints
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

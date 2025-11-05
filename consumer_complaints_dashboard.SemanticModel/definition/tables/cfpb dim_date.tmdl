@@ -1,5 +1,6 @@
 table 'cfpb dim_date'
 	lineageTag: 6c6ee946-2455-4cd4-94a3-767d594baf33
+	dataCategory: Time
 
 	column date_id
 		dataType: int64
@@ -12,15 +13,11 @@ table 'cfpb dim_date'
 
 	column full_date
 		dataType: dateTime
-		formatString: Long Date
+		isKey
+		formatString: Short Date
 		lineageTag: f98e79e5-efd6-469d-b351-db1c7c26e297
 		summarizeBy: none
 		sourceColumn: full_date
-
-		variation Variation
-			isDefault
-			relationship: 547d8206-9276-4745-a8c8-e170668414aa
-			defaultHierarchy: LocalDateTable_d8dd39f4-cca6-49f7-94c7-20d4cdd4b811.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -84,7 +81,12 @@ table 'cfpb dim_date'
 		source =
 				let
 				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
-				    cfpb_dim_date = Source{[Schema="cfpb",Item="dim_date"]}[Data]
+				    cfpb_dim_date = Source{[Schema="cfpb",Item="dim_date"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(cfpb_dim_date, each ([year] = 2024 or [year] = 2025))
 				in
-				    cfpb_dim_date
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 
