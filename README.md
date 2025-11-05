@@ -68,14 +68,15 @@ This is how it looks like when imported in to Power BI via MySQL connector:
 Credit reference agencies (CRAs) act as data intermediaries, not direct financial service providers. They do not engage in customer-facing operations like lending, servicing, or account management. In 2025, CRAs accounted for over 85% of all credit reporting complaints, primarily related to data accuracy and identity theft. Including them would skew complaint distribution and obscure patterns from operationally relevant institutions. Our goal is to help financial institutions — banks, lenders, and servicers. Identify service gaps and improve customer satisfaction. CRA complaints reflect systemic data issues, not service delivery failures. By excluding CRAs, we ensure the dashboard surfaces actionable insights tied to customer experience, dispute resolution, and operational agility, areas where institutions can directly intervene.
 
 ### What is the current consumer complaints landscape.
+Establishes the scale and urgency of consumer dissatisfaction, helping stakeholders understand the broader context and prioritize response strategies.
 
 ### Which complaint areas have the highest volume of consumer complaints.
+Highlights operational hotspots and risk-prone areas, enabling targeted service improvements and resource allocation.
 
-### What are the key issues being experienced by consumers
+### What are the key issues being experienced by consumers.
+Reveals root causes of dissatisfaction, guiding process redesign, staff training, and customer communication strategies.
 
-### What are current complaint resolution, response timeliness and consumer complaint satisfaction benchmarks
-
-
-
+### What are current complaint resolution, response timeliness and consumer complaint satisfaction benchmarks.
+Supports performance benchmarking, regulatory compliance, and continuous improvement in customer experience and operational agility.
 
 ## Business Recommendation
