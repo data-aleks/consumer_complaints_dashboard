@@ -50,6 +50,17 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "background5773560962785065.jpg",
+          "path": "background5773560962785065.jpg",
+          "type": "Image"
+        }
+      ]
     }
   ],
   "settings": {
