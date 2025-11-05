@@ -16,8 +16,6 @@ ref table 'cfpb fact_complaints'
 ref table 'cfpb dim_company'
 ref table 'cfpb dim_consent'
 ref table 'cfpb dim_date'
-ref table DateTableTemplate_5543c814-dd65-41e9-81a0-933e267fd29f
-ref table LocalDateTable_d8dd39f4-cca6-49f7-94c7-20d4cdd4b811
 ref table 'cfpb dim_disputed'
 ref table 'cfpb dim_issue'
 ref table 'cfpb dim_origin'
