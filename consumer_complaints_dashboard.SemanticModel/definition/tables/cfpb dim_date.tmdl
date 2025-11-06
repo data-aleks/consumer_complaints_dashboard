@@ -81,10 +81,9 @@ table 'cfpb dim_date'
 		source =
 				let
 				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
-				    cfpb_dim_date = Source{[Schema="cfpb",Item="dim_date"]}[Data],
-				    #"Filtered Rows" = Table.SelectRows(cfpb_dim_date, each ([year] = 2024 or [year] = 2025))
+				    cfpb_dim_date = Source{[Schema="cfpb",Item="dim_date"]}[Data]
 				in
-				    #"Filtered Rows"
+				    cfpb_dim_date
 
 	annotation PBI_NavigationStepName = Navigation
 

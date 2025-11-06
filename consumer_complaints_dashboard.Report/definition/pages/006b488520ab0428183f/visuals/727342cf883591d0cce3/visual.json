@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "727342cf883591d0cce3",
+  "position": {
+    "x": 768,
+    "y": 181.31170782833738,
+    "z": 3000,
+    "height": 320,
+    "width": 1120
+  },
+  "visualGroup": {
+    "displayName": "complaints_by_product",
+    "groupMode": "ScaleMode"
+  }
+}
