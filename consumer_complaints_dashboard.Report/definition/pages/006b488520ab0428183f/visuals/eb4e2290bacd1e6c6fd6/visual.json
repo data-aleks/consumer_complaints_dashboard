@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "eb4e2290bacd1e6c6fd6",
   "position": {
-    "x": 16,
-    "y": 13.6,
+    "x": 16.684247538677923,
+    "y": 12.053144103958919,
     "z": 2000,
-    "height": 54.4,
-    "width": 560,
-    "tabOrder": 2000
+    "height": 40.989839396919045,
+    "width": 558.92229254571043,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "textbox",
@@ -22,7 +22,7 @@
                     "value": "Timely Response Rate",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "24pt",
+                      "fontSize": "16pt",
                       "color": "#252423"
                     }
                   }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "4e57880ecd24decbb5a7",
   "position": {
-    "x": 16,
-    "y": 16,
+    "x": 17.179189783630608,
+    "y": 10.507607712419022,
     "z": 2000,
-    "height": 64,
-    "width": 592
+    "height": 45.854700854700859,
+    "width": 591.15414354970278
   },
   "visual": {
     "visualType": "textbox",
@@ -21,7 +21,7 @@
                     "value": "Consumer Complaints Resolutions",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "24pt",
+                      "fontSize": "16pt",
                       "color": "#252423"
                     }
                   }
