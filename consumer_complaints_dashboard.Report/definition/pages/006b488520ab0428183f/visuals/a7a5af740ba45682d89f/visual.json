@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "a7a5af740ba45682d89f",
   "position": {
-    "x": 32,
-    "y": 0,
+    "x": 32.000000000000007,
+    "y": 6.6071428571428577,
     "z": 4000,
-    "height": 64,
-    "width": 1392,
+    "height": 39.642857142857146,
+    "width": 952.00000000000023,
     "tabOrder": 1000
   },
   "visual": {
@@ -22,7 +22,8 @@
                     "value": "Consumer Complaint Trends - Monitoring Volume, Risk Areas, and Resolution Performance",
                     "textStyle": {
                       "fontFamily": "Segoe (Bold)",
-                      "fontSize": "24pt"
+                      "fontSize": "16pt",
+                      "color": "#ffffff"
                     }
                   }
                 ]

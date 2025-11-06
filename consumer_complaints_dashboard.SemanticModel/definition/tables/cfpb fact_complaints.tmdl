@@ -6,7 +6,7 @@ table 'cfpb fact_complaints'
 			CALCULATE(
 			    COUNTROWS('cfpb fact_complaints'),
 			    FILTER(
-			        ALL('cfpb dim_date'),
+			        'cfpb dim_date',
 			        'cfpb dim_date'[full_date] <= TODAY()
 			    )
 			)
@@ -17,11 +17,13 @@ table 'cfpb fact_complaints'
 
 	measure Total_Complaints_30_Days_Ago =
 			
+			VAR SelectedDate = MAX('cfpb dim_date'[full_date])
+			RETURN
 			CALCULATE(
 			    COUNTROWS('cfpb fact_complaints'),
 			    FILTER(
-			        ALL('cfpb dim_date'),
-			        'cfpb dim_date'[full_date] <= TODAY() - 30
+			        'cfpb dim_date',
+			        'cfpb dim_date'[full_date] <= SelectedDate - 30
 			    )
 			)
 		formatString: 0
@@ -30,11 +32,13 @@ table 'cfpb fact_complaints'
 
 	measure Total_Complaints_60_Days_Ago =
 			
+			VAR SelectedDate = MAX('cfpb dim_date'[full_date])
+			RETURN
 			CALCULATE(
 			    COUNTROWS('cfpb fact_complaints'),
 			    FILTER(
-			        ALL('cfpb dim_date'),
-			        'cfpb dim_date'[full_date] <= TODAY() - 60
+			        'cfpb dim_date',
+			        'cfpb dim_date'[full_date] <= SelectedDate - 60
 			    )
 			)
 		formatString: 0
@@ -43,12 +47,16 @@ table 'cfpb fact_complaints'
 
 	measure Complaints_Same_Period_Last_Year =
 			
+			VAR SelectedDate = MAX('cfpb dim_date'[full_date])
+			VAR StartDateLY = SelectedDate - 395
+			VAR EndDateLY = SelectedDate - 365
+			RETURN
 			CALCULATE(
 			    COUNTROWS('cfpb fact_complaints'),
 			    FILTER(
 			        'cfpb dim_date',
-			        'cfpb dim_date'[full_date] >= TODAY() - 395 &&
-			        'cfpb dim_date'[full_date] <= TODAY() - 365
+			        'cfpb dim_date'[full_date] >= StartDateLY &&
+			        'cfpb dim_date'[full_date] <= EndDateLY
 			    )
 			)
 		formatString: 0

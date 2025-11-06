@@ -7,7 +7,7 @@ table 'cfpb dim_disputed'
 			VAR cd = CALCULATE([Complaints], FILTER('cfpb dim_disputed', 'cfpb dim_disputed'[disputed] = "Yes"))
 			VAR cdr = DIVIDE(cd, c, 0)
 			RETURN 
-			    cdr
+			    IF(ISBLANK(cdr), "N/A", cdr)
 			```
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 395e05ff-03db-4895-ae4c-ff49ba3f4d06
@@ -18,7 +18,7 @@ table 'cfpb dim_disputed'
 			VAR cd = CALCULATE([Complaints], FILTER('cfpb dim_disputed', 'cfpb dim_disputed'[disputed] = "No"))
 			VAR cdr = DIVIDE(cd, c, 0)
 			RETURN 
-			    cdr
+			    IF(ISBLANK(cdr), "N/A", cdr)
 			```
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: ecdfdce2-4381-4c43-9257-5a11285148ad
@@ -29,7 +29,7 @@ table 'cfpb dim_disputed'
 			VAR cd = CALCULATE([Complaints], FILTER('cfpb dim_disputed', 'cfpb dim_disputed'[disputed] = "N/A"))
 			VAR cdr = DIVIDE(cd, c, 0)
 			RETURN 
-			    cdr
+			    IF(ISBLANK(cdr), "N/A", cdr)
 			```
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: c8c00c65-88a3-45a1-a897-839f570bfb8b

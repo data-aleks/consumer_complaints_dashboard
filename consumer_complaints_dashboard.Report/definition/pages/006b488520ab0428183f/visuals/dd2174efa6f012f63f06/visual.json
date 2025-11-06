@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "dd2174efa6f012f63f06",
   "position": {
-    "x": 15.997536945812808,
-    "y": 13.5,
+    "x": 14.620689655172445,
+    "y": 12.000000000000002,
     "z": 2000,
-    "height": 54,
-    "width": 687.89408866995075
+    "height": 48.000000000000007,
+    "width": 628.689655172414,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "textbox",
@@ -21,7 +22,7 @@
                     "value": "Consumer Issues Over Time",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "24pt",
+                      "fontSize": "16pt",
                       "color": "#252423"
                     }
                   }

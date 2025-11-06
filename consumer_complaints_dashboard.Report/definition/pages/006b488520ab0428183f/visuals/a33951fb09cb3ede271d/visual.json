@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "a33951fb09cb3ede271d",
   "position": {
-    "x": 15.997536945812808,
-    "y": 54,
+    "x": 14.622940723633569,
+    "y": 56.8888888888889,
     "z": 1000,
-    "height": 202.5,
-    "width": 895.86206896551721,
+    "height": 170.66666666666671,
+    "width": 818.88468052348,
     "tabOrder": 1000
   },
   "visual": {
@@ -215,62 +215,7 @@
           }
         },
         "type": "RelativeDate",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "c1",
-              "Entity": "cfpb dim_date",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Between": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "c1"
-                        }
-                      },
-                      "Property": "full_date"
-                    }
-                  },
-                  "LowerBound": {
-                    "DateSpan": {
-                      "Expression": {
-                        "DateAdd": {
-                          "Expression": {
-                            "DateAdd": {
-                              "Expression": {
-                                "Now": {}
-                              },
-                              "Amount": 1,
-                              "TimeUnit": 0
-                            }
-                          },
-                          "Amount": -365,
-                          "TimeUnit": 0
-                        }
-                      },
-                      "TimeUnit": 0
-                    }
-                  },
-                  "UpperBound": {
-                    "DateSpan": {
-                      "Expression": {
-                        "Now": {}
-                      },
-                      "TimeUnit": 0
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
+        "howCreated": "User"
       },
       {
         "name": "a09423ff1bedb5eababf",
@@ -376,7 +321,8 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       }
     ]
   }
