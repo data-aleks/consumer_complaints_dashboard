@@ -108,6 +108,40 @@ table 'cfpb fact_complaints'
 		displayFolder: [complaints][comparison]
 		lineageTag: dbae2ff2-953e-433d-99e1-16ead1da1f09
 
+	measure Complaints = DISTINCTCOUNT('cfpb fact_complaints'[complaint_id])
+		formatString: 0
+		lineageTag: 6b916ab6-c629-41b5-9be8-d065ef9674ee
+
+	measure Timely_Response_Rate =
+			
+			VAR t = CALCULATE(
+			    DISTINCTCOUNT('cfpb fact_complaints'[complaint_id]),
+			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response_flag] = TRUE())
+			)
+			VAR total = CALCULATE(
+			    DISTINCTCOUNT('cfpb fact_complaints'[complaint_id])
+			)
+			RETURN
+			DIVIDE(t, total, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 1938fa06-398a-47c4-ba5f-80cc8d6bce2d
+
+	measure 'Timely Response Complaints' =
+			CALCULATE(
+			    [Complaints],
+			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response_flag] = TRUE())
+			)
+		formatString: 0
+		lineageTag: 560954c1-5034-4a93-8a66-ddcf6a3d5f05
+
+	measure 'Not Timely Response Complaints' =
+			CALCULATE(
+			    [Complaints],
+			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response_flag] = FALSE())
+			)
+		formatString: 0
+		lineageTag: 412a8d3e-5018-44bd-98d8-028b2010c071
+
 	column complaint_id
 		dataType: int64
 		formatString: 0

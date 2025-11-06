@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "e8fd4c3f309bd5eb96e7",
+  "position": {
+    "x": 656,
+    "y": 800,
+    "z": 7000,
+    "height": 272,
+    "width": 608,
+    "tabOrder": 2000
+  },
+  "visualGroup": {
+    "displayName": "complaints_disputed",
+    "groupMode": "ScaleMode"
+  }
+}
