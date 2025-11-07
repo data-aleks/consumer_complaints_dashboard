@@ -2,12 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "ad9fbdfb3d55bd8eb950",
   "position": {
-    "x": 31.666666666666668,
-    "y": 806.66666666666674,
+    "x": 31.590493601462523,
+    "y": 807.31261425959781,
     "z": 6000,
-    "height": 246.66666666666669,
-    "width": 608.33333333333337,
-    "tabOrder": 12000
+    "height": 247.45886654478974,
+    "width": 608.99451553930533
   },
   "visualGroup": {
     "displayName": "complaints_status",

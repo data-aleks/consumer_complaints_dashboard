@@ -105,7 +105,7 @@
             "innerPadding": {
               "expr": {
                 "Literal": {
-                  "Value": "0L"
+                  "Value": "5L"
                 }
               }
             }
@@ -141,6 +141,24 @@
                   "expr": {
                     "Literal": {
                       "Value": "'#9aa6b2'"
+                    }
+                  }
+                }
+              }
+            },
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#252423'"
                     }
                   }
                 }

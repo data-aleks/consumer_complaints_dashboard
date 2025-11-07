@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "9259ddf4b0ab48959a8b",
   "position": {
-    "x": 16.335664335664333,
-    "y": 0.055944055944053162,
+    "x": 16.340207067682034,
+    "y": 0.055944055944053155,
     "z": 1000,
-    "height": 87.6083916083916,
-    "width": 1823.160839160839,
+    "height": 87.608391608391585,
+    "width": 1823.667836057157,
     "tabOrder": 1000
   },
   "visual": {
@@ -25,7 +25,7 @@
                     }
                   },
                   {
-                    "value": "16,169",
+                    "value": "12208",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "12pt"
@@ -51,7 +51,7 @@
                     }
                   },
                   {
-                    "value": "97.94%",
+                    "value": "98.06%",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "12pt"
@@ -71,33 +71,7 @@
                     }
                   },
                   {
-                    "value": ", resolution satisfaction remains unclear ",
-                    "textStyle": {
-                      "fontSize": "12pt"
-                    }
-                  },
-                  {
-                    "value": "92.39%",
-                    "textStyle": {
-                      "fontWeight": "bold",
-                      "fontSize": "12pt"
-                    }
-                  },
-                  {
-                    "value": " of cases ",
-                    "textStyle": {
-                      "fontSize": "12pt"
-                    }
-                  },
-                  {
-                    "value": "lack consumer feedback",
-                    "textStyle": {
-                      "fontWeight": "bold",
-                      "fontSize": "12pt"
-                    }
-                  },
-                  {
-                    "value": " on whether the outcome was disputed or accepted.",
+                    "value": ", Despite strong response times, the absence of consumer feedback on dispute outcomes suggests a blind spot in resolution quality and post-resolution engagement.",
                     "textStyle": {
                       "fontSize": "12pt"
                     }

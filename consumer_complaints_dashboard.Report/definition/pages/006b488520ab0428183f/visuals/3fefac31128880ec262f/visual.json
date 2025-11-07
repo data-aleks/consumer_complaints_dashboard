@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "3fefac31128880ec262f",
   "position": {
-    "x": 16.666666666666664,
-    "y": 71.516666666666652,
+    "x": 16.669239080104948,
+    "y": 71.473165478386562,
     "z": 17500,
-    "height": 86.25,
-    "width": 312.5,
-    "tabOrder": 2000
+    "height": 86.197537019494419,
+    "width": 312.54823275196782,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -34,21 +34,6 @@
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "cfpb dim_date"
-                  }
-                },
-                "Property": "full_date"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
@@ -59,14 +44,7 @@
             "startDate": {
               "expr": {
                 "Literal": {
-                  "Value": "datetime'2011-12-01T00:00:00'"
-                }
-              }
-            },
-            "endDate": {
-              "expr": {
-                "Literal": {
-                  "Value": "datetime'2025-10-30T00:00:00'"
+                  "Value": "datetime'2024-10-10T01:00:00'"
                 }
               }
             },
@@ -96,51 +74,55 @@
                 "Where": [
                   {
                     "Condition": {
-                      "And": {
+                      "Comparison": {
+                        "ComparisonKind": 2,
                         "Left": {
-                          "Comparison": {
-                            "ComparisonKind": 2,
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "c"
-                                  }
-                                },
-                                "Property": "full_date"
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "c"
                               }
                             },
-                            "Right": {
-                              "Literal": {
-                                "Value": "datetime'2011-12-01T00:00:00'"
-                              }
-                            }
+                            "Property": "full_date"
                           }
                         },
                         "Right": {
-                          "Comparison": {
-                            "ComparisonKind": 3,
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "c"
-                                  }
-                                },
-                                "Property": "full_date"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "datetime'2025-10-31T00:00:00'"
-                              }
-                            }
+                          "Literal": {
+                            "Value": "datetime'2024-10-10T00:00:00'"
                           }
                         }
                       }
                     }
                   }
                 ]
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
               }
             }
           }

@@ -143,7 +143,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "37a3166f7eb0cefbbab7",
+                  "name": "73ac1bab720cc59a5855",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -214,7 +214,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "129172d457f927098616",
+                  "name": "de809c6ce39360bc73ed",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -229,7 +229,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "1d4c9178b621a6ceb1bc",
+                  "name": "e80f7859a23c5bc4b02f",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -408,7 +408,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "cbc83773eb43117eb7fd",
+                  "name": "d908a4befa729a11b5b4",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -458,18 +458,6 @@
               }
             }
           },
-          "9259ddf4b0ab48959a8b": {
-            "singleVisual": {
-              "visualType": "textbox",
-              "objects": {}
-            }
-          },
-          "22b8d761bad3122c6b5b": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
           "0e298649e34d229d1cb7": {
             "singleVisual": {
               "visualType": "shape",
@@ -498,7 +486,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "c546f9711babb04c415f",
+                  "name": "dc395b8468eccbd5b8f4",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -513,7 +501,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "3b855607e996dc8ccbbc",
+                  "name": "3af88c41742983a59e69",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -563,11 +551,23 @@
               }
             }
           },
+          "22b8d761bad3122c6b5b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "9259ddf4b0ab48959a8b": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
           "51418ebf619d3ebcdc29": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "8e8fb819bf559eafdf68",
+                  "name": "9b2caad01f2230b9e427",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -613,7 +613,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "17b91c716633986dacc2",
+                  "name": "f8d103642dba49291b10",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -659,7 +659,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "31e9912df48b1da6802e",
+                  "name": "d216e171b98da91047b6",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -699,7 +699,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "770d2de10b5a0d4e3465",
+                  "name": "126f7eb3834386b39216",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -739,7 +739,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "3d3864f0a98645c0d5d3",
+                  "name": "052cf59707df5ed6d06c",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -754,7 +754,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "994b11eedc14b468c8fe",
+                  "name": "48f8b317dca5a82ef95a",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -825,7 +825,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "91f1e188c5bf4fcc04f8",
+                  "name": "489f4d309b298c2c14db",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -865,7 +865,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "da93c9776546ed7cac4a",
+                  "name": "93374ab6a9a2337e7149",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -917,7 +917,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "4818ec533e23b48011ef",
+                  "name": "aba19030567219f69573",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -951,6 +951,292 @@
                   }
                 }
               ]
+            }
+          },
+          "88cd7f507c9dfac57cce": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "33b6d6b32be2b9fd545f": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "2b85538c4fdd5feb9133": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "546fa9f95121b0a2b38e": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "a476658e2e8e0bef5c96": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "ac8c3ff3ada5aec0341c": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "89c57ebfc5a8e3f1e2f9": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "d04ae5dee1a6f321a4fb": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "d15ebd772becde29e85e": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "601abdb23b47a01eddbd": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "d2bcd15f9f85229bbbde": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ff5ce6142c354b74c108",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_origin"
+                        }
+                      },
+                      "Property": "origin"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_origin"
+                        }
+                      },
+                      "Property": "origin"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "7d621726837903fa1437": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3fefac31128880ec262f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "31eba4607083488ebdb2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_date"
+                        }
+                      },
+                      "Property": "full_date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "c",
+                                "Entity": "cfpb dim_date",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "Comparison": {
+                                    "ComparisonKind": 2,
+                                    "Left": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "c"
+                                          }
+                                        },
+                                        "Property": "full_date"
+                                      }
+                                    },
+                                    "Right": {
+                                      "Literal": {
+                                        "Value": "datetime'2024-10-10T00:00:00'"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "startDate": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "datetime'2024-10-10T01:00:00'"
+                            }
+                          }
+                        },
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Between'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_date"
+                        }
+                      },
+                      "Property": "full_date"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "e18854295856ed356f36": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "e7cae7e0861be4130fdb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "fdc595ac67265523139b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_company"
+                        }
+                      },
+                      "Property": "company"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_company"
+                        }
+                      },
+                      "Property": "company"
+                    }
+                  }
+                ]
+              }
             }
           }
         }

@@ -2,12 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "88cd7f507c9dfac57cce",
   "position": {
-    "x": 16.666666666666668,
-    "y": 5,
+    "x": 16.680288670550389,
+    "y": 4.9655172413793061,
     "z": 14000,
-    "height": 40,
-    "width": 951.66666666666674,
-    "tabOrder": 14000
+    "height": 39.724137931034448,
+    "width": 952.44448308842709
   },
   "visual": {
     "visualType": "textbox",
@@ -22,8 +21,7 @@
                     "value": "Resolution Performance & Consumer Response",
                     "textStyle": {
                       "fontFamily": "Segoe (Bold)",
-                      "fontSize": "16pt",
-                      "color": "#ffffff"
+                      "fontSize": "16pt"
                     }
                   }
                 ]
