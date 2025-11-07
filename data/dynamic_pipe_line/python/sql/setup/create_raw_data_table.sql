@@ -1,0 +1,22 @@
+CREATE TABLE consumer_complaints_raw (
+  `Company` TEXT,
+  `Company public response` TEXT,
+  `Company response to consumer` TEXT,
+  `Complaint ID` INT,
+  `Consumer complaint narrative` TEXT,
+  `Consumer consent provided?` TEXT,
+  `Consumer disputed?` TEXT,
+  `Date received` TEXT,
+  `Date sent to company` TEXT,
+  `Issue` TEXT,
+  `Product` TEXT,
+  `State` TEXT,
+  `Sub-issue` TEXT,
+  `Sub-product` TEXT,
+  `Submitted via` TEXT,
+  `Tags` TEXT,
+  `Timely response?` TEXT,
+  `ZIP code` TEXT,
+  ingestion_date DATE,
+  source_file_name VARCHAR(255)
+);

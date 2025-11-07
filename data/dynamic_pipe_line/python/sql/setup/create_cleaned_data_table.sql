@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS consumer_complaints_cleaned (
+  complaint_id INT,
+  company_name VARCHAR(200),
+  company_public_response TEXT,
+  company_response TEXT,
+  consumer_narrative TEXT,
+  consumer_consent VARCHAR(100),
+  consumer_disputed VARCHAR(100),
+  date_received DATE,
+  date_sent_to_company DATE,
+  issue TEXT,
+  product VARCHAR(200),
+  state_code VARCHAR(50),
+  sub_issue TEXT,
+  sub_product VARCHAR(200),
+  submitted_via VARCHAR(100),
+  tags TEXT,
+  timely_response VARCHAR(10),
+  zip_code VARCHAR(20),
+  ingestion_date DATE,
+  source_file_name VARCHAR(100)
+);
