@@ -5,8 +5,8 @@
     "x": 0,
     "y": 0,
     "z": 0,
-    "height": 88,
-    "width": 1856
+    "height": 87.999999999999986,
+    "width": 1856.5161290322576
   },
   "visual": {
     "visualType": "shape",
@@ -94,7 +94,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#9AA6B2'"
+                      "Value": "'#252423'"
                     }
                   }
                 }

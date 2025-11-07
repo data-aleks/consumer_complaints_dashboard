@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "89c57ebfc5a8e3f1e2f9",
   "position": {
-    "x": 4.166666666666667,
-    "y": 5,
+    "x": 4.1527623285131625,
+    "y": 5.0000000000000009,
     "z": 18000,
-    "height": 40,
-    "width": 332.5
+    "height": 40.000000000000007,
+    "width": 331.39043381535038
   },
   "visual": {
     "visualType": "textbox",
@@ -21,8 +21,7 @@
                     "value": "Dashboard Filtering",
                     "textStyle": {
                       "fontFamily": "Segoe (Bold)",
-                      "fontSize": "16pt",
-                      "color": "#ffffff"
+                      "fontSize": "16pt"
                     }
                   }
                 ]
