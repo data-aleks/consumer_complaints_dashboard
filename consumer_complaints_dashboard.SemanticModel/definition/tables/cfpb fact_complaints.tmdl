@@ -159,155 +159,155 @@ table 'cfpb fact_complaints'
 
 		annotation SummarizationSetBy = Automatic
 
-	column date_received_id
+	column complaint_fact_key
 		dataType: int64
 		formatString: 0
-		lineageTag: 0d68ef4b-0f21-4ed5-83bc-8b4dd163aa8e
-		summarizeBy: none
-		sourceColumn: date_received_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column date_sent_id
-		dataType: int64
-		formatString: 0
-		lineageTag: 57f56c5a-7bc7-426c-a738-c1354915d3b6
+		lineageTag: 042f5808-ef89-4ce8-836a-aecdc7b10633
 		summarizeBy: sum
-		sourceColumn: date_sent_id
+		sourceColumn: complaint_fact_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column product_id
+	column date_received_key
 		dataType: int64
 		formatString: 0
-		lineageTag: e7dc4301-75a3-462f-b8e0-dd35148e32ab
-		summarizeBy: none
-		sourceColumn: product_id
+		lineageTag: 85402e96-ccc4-4216-bb7a-359f862032b5
+		summarizeBy: sum
+		sourceColumn: date_received_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column sub_product_id
+	column date_sent_key
 		dataType: int64
 		formatString: 0
-		lineageTag: 3d38481f-d5ab-48cf-af48-89aca747432f
-		summarizeBy: none
-		sourceColumn: sub_product_id
+		lineageTag: 5491bafa-aa2b-4ed6-8e15-3b3f1fc4b83f
+		summarizeBy: sum
+		sourceColumn: date_sent_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column issue_id
+	column product_key
 		dataType: int64
 		formatString: 0
-		lineageTag: 2dc07030-bba2-4525-aa16-de83a4de0958
+		lineageTag: 5cc69f12-ecb1-4a02-b1b4-962c9e744bbc
 		summarizeBy: none
-		sourceColumn: issue_id
+		sourceColumn: product_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column sub_issue_id
+	column sub_product_key
 		dataType: int64
 		formatString: 0
-		lineageTag: ea5fa9e3-290d-4350-8c90-4d785c2e6bd1
+		lineageTag: 48073692-7f75-43f7-8414-18a05039d529
 		summarizeBy: none
-		sourceColumn: sub_issue_id
+		sourceColumn: sub_product_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column company_id
+	column issue_key
 		dataType: int64
 		formatString: 0
-		lineageTag: 8e00de59-b82a-4f31-964d-369157ae7e44
+		lineageTag: 2e49d93d-6552-49cb-9794-d96e7d4576a3
 		summarizeBy: none
-		sourceColumn: company_id
+		sourceColumn: issue_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column state_id
+	column sub_issue_key
 		dataType: int64
 		formatString: 0
-		lineageTag: 74157021-52fd-4899-b452-0201ffe1a118
+		lineageTag: e1114c5a-5af9-44e0-8d3a-14b314aa99e5
 		summarizeBy: none
-		sourceColumn: state_id
+		sourceColumn: sub_issue_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column zip_code_id
+	column company_key
 		dataType: int64
 		formatString: 0
-		lineageTag: 57625d62-99db-4858-8678-b89fae2a1548
+		lineageTag: 94679ca6-0d5d-4df2-874a-fa16a5780853
 		summarizeBy: none
-		sourceColumn: zip_code_id
+		sourceColumn: company_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column origin_id
+	column state_key
 		dataType: int64
 		formatString: 0
-		lineageTag: 254df96d-a1c6-43af-8032-872786cfb61d
+		lineageTag: e4b13be2-d688-44ab-a376-36bc7b3f1342
 		summarizeBy: none
-		sourceColumn: origin_id
+		sourceColumn: state_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column public_response_id
+	column zip_code_key
 		dataType: int64
 		formatString: 0
-		lineageTag: bf96087c-163c-448c-93f6-3779d87124f8
+		lineageTag: 68812a4b-1123-41b4-bd90-75c50dd33ed6
 		summarizeBy: none
-		sourceColumn: public_response_id
+		sourceColumn: zip_code_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column status_id
+	column origin_key
 		dataType: int64
 		formatString: 0
-		lineageTag: a3a802c8-2ba0-4c0f-a383-c1ee18f23999
+		lineageTag: 94cc1d0c-4560-4b7b-b074-8c5c0854938c
 		summarizeBy: none
-		sourceColumn: status_id
+		sourceColumn: origin_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column consent_id
+	column status_key
 		dataType: int64
 		formatString: 0
-		lineageTag: b7be0777-a44a-4e9e-b97e-7f8620376a3d
+		lineageTag: 3d16e0ac-a0cf-4b96-bae9-662172d50f0d
 		summarizeBy: none
-		sourceColumn: consent_id
+		sourceColumn: status_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column tag_id
+	column public_response_key
 		dataType: int64
 		formatString: 0
-		lineageTag: 5c58e90d-daaa-4555-8bd2-7e24bac898ac
+		lineageTag: bd5e3a65-7ae4-452f-98a9-deb81c4ab4f5
 		summarizeBy: none
-		sourceColumn: tag_id
+		sourceColumn: public_response_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column disputed_id
+	column consent_key
 		dataType: int64
 		formatString: 0
-		lineageTag: 9fbeb9a5-ed97-4fb8-8ec7-7d400f2861fc
+		lineageTag: 741d83ce-1a93-4184-9e01-3cdeeee2a395
 		summarizeBy: none
-		sourceColumn: disputed_id
+		sourceColumn: consent_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column consumer_narrative
+	column tag_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 70811247-7e1e-469f-8787-e9fae05eb4ac
+		summarizeBy: none
+		sourceColumn: tag_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column disputed_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 11813252-896a-4c67-bf57-455d402d2616
+		summarizeBy: none
+		sourceColumn: disputed_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column consumer_complaint_narrative
 		dataType: string
-		lineageTag: 8a804b15-c9da-4e23-aa8f-a74241327ba4
+		lineageTag: bee3f9c9-64ae-491c-b0c4-6b2b1b10ba21
 		summarizeBy: none
-		sourceColumn: consumer_narrative
-
-		annotation SummarizationSetBy = Automatic
-
-	column timely_response_flag
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: cd81dd38-3bd9-482f-8ea2-0f929d54acc3
-		summarizeBy: none
-		sourceColumn: timely_response_flag
+		sourceColumn: consumer_complaint_narrative
 
 		annotation SummarizationSetBy = Automatic
 
@@ -316,10 +316,9 @@ table 'cfpb fact_complaints'
 		source =
 				let
 				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
-				    cfpb_fact_complaints = Source{[Schema="cfpb",Item="fact_complaints"]}[Data],
-				    #"Filtered Rows" = Table.SelectRows(cfpb_fact_complaints, each ([company_id] <> 1 and [company_id] <> 2 and [company_id] <> 3))
+				    cfpb_fact_complaints = Source{[Schema="cfpb",Item="fact_complaints"]}[Data]
 				in
-				    #"Filtered Rows"
+				    cfpb_fact_complaints
 
 	annotation PBI_NavigationStepName = Navigation
 

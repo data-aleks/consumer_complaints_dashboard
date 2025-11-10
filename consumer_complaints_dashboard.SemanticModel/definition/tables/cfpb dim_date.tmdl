@@ -2,15 +2,6 @@ table 'cfpb dim_date'
 	lineageTag: 6c6ee946-2455-4cd4-94a3-767d594baf33
 	dataCategory: Time
 
-	column date_id
-		dataType: int64
-		formatString: 0
-		lineageTag: d02d10f7-85bd-4388-9f2b-e3a019f02e6c
-		summarizeBy: none
-		sourceColumn: date_id
-
-		annotation SummarizationSetBy = Automatic
-
 	column full_date
 		dataType: dateTime
 		isKey
@@ -59,20 +50,21 @@ table 'cfpb dim_date'
 
 		annotation SummarizationSetBy = Automatic
 
-	column weekday_name
-		dataType: string
-		lineageTag: f51fed0c-5519-4e32-8cae-095ccd590a57
-		summarizeBy: none
-		sourceColumn: weekday_name
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 64779a5a-7129-4b41-8d6e-2aaa7817684b
+		summarizeBy: sum
+		sourceColumn: date_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column is_weekend
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: 0a90cf34-af3a-47ee-906e-7ae8a5ce75dd
-		summarizeBy: none
-		sourceColumn: is_weekend
+	column day_of_week_number
+		dataType: int64
+		formatString: 0
+		lineageTag: ee4e9785-53e0-4f13-99e7-8fcd2feddce8
+		summarizeBy: sum
+		sourceColumn: day_of_week_number
 
 		annotation SummarizationSetBy = Automatic
 
@@ -81,9 +73,10 @@ table 'cfpb dim_date'
 		source =
 				let
 				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
-				    cfpb_dim_date = Source{[Schema="cfpb",Item="dim_date"]}[Data]
+				    cfpb_dim_date = Source{[Schema="cfpb",Item="dim_date"]}[Data],
+				    #"Sorted Rows" = Table.Sort(cfpb_dim_date,{{"full_date", Order.Descending}})
 				in
-				    cfpb_dim_date
+				    #"Sorted Rows"
 
 	annotation PBI_NavigationStepName = Navigation
 
