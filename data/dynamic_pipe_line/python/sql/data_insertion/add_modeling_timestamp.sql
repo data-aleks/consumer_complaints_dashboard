@@ -1,0 +1,2 @@
+ALTER TABLE consumer_complaints_cleaned
+ADD COLUMN modeling_timestamp DATETIME NULL;
