@@ -1,10 +1,4 @@
--- CFPB Consumer Complaints Cleanup: sub_issue
--- Standardizes missing or blank values in the cleaned table
-
--- Optional: Review current values
--- SELECT DISTINCT sub_issue FROM consumer_complaints_cleaned;
-
--- Replace NULL or blank values with 'None'
-UPDATE consumer_complaints_cleaned
-SET sub_issue = 'None'
-WHERE sub_issue IS NULL OR TRIM(sub_issue) = '';
+-- Standardizes 'Sub-issue' by setting empty strings to NULL.
+UPDATE consumer_complaints_raw
+SET sub_issue = NULL
+WHERE sub_issue = '' {incremental_clause} {limit_clause};

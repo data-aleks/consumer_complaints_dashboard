@@ -1,0 +1,2 @@
+ALTER TABLE consumer_complaints_raw
+ADD COLUMN cleaned_timestamp DATETIME NULL;

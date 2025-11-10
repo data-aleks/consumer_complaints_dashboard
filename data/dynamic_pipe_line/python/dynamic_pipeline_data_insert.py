@@ -2,6 +2,7 @@ import logging
 import time
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
+from pipeline_logger import log_db
 import os
 
 # === CONFIG ===
@@ -14,61 +15,58 @@ db_port = os.getenv("DB_PORT")
 db_name = os.getenv("DB_NAME")
 
 # === SCRIPT CONFIG ===
-insert_script_path = "python\sql\data_insertion\cfpb_consumer_complaints_data_insert.sql"
+insert_script_path = "sql/data_insertion/cfpb_consumer_complaints_data_insert.sql"
 insert_label = "Insert Cleaned Data"
 
-# === LOGGING SETUP ===
-log_file = "cfpb_data_insert_log.txt"
-logging.basicConfig(
-    filename=log_file,
-    level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S"
-)
-console = logging.StreamHandler()
-console.setLevel(logging.INFO)
-formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s", "%H:%M:%S")
-console.setFormatter(formatter)
-logging.getLogger().addHandler(console)
-
-def log_action(action, status, message):
-    if status.lower() == "success":
-        logging.info(f"{action} | SUCCESS | {message}")
-    else:
-        logging.error(f"{action} | ERROR | {message}")
-
 # === EXECUTION FUNCTION ===
-def run_insert_script(engine, script_path, label):
+def run_insert_script(engine, script_path, label, limit=None):
     try:
-        logging.info(f"🚀 Starting: {label}")
         with open(script_path, "r", encoding="utf-8") as file:
             sql = file.read()
 
-        start_time = time.time()
+        limit_clause = f"LIMIT {limit}" if limit is not None else ""
+        sql = sql.replace("{limit_clause}", limit_clause)
+
         with engine.begin() as conn:
-            for stmt in sql.split(";"):
+            for stmt in sql.split(';'):
                 stmt = stmt.strip()
                 if stmt:
                     conn.exec_driver_sql(stmt)
-
-        duration = round(time.time() - start_time, 2)
-        logging.info(f"✅ Completed: {label} in {duration}s")
-        log_action(label, "success", f"Executed successfully in {duration}s")
-
+        logging.info(f"Executed: {label}")
     except Exception as e:
-        logging.error(f"❌ Error in {label}: {str(e)}", exc_info=True)
-        log_action(label, "error", str(e))
+        logging.error(f"Error in {label}: {str(e)}", exc_info=True)
+        log_db(engine, label, "ERROR", str(e))
+        raise
 
 # === MAIN RUN FUNCTION ===
-def run(engine=None):
-    logging.info("🔗 Connecting to MySQL...")
+def run(engine=None, limit=None):
+    logging.info("Connecting to MySQL...")
     if engine is None:
         connection_string = f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
         engine = create_engine(connection_string)
+    
+    with engine.begin() as conn:
+        # 1. Find how many records are cleaned but not yet inserted.
+        count_sql = """
+            SELECT COUNT(r.complaint_id)
+            FROM consumer_complaints_raw r
+            LEFT JOIN consumer_complaints_cleaned c ON r.complaint_id = c.complaint_id
+            WHERE r.cleaned_timestamp IS NOT NULL AND c.complaint_id IS NULL
+        """
+        count_result = conn.exec_driver_sql(count_sql).scalar()
+        logging.info(f"Found {count_result} records ready for insertion.")
+        log_db(engine, "Insertion Pre-check", "INFO", f"Found {count_result} records to insert.")
 
-    logging.info("📥 Starting data insertion step...")
-    run_insert_script(engine, insert_script_path, insert_label)
-    logging.info("🏁 Data insertion step completed.")
+        if count_result == 0:
+            logging.info("No new records to insert. Skipping.")
+            return
+
+        # 2. Run the insertion script.
+        logging.info("Starting data insertion step...")
+        run_insert_script(engine, insert_script_path, insert_label, limit=limit)
+        log_db(engine, "Insertion", "SUCCESS", f"Successfully inserted {count_result} records.")
+
+    logging.info("Data insertion step completed.")
 
 # === CLI ENTRYPOINT ===
 if __name__ == "__main__":
