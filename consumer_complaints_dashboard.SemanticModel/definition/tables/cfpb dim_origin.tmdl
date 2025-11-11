@@ -1,20 +1,20 @@
 table 'cfpb dim_origin'
 	lineageTag: 8293cb89-2e59-4bf4-9134-3b97d66d4f72
 
-	column origin_id
+	column origin_key
 		dataType: int64
 		formatString: 0
-		lineageTag: e579dfbb-b864-45a8-a6c8-4142b371abe2
+		lineageTag: a9e290ac-28a9-47c1-bcc8-a2286febd552
 		summarizeBy: none
-		sourceColumn: origin_id
+		sourceColumn: origin_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column origin
+	column origin_method
 		dataType: string
-		lineageTag: 09a5156b-ce2d-47d2-9ac6-5b94a45d4390
+		lineageTag: 20b37ce9-c464-48e0-8766-e0aa179537b0
 		summarizeBy: none
-		sourceColumn: origin
+		sourceColumn: origin_method
 
 		annotation SummarizationSetBy = Automatic
 
@@ -26,4 +26,8 @@ table 'cfpb dim_origin'
 				    cfpb_dim_origin = Source{[Schema="cfpb",Item="dim_origin"]}[Data]
 				in
 				    cfpb_dim_origin
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

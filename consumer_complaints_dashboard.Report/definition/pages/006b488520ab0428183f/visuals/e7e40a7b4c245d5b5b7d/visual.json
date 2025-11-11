@@ -19,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "cfpb dim_status"
+                      "Entity": "cfpb dim_company_response"
                     }
                   },
-                  "Property": "complaint_status"
+                  "Property": "response_description"
                 }
               },
-              "queryRef": "cfpb dim_status.complaint_status",
-              "nativeQueryRef": "complaint_status",
+              "queryRef": "cfpb dim_company_response.response_description",
+              "nativeQueryRef": "response_description",
               "active": true
             }
           ]

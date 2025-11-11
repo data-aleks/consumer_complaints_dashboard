@@ -1,20 +1,20 @@
 table 'cfpb dim_consent'
 	lineageTag: d9ee02ad-e0bb-4ed1-adf2-af3f1f21fd25
 
-	column consent_id
+	column consent_key
 		dataType: int64
 		formatString: 0
-		lineageTag: a1ae6061-3015-4ee7-bcf3-f4d888b60d30
+		lineageTag: 8533eb3a-7dc1-4e31-aac0-1fdf62696b6c
 		summarizeBy: none
-		sourceColumn: consent_id
+		sourceColumn: consent_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column consent
+	column consent_status
 		dataType: string
-		lineageTag: 0e7a8f30-2ebd-4a26-959c-cbe1f6b4c836
+		lineageTag: d8c3e1f1-426e-4004-b072-98c6c695aaae
 		summarizeBy: none
-		sourceColumn: consent
+		sourceColumn: consent_status
 
 		annotation SummarizationSetBy = Automatic
 
@@ -26,4 +26,8 @@ table 'cfpb dim_consent'
 				    cfpb_dim_consent = Source{[Schema="cfpb",Item="dim_consent"]}[Data]
 				in
 				    cfpb_dim_consent
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

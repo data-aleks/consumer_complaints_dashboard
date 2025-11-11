@@ -1,20 +1,20 @@
 table 'cfpb dim_sub_product'
 	lineageTag: 97e2cbc4-f149-477d-a837-850d4c730abc
 
-	column sub_product_id
-		dataType: int64
-		formatString: 0
-		lineageTag: 58bb8661-cb5a-4975-8a0a-788dfed29d22
-		summarizeBy: none
-		sourceColumn: sub_product_id
-
-		annotation SummarizationSetBy = Automatic
-
 	column sub_product_name
 		dataType: string
 		lineageTag: af8191d3-bae8-4d54-9fff-d9b503868d83
 		summarizeBy: none
 		sourceColumn: sub_product_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 061ae663-e9ce-4237-8d42-85167fb22812
+		summarizeBy: none
+		sourceColumn: sub_product_key
 
 		annotation SummarizationSetBy = Automatic
 
@@ -26,4 +26,8 @@ table 'cfpb dim_sub_product'
 				    cfpb_dim_sub_product = Source{[Schema="cfpb",Item="dim_sub_product"]}[Data]
 				in
 				    cfpb_dim_sub_product
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

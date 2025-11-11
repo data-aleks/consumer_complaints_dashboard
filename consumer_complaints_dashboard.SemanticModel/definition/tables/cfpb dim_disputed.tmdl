@@ -4,7 +4,7 @@ table 'cfpb dim_disputed'
 	measure 'Disputed Complaints Rate' = ```
 			
 			VAR c = [Complaints]
-			VAR cd = CALCULATE([Complaints], FILTER('cfpb dim_disputed', 'cfpb dim_disputed'[disputed] = "Yes"))
+			VAR cd = CALCULATE([Complaints], FILTER('cfpb dim_disputed', 'cfpb dim_disputed'[disputed_status] = "Yes"))
 			VAR cdr = DIVIDE(cd, c, 0)
 			RETURN 
 			    IF(ISBLANK(cdr), "N/A", cdr)
@@ -15,7 +15,7 @@ table 'cfpb dim_disputed'
 	measure 'Not Disputed Complaints Rate' = ```
 			
 			VAR c = [Complaints]
-			VAR cd = CALCULATE([Complaints], FILTER('cfpb dim_disputed', 'cfpb dim_disputed'[disputed] = "No"))
+			VAR cd = CALCULATE([Complaints], FILTER('cfpb dim_disputed', 'cfpb dim_disputed'[disputed_status] = "No"))
 			VAR cdr = DIVIDE(cd, c, 0)
 			RETURN 
 			    IF(ISBLANK(cdr), "N/A", cdr)
@@ -26,7 +26,7 @@ table 'cfpb dim_disputed'
 	measure 'Disputed Not Available Complaints Rate' = ```
 			
 			VAR c = [Complaints]
-			VAR cd = CALCULATE([Complaints], FILTER('cfpb dim_disputed', 'cfpb dim_disputed'[disputed] = "N/A"))
+			VAR cd = CALCULATE([Complaints], FILTER('cfpb dim_disputed', 'cfpb dim_disputed'[disputed_status] = "N/A"))
 			VAR cdr = DIVIDE(cd, c, 0)
 			RETURN 
 			    IF(ISBLANK(cdr), "N/A", cdr)
@@ -34,20 +34,20 @@ table 'cfpb dim_disputed'
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: c8c00c65-88a3-45a1-a897-839f570bfb8b
 
-	column disputed_id
+	column disputed_key
 		dataType: int64
 		formatString: 0
-		lineageTag: 2e402205-ee24-4797-8761-1fd3923e7b6f
+		lineageTag: 3572a0c9-8113-4125-8d25-1193b00ec867
 		summarizeBy: none
-		sourceColumn: disputed_id
+		sourceColumn: disputed_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column disputed
+	column disputed_status
 		dataType: string
-		lineageTag: 3677fd10-3671-4a2c-852f-5a6048470c0c
+		lineageTag: 2f7fb293-2609-45b4-986e-e04c7557b00a
 		summarizeBy: none
-		sourceColumn: disputed
+		sourceColumn: disputed_status
 
 		annotation SummarizationSetBy = Automatic
 
@@ -59,4 +59,8 @@ table 'cfpb dim_disputed'
 				    cfpb_dim_disputed = Source{[Schema="cfpb",Item="dim_disputed"]}[Data]
 				in
 				    cfpb_dim_disputed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

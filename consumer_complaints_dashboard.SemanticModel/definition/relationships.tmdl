@@ -1,52 +1,56 @@
-relationship AutoDetected_86e574dc-3de3-41fe-aa69-81a3aa1ab14e
+relationship AutoDetected_530af8b3-718d-4892-addd-191bfbb3a053
 	fromColumn: 'cfpb fact_complaints'.product_key
-	toColumn: 'cfpb dim_product'.product_id
+	toColumn: 'cfpb dim_product'.product_key
 
-relationship AutoDetected_7b08a29f-f923-47e6-a95c-84e405f579e0
+relationship AutoDetected_dea69170-c2b3-4d3f-87e9-f46fa4acd39f
 	fromColumn: 'cfpb fact_complaints'.sub_product_key
-	toColumn: 'cfpb dim_sub_product'.sub_product_id
+	toColumn: 'cfpb dim_sub_product'.sub_product_key
 
-relationship AutoDetected_8e716ef4-f6e9-4f1d-b34e-a8f16b6ec4a9
+relationship AutoDetected_9d93513e-4c3e-4f67-86ba-da7d94d0546a
 	fromColumn: 'cfpb fact_complaints'.issue_key
-	toColumn: 'cfpb dim_issue'.issue_id
+	toColumn: 'cfpb dim_issue'.issue_key
 
-relationship AutoDetected_b2052bcc-26c9-41f5-9253-b972d3962bb5
+relationship AutoDetected_9e3a1fc7-e17b-4934-9e43-ee2d31b1d849
 	fromColumn: 'cfpb fact_complaints'.sub_issue_key
-	toColumn: 'cfpb dim_sub_issue'.sub_issue_id
+	toColumn: 'cfpb dim_sub_issue'.sub_issue_key
 
-relationship AutoDetected_cf6fb554-9922-406b-b89c-56fb79cbdfc7
+relationship AutoDetected_17a12282-1a31-46b2-b774-7eec35fe428a
 	fromColumn: 'cfpb fact_complaints'.company_key
-	toColumn: 'cfpb dim_company'.company_id
+	toColumn: 'cfpb dim_company'.company_key
 
-relationship AutoDetected_e229ba0b-bd20-4a70-851f-f59ae06e7d4f
+relationship AutoDetected_a2525ce2-2954-4f8d-9fcc-276fb257fb28
 	fromColumn: 'cfpb fact_complaints'.state_key
-	toColumn: 'cfpb dim_state'.state_id
+	toColumn: 'cfpb dim_state'.state_key
 
-relationship AutoDetected_b9011f7c-c127-400e-bda4-c38cc15457e8
+relationship AutoDetected_1647499e-0de1-4d84-8be6-f5f4f76e3a89
 	fromColumn: 'cfpb fact_complaints'.zip_code_key
-	toColumn: 'cfpb dim_zip_code'.zip_code_id
+	toColumn: 'cfpb dim_zip_code'.zip_code_key
 
-relationship AutoDetected_f096626a-a5b0-474e-9ce2-333da0a59e6b
+relationship AutoDetected_da6184d4-4218-40f3-bfa4-6c40c069fdd9
 	fromColumn: 'cfpb fact_complaints'.origin_key
-	toColumn: 'cfpb dim_origin'.origin_id
+	toColumn: 'cfpb dim_origin'.origin_key
 
-relationship AutoDetected_df3fa764-bc80-4180-9385-e0f717a691ea
-	fromColumn: 'cfpb fact_complaints'.status_key
-	toColumn: 'cfpb dim_status'.status_id
-
-relationship AutoDetected_f5e20d97-8398-4f9d-84a8-2a299ae5be61
-	fromColumn: 'cfpb fact_complaints'.public_response_key
-	toColumn: 'cfpb dim_public_response'.public_response_id
-
-relationship AutoDetected_1c407fbe-604b-42c6-8936-a7d78af6854a
+relationship AutoDetected_bbdef417-a99e-49f1-9313-173a0fc0cc92
 	fromColumn: 'cfpb fact_complaints'.consent_key
-	toColumn: 'cfpb dim_consent'.consent_id
+	toColumn: 'cfpb dim_consent'.consent_key
 
-relationship AutoDetected_fddfd8d7-9f3f-4879-9ef1-e6890c28fdef
+relationship AutoDetected_bb0e9199-19a5-4b72-bf56-d18b90aac87f
 	fromColumn: 'cfpb fact_complaints'.tag_key
-	toColumn: 'cfpb dim_tag'.tag_id
+	toColumn: 'cfpb dim_tag'.tag_key
 
-relationship AutoDetected_8518469b-361f-4a30-901a-1fc508b32483
+relationship AutoDetected_28f0a45a-750d-4a29-8745-8d5787af71a4
 	fromColumn: 'cfpb fact_complaints'.disputed_key
-	toColumn: 'cfpb dim_disputed'.disputed_id
+	toColumn: 'cfpb dim_disputed'.disputed_key
+
+relationship fe00a2de-17fa-4242-2298-84d03861088b
+	fromColumn: 'cfpb fact_complaints'.date_received_key
+	toColumn: 'cfpb dim_date'.date_key
+
+relationship 6bd32b7b-4a20-d359-f7a0-2323eff86187
+	fromColumn: 'cfpb fact_complaints'.company_response_key
+	toColumn: 'cfpb dim_company_response'.response_key
+
+relationship 7271c09a-1368-3de4-85a6-159aefa58b6f
+	fromColumn: 'cfpb fact_complaints'.public_response_key
+	toColumn: 'cfpb dim_public_response'.response_key
 

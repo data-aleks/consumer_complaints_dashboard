@@ -18,7 +18,7 @@ table 'cfpb dim_date'
 		dataType: int64
 		formatString: 0
 		lineageTag: bac0a2aa-4652-4974-95b4-d9c8592b56c2
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: year
 
 		annotation SummarizationSetBy = Automatic
@@ -27,7 +27,7 @@ table 'cfpb dim_date'
 		dataType: int64
 		formatString: 0
 		lineageTag: 68e9d6ec-9b63-427d-95a9-df601cb16a3a
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: quarter
 
 		annotation SummarizationSetBy = Automatic
@@ -36,7 +36,7 @@ table 'cfpb dim_date'
 		dataType: int64
 		formatString: 0
 		lineageTag: a05e36f1-eae8-48ef-abaf-d942c1050678
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: month
 
 		annotation SummarizationSetBy = Automatic
@@ -45,7 +45,7 @@ table 'cfpb dim_date'
 		dataType: int64
 		formatString: 0
 		lineageTag: b171cda5-43b5-4478-93a0-9814a64ecc2d
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: day
 
 		annotation SummarizationSetBy = Automatic
@@ -54,7 +54,7 @@ table 'cfpb dim_date'
 		dataType: int64
 		formatString: 0
 		lineageTag: 64779a5a-7129-4b41-8d6e-2aaa7817684b
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: date_key
 
 		annotation SummarizationSetBy = Automatic
@@ -63,7 +63,7 @@ table 'cfpb dim_date'
 		dataType: int64
 		formatString: 0
 		lineageTag: ee4e9785-53e0-4f13-99e7-8fcd2feddce8
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: day_of_week_number
 
 		annotation SummarizationSetBy = Automatic

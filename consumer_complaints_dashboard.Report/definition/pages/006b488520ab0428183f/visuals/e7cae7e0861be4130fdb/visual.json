@@ -23,11 +23,11 @@
                       "Entity": "cfpb dim_company"
                     }
                   },
-                  "Property": "company"
+                  "Property": "company_name"
                 }
               },
-              "queryRef": "cfpb dim_company.company",
-              "nativeQueryRef": "company",
+              "queryRef": "cfpb dim_company.company_name",
+              "nativeQueryRef": "company_name",
               "active": true
             }
           ]

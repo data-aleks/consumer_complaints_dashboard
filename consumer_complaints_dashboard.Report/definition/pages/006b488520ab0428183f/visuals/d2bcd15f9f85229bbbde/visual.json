@@ -23,11 +23,11 @@
                       "Entity": "cfpb dim_origin"
                     }
                   },
-                  "Property": "origin"
+                  "Property": "origin_method"
                 }
               },
-              "queryRef": "cfpb dim_origin.origin",
-              "nativeQueryRef": "origin",
+              "queryRef": "cfpb dim_origin.origin_method",
+              "nativeQueryRef": "origin_method",
               "active": true
             }
           ]

@@ -1,20 +1,20 @@
 table 'cfpb dim_tag'
 	lineageTag: 59eec96d-8a72-47ef-a1ce-d5371ef118f2
 
-	column tag_id
+	column tag_key
 		dataType: int64
 		formatString: 0
-		lineageTag: 4b6a2cd1-7fbc-48fb-833b-8a03e6394013
+		lineageTag: 4f6624d7-beb2-4c79-ade3-9d0f5bea8f60
 		summarizeBy: none
-		sourceColumn: tag_id
+		sourceColumn: tag_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column tag
+	column tag_name
 		dataType: string
-		lineageTag: 83e9d608-d30c-4382-b980-930bc52a4cbf
+		lineageTag: cffac89a-02a6-4fb2-975f-fe8991554873
 		summarizeBy: none
-		sourceColumn: tag
+		sourceColumn: tag_name
 
 		annotation SummarizationSetBy = Automatic
 
@@ -26,4 +26,8 @@ table 'cfpb dim_tag'
 				    cfpb_dim_tag = Source{[Schema="cfpb",Item="dim_tag"]}[Data]
 				in
 				    cfpb_dim_tag
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

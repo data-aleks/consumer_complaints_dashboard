@@ -1,20 +1,20 @@
 table 'cfpb dim_issue'
 	lineageTag: c80aab27-75f1-4b00-90fb-19202fa532b4
 
-	column issue_id
+	column issue_key
 		dataType: int64
 		formatString: 0
-		lineageTag: 52b25dd5-2ea9-4f3d-bb1b-fb32679191f6
+		lineageTag: bc177c33-a4c9-4a2f-a663-178e715ec6fa
 		summarizeBy: none
-		sourceColumn: issue_id
+		sourceColumn: issue_key
 
 		annotation SummarizationSetBy = Automatic
 
-	column issue_description
+	column issue_name
 		dataType: string
-		lineageTag: 327aeb0b-3389-422d-9faa-692dc0d32d4b
+		lineageTag: 611a87a8-5d11-4277-b0b9-6e1688ea77f7
 		summarizeBy: none
-		sourceColumn: issue_description
+		sourceColumn: issue_name
 
 		annotation SummarizationSetBy = Automatic
 
@@ -26,4 +26,8 @@ table 'cfpb dim_issue'
 				    cfpb_dim_issue = Source{[Schema="cfpb",Item="dim_issue"]}[Data]
 				in
 				    cfpb_dim_issue
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

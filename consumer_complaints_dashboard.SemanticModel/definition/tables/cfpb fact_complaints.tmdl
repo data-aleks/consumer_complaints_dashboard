@@ -124,7 +124,7 @@ table 'cfpb fact_complaints'
 			
 			VAR t = CALCULATE(
 			    DISTINCTCOUNT('cfpb fact_complaints'[complaint_id]),
-			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response_flag] = TRUE())
+			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response] = TRUE())
 			)
 			VAR total = CALCULATE(
 			    DISTINCTCOUNT('cfpb fact_complaints'[complaint_id])
@@ -137,7 +137,7 @@ table 'cfpb fact_complaints'
 	measure 'Timely Response Complaints' =
 			CALCULATE(
 			    [Complaints],
-			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response_flag] = TRUE())
+			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response] = TRUE())
 			)
 		formatString: 0
 		lineageTag: 560954c1-5034-4a93-8a66-ddcf6a3d5f05
@@ -145,7 +145,7 @@ table 'cfpb fact_complaints'
 	measure 'Not Timely Response Complaints' =
 			CALCULATE(
 			    [Complaints],
-			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response_flag] = FALSE())
+			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response] = FALSE())
 			)
 		formatString: 0
 		lineageTag: 412a8d3e-5018-44bd-98d8-028b2010c071
@@ -172,7 +172,7 @@ table 'cfpb fact_complaints'
 		dataType: int64
 		formatString: 0
 		lineageTag: 85402e96-ccc4-4216-bb7a-359f862032b5
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: date_received_key
 
 		annotation SummarizationSetBy = Automatic
@@ -258,15 +258,6 @@ table 'cfpb fact_complaints'
 
 		annotation SummarizationSetBy = Automatic
 
-	column status_key
-		dataType: int64
-		formatString: 0
-		lineageTag: 3d16e0ac-a0cf-4b96-bae9-662172d50f0d
-		summarizeBy: none
-		sourceColumn: status_key
-
-		annotation SummarizationSetBy = Automatic
-
 	column public_response_key
 		dataType: int64
 		formatString: 0
@@ -308,6 +299,24 @@ table 'cfpb fact_complaints'
 		lineageTag: bee3f9c9-64ae-491c-b0c4-6b2b1b10ba21
 		summarizeBy: none
 		sourceColumn: consumer_complaint_narrative
+
+		annotation SummarizationSetBy = Automatic
+
+	column timely_response
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3da6496e-9adf-4b12-bc35-893b0da74671
+		summarizeBy: none
+		sourceColumn: timely_response
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_response_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 84f51635-4ef4-4e1c-84e1-ae0e05bcd8e6
+		summarizeBy: none
+		sourceColumn: company_response_key
 
 		annotation SummarizationSetBy = Automatic
 
