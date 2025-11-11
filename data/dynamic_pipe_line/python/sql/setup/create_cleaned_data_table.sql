@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS consumer_complaints_cleaned (
     submitted_via VARCHAR(100),
     date_sent_to_company DATE,
     company_response_to_consumer TEXT,
-    timely_response VARCHAR(10),
+    timely_response TINYINT(1),
     consumer_disputed VARCHAR(100),
     complaint_id INT,
     ingestion_date DATE,

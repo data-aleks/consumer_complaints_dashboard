@@ -27,6 +27,7 @@ cleaning_scripts = [
     ("sql/data_cleaning/cfpb_consumer_complaints_sub_product_cleanup.sql", "Clean Sub-Products"),
     ("sql/data_cleaning/cfpb_consumer_complaints_tags_cleanup.sql", "Clean Tags"),
     ("sql/data_cleaning/cfpb_consumer_complaints_company_public_response_cleanup.sql", "Clean Public Response"),
+    ("sql/data_cleaning/cfpb_consumer_complaints_timely_response_cleanup.sql", "Clean Timely Response"),
 ]
 
 # === MAIN RUN FUNCTION ===
