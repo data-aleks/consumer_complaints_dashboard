@@ -59,6 +59,36 @@
           "name": "background5773560962785065.jpg",
           "path": "background5773560962785065.jpg",
           "type": "Image"
+        },
+        {
+          "name": "data_logo044929995326324246.png",
+          "path": "data_logo044929995326324246.png",
+          "type": "Image"
+        },
+        {
+          "name": "home_icon5596263428911984.svg",
+          "path": "home_icon5596263428911984.svg",
+          "type": "Image"
+        },
+        {
+          "name": "key_risk_icon8083289030037242.svg",
+          "path": "key_risk_icon8083289030037242.svg",
+          "type": "Image"
+        },
+        {
+          "name": "resolution_performance_icon6225311105995753.svg",
+          "path": "resolution_performance_icon6225311105995753.svg",
+          "type": "Image"
+        },
+        {
+          "name": "volume_icon12597284386528984.svg",
+          "path": "volume_icon12597284386528984.svg",
+          "type": "Image"
+        },
+        {
+          "name": "background2749094998263324.jpg",
+          "path": "background2749094998263324.jpg",
+          "type": "Image"
         }
       ]
     }

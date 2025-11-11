@@ -6,7 +6,8 @@
     "y": 807.31261425959781,
     "z": 7000,
     "height": 245.70383912248627,
-    "width": 608.99451553930533
+    "width": 608.99451553930533,
+    "tabOrder": 13000
   },
   "visualGroup": {
     "displayName": "complaints_disputed",
