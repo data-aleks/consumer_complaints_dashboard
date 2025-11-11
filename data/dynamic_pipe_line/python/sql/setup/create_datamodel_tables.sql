@@ -51,9 +51,9 @@ CREATE TABLE IF NOT EXISTS dim_state (
     state_code VARCHAR(50) UNIQUE
 );
 
-CREATE TABLE IF NOT EXISTS dim_status (
-    status_key INT AUTO_INCREMENT PRIMARY KEY,
-    status_description VARCHAR(255) UNIQUE
+CREATE TABLE IF NOT EXISTS dim_company_response (
+    response_key INT AUTO_INCREMENT PRIMARY KEY,
+    response_description VARCHAR(255) UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS dim_sub_issue (
@@ -89,11 +89,12 @@ CREATE TABLE IF NOT EXISTS fact_complaints (
     company_key INT,
     state_key INT,
     zip_code_key INT,
-    origin_key INT,
-    status_key INT,
+    origin_key INT,    
+    company_response_key INT,
     public_response_key INT,
     consent_key INT,
     tag_key INT,
     disputed_key INT,
+    timely_response BOOLEAN,
     consumer_complaint_narrative TEXT
 );
