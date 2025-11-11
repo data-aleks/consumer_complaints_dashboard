@@ -19,6 +19,7 @@ db_name = os.getenv("DB_NAME")
 cleaning_scripts = [
     ("sql/data_cleaning/cfpb_consumer_complaints_company_response.sql", "Clean Company Response"),
     ("sql/data_cleaning/cfpb_consumer_complaints_consumer_consent_cleanup.sql", "Clean Consumer Consent"),
+    ("sql/data_cleaning/cfpb_consumer_complaints_consumer_disputed_cleanup.sql", "Clean Consumer Disputed"),
     ("sql/data_cleaning/cfpb_consumer_complaints_consumer_narrative_cleanup.sql", "Clean Consumer Narrative"),
     ("sql/data_cleaning/cfpb_consumer_complaints_dates_cleanup.sql", "Clean Dates"),
     ("sql/data_cleaning/cfpb_consumer_complaints_product_standartize.sql", "Standardize Products"),
