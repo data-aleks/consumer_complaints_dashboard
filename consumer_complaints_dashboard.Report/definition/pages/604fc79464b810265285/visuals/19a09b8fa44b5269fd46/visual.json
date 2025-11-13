@@ -10,29 +10,44 @@
     "tabOrder": 4002
   },
   "visual": {
-    "visualType": "barChart",
+    "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Category": {
+        "Rows": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "cfpb dim_sub_product"
+                      "Entity": "cfpb dim_product"
                     }
                   },
-                  "Property": "sub_product_name"
+                  "Property": "product_name"
                 }
               },
-              "queryRef": "cfpb dim_sub_product.sub_product_name",
-              "nativeQueryRef": "sub_product_name",
+              "queryRef": "cfpb dim_product.product_name",
+              "nativeQueryRef": "product_name",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cfpb dim_issue"
+                    }
+                  },
+                  "Property": "issue_name"
+                }
+              },
+              "queryRef": "cfpb dim_issue.issue_name",
+              "nativeQueryRef": "issue_name",
               "active": true
             }
           ]
         },
-        "Y": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -70,13 +85,109 @@
         "isDefaultSort": true
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "cfpb dim_product.product_name"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cfpb dim_product"
+                    }
+                  },
+                  "Property": "product_name"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "cfpb dim_issue.issue_name"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Credit reporting, credit repair services, or other personal consumer reports'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Compact'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "728.0628836163114D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "cfpb dim_product.product_name"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minimal'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "parentGroupName": "2a969ed7859b606ffacf",
   "filterConfig": {
     "filters": [
       {
-        "name": "a06394d7caeba4e53862",
+        "name": "c8220472fb90a953c376",
+        "ordinal": 0,
         "field": {
           "Measure": {
             "Expression": {
@@ -87,18 +198,20 @@
             "Property": "Complaints"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
-        "name": "39b121a9e29e40aaf0a0",
+        "name": "63ede5183378336c7512",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "cfpb dim_sub_product"
+                "Entity": "cfpb dim_product"
               }
             },
-            "Property": "sub_product_name"
+            "Property": "product_name"
           }
         },
         "type": "TopN",
@@ -113,12 +226,12 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "c",
-                        "Entity": "cfpb dim_sub_product",
+                        "Name": "c2",
+                        "Entity": "cfpb dim_product",
                         "Type": 0
                       },
                       {
-                        "Name": "c1",
+                        "Name": "c",
                         "Entity": "cfpb fact_complaints",
                         "Type": 0
                       }
@@ -128,10 +241,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "c"
+                              "Source": "c2"
                             }
                           },
-                          "Property": "sub_product_name"
+                          "Property": "product_name"
                         },
                         "Name": "field"
                       }
@@ -143,7 +256,7 @@
                           "Measure": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "c1"
+                                "Source": "c"
                               }
                             },
                             "Property": "Complaints"
@@ -158,8 +271,8 @@
               "Type": 2
             },
             {
-              "Name": "c",
-              "Entity": "cfpb dim_sub_product",
+              "Name": "c2",
+              "Entity": "cfpb dim_product",
               "Type": 0
             }
           ],
@@ -172,10 +285,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "c"
+                            "Source": "c2"
                           }
                         },
-                        "Property": "sub_product_name"
+                        "Property": "product_name"
                       }
                     }
                   ],
@@ -189,7 +302,23 @@
             }
           ]
         }
+      },
+      {
+        "name": "a2bf08d8151a9b5eb05f",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "cfpb dim_issue"
+              }
+            },
+            "Property": "issue_name"
+          }
+        },
+        "type": "Categorical"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }

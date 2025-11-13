@@ -31,7 +31,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "true"
+                "Value": "false"
               }
             }
           }
@@ -55,11 +55,6 @@
       "name": "RegisteredResources",
       "type": "RegisteredResources",
       "items": [
-        {
-          "name": "background5773560962785065.jpg",
-          "path": "background5773560962785065.jpg",
-          "type": "Image"
-        },
         {
           "name": "data_logo044929995326324246.png",
           "path": "data_logo044929995326324246.png",
