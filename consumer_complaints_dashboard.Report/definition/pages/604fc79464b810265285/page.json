@@ -1,0 +1,117 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "604fc79464b810265285",
+  "displayName": "Key Risk Areas",
+  "displayOption": "FitToPage",
+  "height": 1020,
+  "width": 1980,
+  "objects": {
+    "outspace": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'background.jpg'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "background2749094998263324.jpg"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "90D"
+              }
+            }
+          },
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#FBFBFB'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "19a09b8fa44b5269fd46",
+      "target": "bad034a9f4106916216e",
+      "type": "DataFilter"
+    },
+    {
+      "source": "19a09b8fa44b5269fd46",
+      "target": "31c8de3221c0c0a013d2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "bad034a9f4106916216e",
+      "target": "19a09b8fa44b5269fd46",
+      "type": "DataFilter"
+    },
+    {
+      "source": "bad034a9f4106916216e",
+      "target": "31c8de3221c0c0a013d2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "31c8de3221c0c0a013d2",
+      "target": "19a09b8fa44b5269fd46",
+      "type": "DataFilter"
+    },
+    {
+      "source": "31c8de3221c0c0a013d2",
+      "target": "bad034a9f4106916216e",
+      "type": "DataFilter"
+    }
+  ]
+}

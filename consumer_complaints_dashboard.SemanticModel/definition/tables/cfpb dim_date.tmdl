@@ -74,9 +74,10 @@ table 'cfpb dim_date'
 				let
 				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
 				    cfpb_dim_date = Source{[Schema="cfpb",Item="dim_date"]}[Data],
-				    #"Sorted Rows" = Table.Sort(cfpb_dim_date,{{"full_date", Order.Descending}})
+				    #"Sorted Rows" = Table.Sort(cfpb_dim_date,{{"full_date", Order.Descending}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Sorted Rows", each ([year] = 2025))
 				in
-				    #"Sorted Rows"
+				    #"Filtered Rows"
 
 	annotation PBI_NavigationStepName = Navigation
 
