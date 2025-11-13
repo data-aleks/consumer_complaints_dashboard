@@ -43,7 +43,7 @@
               },
               "queryRef": "cfpb dim_issue.issue_name",
               "nativeQueryRef": "issue_name",
-              "active": true
+              "active": false
             }
           ]
         },
@@ -70,19 +70,31 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "cfpb fact_complaints"
+                    "Entity": "cfpb dim_product"
                   }
                 },
-                "Property": "Complaints"
+                "Property": "product_name"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "cfpb dim_issue"
+                  }
+                },
+                "Property": "issue_name"
+              }
+            },
+            "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "expansionStates": [
@@ -118,20 +130,7 @@
             "isPinned": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'Credit reporting, credit repair services, or other personal consumer reports'"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {
