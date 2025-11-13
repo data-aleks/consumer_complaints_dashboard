@@ -294,14 +294,6 @@ table 'cfpb fact_complaints'
 
 		annotation SummarizationSetBy = Automatic
 
-	column consumer_complaint_narrative
-		dataType: string
-		lineageTag: bee3f9c9-64ae-491c-b0c4-6b2b1b10ba21
-		summarizeBy: none
-		sourceColumn: consumer_complaint_narrative
-
-		annotation SummarizationSetBy = Automatic
-
 	column timely_response
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
@@ -325,9 +317,11 @@ table 'cfpb fact_complaints'
 		source =
 				let
 				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
-				    cfpb_fact_complaints = Source{[Schema="cfpb",Item="fact_complaints"]}[Data]
+				    cfpb_fact_complaints = Source{[Schema="cfpb",Item="fact_complaints"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(cfpb_fact_complaints,{"consumer_complaint_narrative"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each ([company_key] <> 1 and [company_key] <> 2 and [company_key] <> 3))
 				in
-				    cfpb_fact_complaints
+				    #"Filtered Rows"
 
 	annotation PBI_NavigationStepName = Navigation
 

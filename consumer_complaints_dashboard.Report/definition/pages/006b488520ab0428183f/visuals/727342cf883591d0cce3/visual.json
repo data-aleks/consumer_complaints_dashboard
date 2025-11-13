@@ -6,7 +6,8 @@
     "y": 210,
     "z": 2000,
     "height": 240,
-    "width": 846.66666666666674
+    "width": 846.66666666666674,
+    "tabOrder": 1000
   },
   "visualGroup": {
     "displayName": "complaints_by_product",
