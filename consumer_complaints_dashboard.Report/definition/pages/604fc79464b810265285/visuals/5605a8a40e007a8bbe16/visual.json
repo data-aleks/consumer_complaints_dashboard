@@ -6,8 +6,7 @@
     "y": 9.3333333333333428,
     "z": 1000,
     "height": 64,
-    "width": 512,
-    "tabOrder": 4003
+    "width": 512
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +18,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Complaints By Issue",
+                    "value": "Complaints By Sub Product",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "28pt"

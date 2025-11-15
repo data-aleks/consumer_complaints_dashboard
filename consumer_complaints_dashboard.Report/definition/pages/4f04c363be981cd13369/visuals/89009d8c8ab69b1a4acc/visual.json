@@ -1,38 +1,18 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "57262c1cbfed5cb132ec",
+  "name": "89009d8c8ab69b1a4acc",
   "position": {
     "x": 14.181818181818159,
     "y": 73.5151515151515,
     "z": 2000,
     "height": 310,
-    "width": 819.090909090909,
-    "tabOrder": 2000
+    "width": 819.090909090909
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "barChart",
     "query": {
       "queryState": {
         "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "cfpb dim_date"
-                    }
-                  },
-                  "Property": "full_date"
-                }
-              },
-              "queryRef": "cfpb dim_date.full_date",
-              "nativeQueryRef": "full_date",
-              "active": true
-            }
-          ]
-        },
-        "Series": {
           "projections": [
             {
               "field": {
@@ -46,7 +26,8 @@
                 }
               },
               "queryRef": "cfpb dim_product.product_name",
-              "nativeQueryRef": "product_name"
+              "nativeQueryRef": "product_name",
+              "active": true
             }
           ]
         },
@@ -73,56 +54,150 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "cfpb dim_date"
+                    "Entity": "cfpb fact_complaints"
                   }
                 },
-                "Property": "full_date"
+                "Property": "Complaints"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ],
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Light'', wf_segoe-ui_light, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Light'', wf_segoe-ui_light, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "30L"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#205E61'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "21305ddc61d71fe5d97a",
+  "parentGroupName": "789758ddbb3298315818",
   "filterConfig": {
     "filters": [
       {
-        "name": "25df0ae9424ec38849ef",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb fact_complaints"
-              }
-            },
-            "Property": "Complaints"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0611bfc6389d1dc7b1d6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb dim_date"
-              }
-            },
-            "Property": "full_date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "f74703ce18500a17e0a3",
+        "name": "f56d48edaa50abc23178",
         "field": {
           "Column": {
             "Expression": {
@@ -145,12 +220,12 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "c2",
+                        "Name": "c",
                         "Entity": "cfpb dim_product",
                         "Type": 0
                       },
                       {
-                        "Name": "c",
+                        "Name": "c1",
                         "Entity": "cfpb fact_complaints",
                         "Type": 0
                       }
@@ -160,7 +235,7 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "c2"
+                              "Source": "c"
                             }
                           },
                           "Property": "product_name"
@@ -175,7 +250,7 @@
                           "Measure": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "c"
+                                "Source": "c1"
                               }
                             },
                             "Property": "Complaints"
@@ -190,7 +265,7 @@
               "Type": 2
             },
             {
-              "Name": "c2",
+              "Name": "c",
               "Entity": "cfpb dim_product",
               "Type": 0
             }
@@ -204,7 +279,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "c2"
+                            "Source": "c"
                           }
                         },
                         "Property": "product_name"

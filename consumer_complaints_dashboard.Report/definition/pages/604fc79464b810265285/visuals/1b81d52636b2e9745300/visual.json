@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "1b81d52636b2e9745300",
   "position": {
-    "x": 14,
+    "x": 14.219483568075134,
     "y": 9.3333333333333428,
     "z": 1000,
-    "height": 64,
-    "width": 512,
-    "tabOrder": 4001
+    "height": 63.333333333333336,
+    "width": 511.66666666666669,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Product and Issues Matrix",
+                    "value": "Product and Issues",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "28pt"
