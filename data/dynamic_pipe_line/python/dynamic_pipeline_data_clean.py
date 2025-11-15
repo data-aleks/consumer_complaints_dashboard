@@ -15,22 +15,9 @@ db_host = os.getenv("DB_HOST")
 db_port = os.getenv("DB_PORT")
 db_name = os.getenv("DB_NAME")
 
-# SQL script paths for data cleaning
-cleaning_scripts = [
-    ("sql/data_cleaning/cfpb_consumer_complaints_company_response.sql", "Clean Company Response"),
-    ("sql/data_cleaning/cfpb_consumer_complaints_consumer_consent_cleanup.sql", "Clean Consumer Consent"),
-    ("sql/data_cleaning/cfpb_consumer_complaints_consumer_disputed_cleanup.sql", "Clean Consumer Disputed"),
-    ("sql/data_cleaning/cfpb_consumer_complaints_consumer_narrative_cleanup.sql", "Clean Consumer Narrative"),
-    ("sql/data_cleaning/cfpb_consumer_complaints_dates_cleanup.sql", "Clean Dates"),
-    ("sql/data_cleaning/cfpb_consumer_complaints_product_standartize.sql", "Standardize Products"),
-    ("sql/data_cleaning/cfpb_consumer_complaints_state_code_cleanup.sql", "Clean State Codes"),
-    ("sql/data_cleaning/cfpb_consumer_complaints_issue_cleanup.sql", "Clean Issues"),
-    ("sql/data_cleaning/cfpb_consumer_complaints_sub_issue_cleanup.sql", "Clean Sub-Issues"),
-    ("sql/data_cleaning/cfpb_consumer_complaints_sub_product_cleanup.sql", "Clean Sub-Products"),
-    ("sql/data_cleaning/cfpb_consumer_complaints_tags_cleanup.sql", "Clean Tags"),
-    ("sql/data_cleaning/cfpb_consumer_complaints_company_public_response_cleanup.sql", "Clean Public Response"),
-    ("sql/data_cleaning/cfpb_consumer_complaints_timely_response_cleanup.sql", "Clean Timely Response"),
-]
+# Use a single, consolidated script for performance
+consolidated_cleaning_script = ("sql/data_cleaning/consolidated_data_cleaning.sql", "Consolidated Data Cleaning")
+
 
 # === MAIN RUN FUNCTION ===
 def run(engine=None, limit=None):
@@ -53,12 +40,10 @@ def run(engine=None, limit=None):
             logging.info("Staging table is empty. No records to clean. Skipping.")
             return
 
-        # 2. Run all cleaning scripts against the staging table.
+        # 2. Run the single consolidated cleaning script against the staging table.
         logging.info("Starting data cleaning pipeline...")
-        for script_path, label in cleaning_scripts:
-            # The incremental_clause is no longer needed as we operate on a fresh staging table.
-            if not execute_sql_file(engine, script_path, label, limit=limit):
-                raise Exception(f"Failed during cleaning step: {label}")
+        if not execute_sql_file(engine, consolidated_cleaning_script[0], consolidated_cleaning_script[1], limit=limit):
+            raise Exception(f"Failed during cleaning step: {consolidated_cleaning_script[1]}")
 
         # 3. Update the timestamp in the staging table to mark records as cleaned.
         logging.info("Updating timestamp for cleaned records in staging table...")

@@ -116,7 +116,8 @@ def ensure_tables_and_indexes():
         "consumer_complaints_raw": os.path.join("sql", "setup", "create_raw_data_table.sql"),
         "consumer_complaints_cleaned": os.path.join("sql", "setup", "create_cleaned_data_table.sql"),
         "ingestion_metadata": os.path.join("sql", "setup", "create_ingestion_metadata_table.sql"),
-        "pipeline_logs": os.path.join("sql", "setup", "create_pipeline_logs_table.sql")
+        "pipeline_logs": os.path.join("sql", "setup", "create_pipeline_logs_table.sql"),
+        "datamodel_tables": os.path.join("sql", "setup", "create_datamodel_tables.sql") # Add model tables to setup
     }
 
     for table, script_path in setup_scripts.items():
@@ -125,6 +126,12 @@ def ensure_tables_and_indexes():
             if not execute_sql_file(engine, script_path, f"Create table: {table}"):
                 logging.error(f"Failed to create table {table}, exiting.")
                 sys.exit(1)
+        # Special case for datamodel_tables which is a script with many tables
+        elif table == "datamodel_tables":
+            logging.info("Ensuring data model tables exist...")
+            if not execute_sql_file(engine, script_path, "Create/Verify Data Model Tables"):
+                logging.error("Failed to create/verify data model tables, exiting.")
+                sys.exit(1)
         else:
             logging.info(f"Table exists: {table}")
 
@@ -132,36 +139,34 @@ def ensure_tables_and_indexes():
     # This will add columns like 'cleaned_timestamp' if they are missing.
     run_migrations()
 
-    # === Programmatic index creation ===
+    # === Refactored Programmatic Index Creation ===
     try:
         with engine.begin() as conn:
-            indexes_raw = [idx['name'] for idx in inspector.get_indexes('consumer_complaints_raw')]
-            indexes_staging = [idx['name'] for idx in inspector.get_indexes('consumer_complaints_staging')]
-            indexes_cleaned = [idx['name'] for idx in inspector.get_indexes('consumer_complaints_cleaned')]
+            # Define all indexes that should exist in a structured way
+            indexes_to_ensure = {
+                'consumer_complaints_raw': {
+                    'idx_raw_complaint_id': 'complaint_id',
+                    'idx_raw_cleaned_timestamp': 'cleaned_timestamp' # Performance index
+                },
+                'consumer_complaints_staging': {
+                    'idx_staging_complaint_id': 'complaint_id',
+                    'idx_staging_cleaned_timestamp': 'cleaned_timestamp' # Performance index
+                },
+                'consumer_complaints_cleaned': {
+                    'idx_cleaned_complaint_id': 'complaint_id',
+                    'idx_cleaned_modeling_timestamp': 'modeling_timestamp' # Performance index
+                },
+            }
 
-            if 'idx_raw_complaint_id' not in indexes_raw:
-                conn.exec_driver_sql(
-                    "CREATE INDEX idx_raw_complaint_id ON consumer_complaints_raw(complaint_id);"
-                )
-                logging.info("Created index: idx_raw_complaint_id")
-            else:
-                logging.info("Index already exists: idx_raw_complaint_id")
-
-            if 'idx_staging_complaint_id' not in indexes_staging:
-                conn.exec_driver_sql(
-                    "CREATE INDEX idx_staging_complaint_id ON consumer_complaints_staging(complaint_id);"
-                )
-                logging.info("Created index: idx_staging_complaint_id")
-            else:
-                logging.info("Index already exists: idx_staging_complaint_id")
-
-            if 'idx_cleaned_complaint_id' not in indexes_cleaned:
-                conn.exec_driver_sql(
-                    "CREATE INDEX idx_cleaned_complaint_id ON consumer_complaints_cleaned(complaint_id);"
-                )
-                logging.info("Created index: idx_cleaned_complaint_id")
-            else:
-                logging.info("Index already exists: idx_cleaned_complaint_id")
+            for table_name, indexes in indexes_to_ensure.items():
+                existing_indexes = [idx['name'] for idx in inspector.get_indexes(table_name)]
+                for index_name, column_name in indexes.items():
+                    if index_name not in existing_indexes:
+                        logging.info(f"Creating index '{index_name}' on table '{table_name}'...")
+                        conn.exec_driver_sql(f"CREATE INDEX {index_name} ON {table_name}({column_name});")
+                        logging.info(f"Created index: {index_name}")
+                    else:
+                        logging.info(f"Index already exists: {index_name}")
 
     except Exception as e:
         logging.error(f"Failed to create indexes: {e}", exc_info=True)
@@ -187,8 +192,6 @@ def run_pipeline(step, limit=None): # No changes here, just for context
             timed_step("Data Insert", lambda: data_insert.run(engine, limit=limit))
 
         if step in ["all", "model"]:
-            if not execute_sql_file(engine, os.path.join("sql", "setup", "create_datamodel_tables.sql"), "Create Data Model Tables"):
-                raise Exception("Failed to create data model tables.")
             timed_step("Data Modeling", lambda: modeling.run(engine, limit=limit))
 
         total_duration = sum(step_durations.values())

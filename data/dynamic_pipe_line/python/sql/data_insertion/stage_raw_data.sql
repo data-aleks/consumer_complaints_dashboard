@@ -27,7 +27,28 @@ INSERT INTO consumer_complaints_staging (
     source_file_name,
     cleaned_timestamp
 )
-SELECT * -- This is now safe because we added the column to the staging table.
+SELECT -- Explicitly list columns to prevent future schema mismatch errors.
+    date_received,
+    product,
+    sub_product,
+    issue,
+    sub_issue,
+    consumer_complaint_narrative,
+    company_public_response,
+    company,
+    state_code,
+    zip_code,
+    tags,
+    consumer_consent_provided,
+    submitted_via,
+    date_sent_to_company,
+    company_response_to_consumer,
+    timely_response,
+    consumer_disputed,
+    complaint_id,
+    ingestion_date,
+    source_file_name,
+    cleaned_timestamp
 FROM consumer_complaints_raw
 WHERE cleaned_timestamp IS NULL
 {limit_clause};

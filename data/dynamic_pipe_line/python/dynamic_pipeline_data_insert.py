@@ -3,6 +3,7 @@ import time
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
 from pipeline_logger import log_db
+from pipeline_utils import execute_sql_file  # Import the utility function
 import os
 
 # === CONFIG ===
@@ -17,26 +18,6 @@ db_name = os.getenv("DB_NAME")
 # === SCRIPT CONFIG ===
 insert_script_path = "sql/data_insertion/cfpb_consumer_complaints_data_insert.sql"
 insert_label = "Insert Cleaned Data"
-
-# === EXECUTION FUNCTION ===
-def run_insert_script(engine, script_path, label, limit=None):
-    try:
-        with open(script_path, "r", encoding="utf-8") as file:
-            sql = file.read()
-
-        limit_clause = f"LIMIT {limit}" if limit is not None else ""
-        sql = sql.replace("{limit_clause}", limit_clause)
-
-        with engine.begin() as conn:
-            for stmt in sql.split(';'):
-                stmt = stmt.strip()
-                if stmt:
-                    conn.exec_driver_sql(stmt)
-        logging.info(f"Executed: {label}")
-    except Exception as e:
-        logging.error(f"Error in {label}: {str(e)}", exc_info=True)
-        log_db(engine, label, "ERROR", str(e))
-        raise
 
 # === MAIN RUN FUNCTION ===
 def run(engine=None, limit=None):
@@ -63,7 +44,8 @@ def run(engine=None, limit=None):
 
         # 2. Run the insertion script.
         logging.info("Starting data insertion step...")
-        run_insert_script(engine, insert_script_path, insert_label, limit=limit)
+        if not execute_sql_file(engine, insert_script_path, insert_label, limit=limit):
+            raise Exception("Failed during data insertion step.")
         log_db(engine, "Insertion", "SUCCESS", f"Successfully inserted {count_result} records.")
 
     logging.info("Data insertion step completed.")
