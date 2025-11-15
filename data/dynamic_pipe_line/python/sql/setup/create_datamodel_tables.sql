@@ -48,7 +48,8 @@ CREATE TABLE IF NOT EXISTS dim_public_response (
 
 CREATE TABLE IF NOT EXISTS dim_state (
     state_key INT AUTO_INCREMENT PRIMARY KEY,
-    state_code VARCHAR(50) UNIQUE
+    state_code VARCHAR(50) UNIQUE,
+    state_name VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS dim_company_response (

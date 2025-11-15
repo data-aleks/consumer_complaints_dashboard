@@ -48,10 +48,10 @@ def run(engine=None, limit=None):
     with engine.begin() as conn:
         # 1. Find how many records are cleaned but not yet inserted.
         count_sql = """
-            SELECT COUNT(r.complaint_id)
-            FROM consumer_complaints_raw r
-            LEFT JOIN consumer_complaints_cleaned c ON r.complaint_id = c.complaint_id
-            WHERE r.cleaned_timestamp IS NOT NULL AND c.complaint_id IS NULL
+            SELECT COUNT(s.complaint_id)
+            FROM consumer_complaints_staging s
+            LEFT JOIN consumer_complaints_cleaned c ON s.complaint_id = c.complaint_id
+            WHERE s.cleaned_timestamp IS NOT NULL AND c.complaint_id IS NULL
         """
         count_result = conn.exec_driver_sql(count_sql).scalar()
         logging.info(f"Found {count_result} records ready for insertion.")

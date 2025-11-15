@@ -147,6 +147,11 @@ def run(engine, limit=None):
         # --- Sanitize all column names first ---
         df.columns = [col.lower().replace(' ', '_').replace('?', '').replace('-', '_') for col in df.columns]
 
+        # --- Explicitly rename 'state' to 'state_code' to avoid SQL keyword conflicts ---
+        if 'state' in df.columns:
+            df.rename(columns={'state': 'state_code'}, inplace=True)
+            logging.info("Renamed 'state' column to 'state_code'.")
+
         df["ingestion_date"] = ingestion_date
         df["source_file_name"] = source_file_name
         df["complaint_id"] = pd.to_numeric(df["complaint_id"], errors="coerce")

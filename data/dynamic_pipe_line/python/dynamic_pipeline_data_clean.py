@@ -24,6 +24,7 @@ cleaning_scripts = [
     ("sql/data_cleaning/cfpb_consumer_complaints_dates_cleanup.sql", "Clean Dates"),
     ("sql/data_cleaning/cfpb_consumer_complaints_product_standartize.sql", "Standardize Products"),
     ("sql/data_cleaning/cfpb_consumer_complaints_state_code_cleanup.sql", "Clean State Codes"),
+    ("sql/data_cleaning/cfpb_consumer_complaints_issue_cleanup.sql", "Clean Issues"),
     ("sql/data_cleaning/cfpb_consumer_complaints_sub_issue_cleanup.sql", "Clean Sub-Issues"),
     ("sql/data_cleaning/cfpb_consumer_complaints_sub_product_cleanup.sql", "Clean Sub-Products"),
     ("sql/data_cleaning/cfpb_consumer_complaints_tags_cleanup.sql", "Clean Tags"),
@@ -39,36 +40,41 @@ def run(engine=None, limit=None):
         engine = create_engine(connection_string)
     
     with engine.begin() as conn:
-        # 1. Find how many records need cleaning
-        count_sql = "SELECT COUNT(*) FROM consumer_complaints_raw WHERE cleaned_timestamp IS NULL"
+        # 1. Find how many records are in the staging table to be cleaned.
+        count_sql = "SELECT COUNT(*) FROM consumer_complaints_staging"
         if limit:
             count_sql += f" LIMIT {limit}"
         
         count_result = conn.exec_driver_sql(count_sql).scalar()
-        logging.info(f"Found {count_result} records ready for cleaning.")
+        logging.info(f"Found {count_result} records in staging table ready for cleaning.")
         log_db(engine, "Cleaning Pre-check", "INFO", f"Found {count_result} records to clean.")
         
         if count_result == 0:
-            logging.info("No new records to clean. Skipping.")
+            logging.info("Staging table is empty. No records to clean. Skipping.")
             return
 
-        # 2. Run all cleaning scripts, which will now operate only on un-cleaned records.
+        # 2. Run all cleaning scripts against the staging table.
         logging.info("Starting data cleaning pipeline...")
-        incremental_clause = "AND cleaned_timestamp IS NULL"
         for script_path, label in cleaning_scripts:
-            # Pass the incremental clause to the utility function
-            if not execute_sql_file(engine, script_path, label, incremental_clause=incremental_clause, limit=limit):
+            # The incremental_clause is no longer needed as we operate on a fresh staging table.
+            if not execute_sql_file(engine, script_path, label, limit=limit):
                 raise Exception(f"Failed during cleaning step: {label}")
 
-        # 3. Update the timestamp for the records we just processed.
-        logging.info("Updating timestamp for cleaned records...")
-        update_sql = "UPDATE consumer_complaints_raw SET cleaned_timestamp = NOW() WHERE cleaned_timestamp IS NULL"
-        if limit:
-            # This is important to only stamp the records we actually processed if a limit was applied
-            update_sql += f" LIMIT {limit}"
-        
+        # 3. Update the timestamp in the staging table to mark records as cleaned.
+        logging.info("Updating timestamp for cleaned records in staging table...")
+        update_sql = "UPDATE consumer_complaints_staging SET cleaned_timestamp = NOW()"
         conn.exec_driver_sql(update_sql)
-        log_db(engine, "Cleaning", "SUCCESS", f"Successfully cleaned and stamped {count_result} records.")
+
+        # 4. Update the timestamp in the original raw table for data lineage.
+        logging.info("Updating timestamp in raw table for processed records...")
+        update_raw_sql = """
+            UPDATE consumer_complaints_raw r
+            JOIN consumer_complaints_staging s ON r.complaint_id = s.complaint_id
+            SET r.cleaned_timestamp = s.cleaned_timestamp
+            WHERE r.cleaned_timestamp IS NULL;
+        """
+        conn.exec_driver_sql(update_raw_sql)
+        log_db(engine, "Cleaning", "SUCCESS", f"Successfully cleaned and stamped {count_result} records in staging and raw tables.")
 
     logging.info("Data cleaning step completed.")
 
