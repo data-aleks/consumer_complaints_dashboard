@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS consumer_complaints_cleaned (
     consumer_complaint_narrative TEXT,
     company_public_response TEXT,
     company VARCHAR(255),
-    state VARCHAR(50),
+    state_code VARCHAR(50),
     zip_code VARCHAR(20),
     tags TEXT,
     consumer_consent_provided VARCHAR(100),

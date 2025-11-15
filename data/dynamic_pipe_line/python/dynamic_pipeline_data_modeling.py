@@ -18,6 +18,7 @@ modeling_scripts = [
     ("sql/data_modeling/cfpb_consumer_complaints_dim_origin.sql", "Create origin dimension"),
     ("sql/data_modeling/cfpb_consumer_complaints_dim_product.sql", "Create product dimension"),
     ("sql/data_modeling/cfpb_consumer_complaints_dim_public_response.sql", "Create public_response dimension"),
+    ("sql/data_modeling/cfpb_consumer_complaints_dim_state.sql", "Create state dimension"),
     ("sql/data_modeling/cfpb_consumer_complaints_dim_company_response.sql", "Create company_response dimension"),
     ("sql/data_modeling/cfpb_consumer_complaints_dim_sub_issue.sql", "Create sub_issue dimension"),
     ("sql/data_modeling/cfpb_consumer_complaints_dim_sub_product.sql", "Create sub_product dimension"),
@@ -43,8 +44,11 @@ def run(engine, limit=None):
             # 2. Run modeling scripts
             logging.info("Starting data modeling pipeline...")
             for script_path, label in modeling_scripts:
-                # Dimension tables are rebuilt each time, fact table is incremental
-                incremental_clause = "AND c.modeling_timestamp IS NULL" if "fact_complaint" in script_path else None
+                # All scripts that read from consumer_complaints_cleaned need to filter for new records.
+                # The date dimension is special as it's built independently.
+                incremental_clause = "AND c.modeling_timestamp IS NULL"
+                if "dim_date" in script_path:
+                    incremental_clause = None # Date dimension doesn't depend on the cleaned table.
                 
                 if not execute_sql_file(engine, script_path, label, incremental_clause=incremental_clause, limit=limit):
                      raise Exception(f"Failed during modeling step: {label}")

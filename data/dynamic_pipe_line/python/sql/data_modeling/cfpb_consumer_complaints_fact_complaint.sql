@@ -32,7 +32,7 @@ LEFT JOIN dim_sub_product sp ON c.sub_product = sp.sub_product_name
 LEFT JOIN dim_issue i ON c.issue = i.issue_name
 LEFT JOIN dim_sub_issue si ON c.sub_issue = si.sub_issue_name
 LEFT JOIN dim_company co ON c.company = co.company_name
-LEFT JOIN dim_state s ON c.state = s.state_code
+LEFT JOIN dim_state s ON c.state_code = s.state_code
 LEFT JOIN dim_zip_code z ON c.zip_code = z.zip_code
 LEFT JOIN dim_origin o ON c.submitted_via = o.origin_method
 LEFT JOIN dim_company_response cr ON c.company_response_to_consumer = cr.response_description
@@ -41,5 +41,5 @@ LEFT JOIN dim_consent cn ON c.consumer_consent_provided = cn.consent_status
 LEFT JOIN dim_tag t ON c.tags = t.tag_name
 LEFT JOIN dim_disputed d ON c.consumer_disputed = d.disputed_status
 WHERE c.complaint_id NOT IN (SELECT complaint_id FROM fact_complaints WHERE complaint_id IS NOT NULL)
-{incremental_where_clause}
+{incremental_clause}
 {limit_clause};

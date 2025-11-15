@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS consumer_complaints_raw (
+CREATE TABLE IF NOT EXISTS consumer_complaints_staging (
   date_received text,
   product text,
   sub_product text,
@@ -18,5 +18,6 @@ CREATE TABLE IF NOT EXISTS consumer_complaints_raw (
   consumer_disputed text,
   complaint_id int,
   ingestion_date DATE,
-  source_file_name VARCHAR(255)
+  source_file_name VARCHAR(255),
+  cleaned_timestamp DATETIME NULL
 );

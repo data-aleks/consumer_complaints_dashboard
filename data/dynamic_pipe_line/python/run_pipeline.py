@@ -112,6 +112,7 @@ def ensure_tables_and_indexes():
     existing_tables = inspector.get_table_names()
 
     setup_scripts = {
+        "consumer_complaints_staging": os.path.join("sql", "setup", "create_staging_data_table.sql"),
         "consumer_complaints_raw": os.path.join("sql", "setup", "create_raw_data_table.sql"),
         "consumer_complaints_cleaned": os.path.join("sql", "setup", "create_cleaned_data_table.sql"),
         "ingestion_metadata": os.path.join("sql", "setup", "create_ingestion_metadata_table.sql"),
@@ -135,6 +136,7 @@ def ensure_tables_and_indexes():
     try:
         with engine.begin() as conn:
             indexes_raw = [idx['name'] for idx in inspector.get_indexes('consumer_complaints_raw')]
+            indexes_staging = [idx['name'] for idx in inspector.get_indexes('consumer_complaints_staging')]
             indexes_cleaned = [idx['name'] for idx in inspector.get_indexes('consumer_complaints_cleaned')]
 
             if 'idx_raw_complaint_id' not in indexes_raw:
@@ -144,6 +146,14 @@ def ensure_tables_and_indexes():
                 logging.info("Created index: idx_raw_complaint_id")
             else:
                 logging.info("Index already exists: idx_raw_complaint_id")
+
+            if 'idx_staging_complaint_id' not in indexes_staging:
+                conn.exec_driver_sql(
+                    "CREATE INDEX idx_staging_complaint_id ON consumer_complaints_staging(complaint_id);"
+                )
+                logging.info("Created index: idx_staging_complaint_id")
+            else:
+                logging.info("Index already exists: idx_staging_complaint_id")
 
             if 'idx_cleaned_complaint_id' not in indexes_cleaned:
                 conn.exec_driver_sql(
@@ -166,6 +176,11 @@ def run_pipeline(step, limit=None): # No changes here, just for context
             timed_step("Data Ingestion", lambda: ingestion.run(engine, limit=limit))
         
         if step in ["all", "clean"]:
+            # New Staging Step: Move data from raw to staging before cleaning
+            logging.info("Staging data for cleaning...")
+            if not execute_sql_file(engine, os.path.join("sql", "data_insertion", "stage_raw_data.sql"), "Stage Raw Data", limit=limit):
+                raise Exception("Failed to stage data from raw to staging table.")
+            
             timed_step("Data Cleaning", lambda: cleaning.run(engine, limit=limit))
         
         if step in ["all", "insert"]:
