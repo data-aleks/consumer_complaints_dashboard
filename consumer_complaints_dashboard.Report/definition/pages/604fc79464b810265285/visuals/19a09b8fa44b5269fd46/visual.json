@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "19a09b8fa44b5269fd46",
   "position": {
-    "x": 14.181818181818159,
-    "y": 73.5151515151515,
+    "x": 12.812989045383432,
+    "y": 78,
     "z": 2000,
-    "height": 310,
-    "width": 819.090909090909,
-    "tabOrder": 4002
+    "height": 694.44444444444446,
+    "width": 817.77777777777771,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "cfpb dim_product.product_name",
-              "nativeQueryRef": "product_name",
-              "active": true
+              "nativeQueryRef": "Product",
+              "active": true,
+              "displayName": "Product"
             },
             {
               "field": {
@@ -70,29 +71,16 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "cfpb dim_product"
+                    "Entity": "cfpb fact_complaints"
                   }
                 },
-                "Property": "product_name"
+                "Property": "Complaints"
               }
             },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "cfpb dim_issue"
-                  }
-                },
-                "Property": "issue_name"
-              }
-            },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -153,13 +141,107 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "728.0628836163114D"
+                  "Value": "633D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "cfpb dim_product.product_name"
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Column"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Row"
+          }
+        },
+        {
+          "properties": {
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Bold'', wf_segoe-ui_bold, helvetica, arial, sans-serif'"
+                }
+              }
+            }
           }
         }
       ]
@@ -171,7 +253,20 @@
             "name": {
               "expr": {
                 "Literal": {
-                  "Value": "'Minimal'"
+                  "Value": "'None'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -197,8 +292,7 @@
             "Property": "Complaints"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Advanced"
       },
       {
         "name": "63ede5183378336c7512",
@@ -214,93 +308,7 @@
           }
         },
         "type": "TopN",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "subquery",
-              "Expression": {
-                "Subquery": {
-                  "Query": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "c2",
-                        "Entity": "cfpb dim_product",
-                        "Type": 0
-                      },
-                      {
-                        "Name": "c",
-                        "Entity": "cfpb fact_complaints",
-                        "Type": 0
-                      }
-                    ],
-                    "Select": [
-                      {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "c2"
-                            }
-                          },
-                          "Property": "product_name"
-                        },
-                        "Name": "field"
-                      }
-                    ],
-                    "OrderBy": [
-                      {
-                        "Direction": 2,
-                        "Expression": {
-                          "Measure": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "c"
-                              }
-                            },
-                            "Property": "Complaints"
-                          }
-                        }
-                      }
-                    ],
-                    "Top": 5
-                  }
-                }
-              },
-              "Type": 2
-            },
-            {
-              "Name": "c2",
-              "Entity": "cfpb dim_product",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "c2"
-                          }
-                        },
-                        "Property": "product_name"
-                      }
-                    }
-                  ],
-                  "Table": {
-                    "SourceRef": {
-                      "Source": "subquery"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
+        "howCreated": "User"
       },
       {
         "name": "a2bf08d8151a9b5eb05f",
