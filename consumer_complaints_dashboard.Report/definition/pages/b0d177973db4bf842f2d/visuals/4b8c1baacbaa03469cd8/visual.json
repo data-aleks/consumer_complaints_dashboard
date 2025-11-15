@@ -32,6 +32,24 @@
             }
           ]
         },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cfpb dim_origin"
+                    }
+                  },
+                  "Property": "origin_method"
+                }
+              },
+              "queryRef": "cfpb dim_origin.origin_method",
+              "nativeQueryRef": "origin_method"
+            }
+          ]
+        },
         "Y": {
           "projections": [
             {

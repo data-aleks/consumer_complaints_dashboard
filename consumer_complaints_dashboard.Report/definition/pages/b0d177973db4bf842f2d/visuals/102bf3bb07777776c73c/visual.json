@@ -6,8 +6,7 @@
     "y": 73.5151515151515,
     "z": 2000,
     "height": 310,
-    "width": 819.090909090909,
-    "tabOrder": 1000
+    "width": 819.090909090909
   },
   "visual": {
     "visualType": "barChart",
@@ -20,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "cfpb dim_product"
+                      "Entity": "cfpb dim_tag"
                     }
                   },
-                  "Property": "product_name"
+                  "Property": "tag_name"
                 }
               },
-              "queryRef": "cfpb dim_product.product_name",
-              "nativeQueryRef": "product_name",
+              "queryRef": "cfpb dim_tag.tag_name",
+              "nativeQueryRef": "tag_name",
               "active": true
             }
           ]
@@ -296,7 +295,8 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       }
     ]
   }

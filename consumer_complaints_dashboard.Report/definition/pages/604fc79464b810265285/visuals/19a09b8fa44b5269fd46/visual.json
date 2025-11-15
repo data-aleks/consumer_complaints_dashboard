@@ -6,8 +6,7 @@
     "y": 78,
     "z": 2000,
     "height": 694.44444444444446,
-    "width": 817.77777777777771,
-    "tabOrder": 1000
+    "width": 817.77777777777771
   },
   "visual": {
     "visualType": "pivotTable",
@@ -44,7 +43,7 @@
               },
               "queryRef": "cfpb dim_issue.issue_name",
               "nativeQueryRef": "issue_name",
-              "active": false
+              "active": true
             }
           ]
         },
@@ -118,7 +117,20 @@
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Credit Card'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -223,6 +235,19 @@
               }
             }
           }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "cfpb fact_complaints.Complaints"
+          }
         }
       ],
       "columnHeaders": [
@@ -242,6 +267,14 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "cfpb fact_complaints.Complaints"
           }
         }
       ]
