@@ -133,65 +133,60 @@ def run(engine, limit=None):
         logging.info("Extracting CSV...")
         with zipfile.ZipFile(zip_bytes, 'r') as zip_ref:
             csv_filename = [f for f in zip_ref.namelist() if f.endswith('.csv')][0]
+            
+            total_new_records = 0
+            max_complaint_id = 0
+            
             with zip_ref.open(csv_filename) as csv_file:
-                df = pd.read_csv(csv_file)
+                # Process the CSV in chunks to handle large files
+                chunk_size_read = 50000
+                chunk_size_write = 10000
+                
+                with pd.read_csv(csv_file, chunksize=chunk_size_read, low_memory=False) as reader:
+                    for i, df_chunk in enumerate(tqdm(reader, desc="Processing CSV Chunks")):
+                        # --- Sanitize and Transform each chunk ---
+                        df_chunk.columns = [col.lower().replace(' ', '_').replace('?', '').replace('-', '_') for col in df_chunk.columns]
+                        if 'state' in df_chunk.columns:
+                            df_chunk.rename(columns={'state': 'state_code'}, inplace=True)
+                        
+                        df_chunk["ingestion_date"] = ingestion_date
+                        df_chunk["source_file_name"] = source_file_name
+                        df_chunk["complaint_id"] = pd.to_numeric(df_chunk["complaint_id"], errors="coerce")
 
-        if limit is not None:
-            logging.warning(f"Limiting ingestion to the first {limit} records for this run.")
-            df = df.head(limit)
-            log_db(engine, "Record Limiting", "INFO", f"Using only the first {limit} records.")
+                        # Update max ID for metadata
+                        chunk_max_id = df_chunk["complaint_id"].dropna().astype(int).max()
+                        if chunk_max_id > max_complaint_id:
+                            max_complaint_id = chunk_max_id
 
-        logging.info(f"Extracted {len(df)} records from {csv_filename}.")
-        log_db(engine, "Extract CSV", "SUCCESS", f"Extracted {len(df)} records from {csv_filename}")
+                        # --- Deduplication for each chunk ---
+                        potential_ids = df_chunk["complaint_id"].dropna().astype(int).tolist()
+                        existing_ids_set = set()
+                        if potential_ids:
+                            query = text("SELECT complaint_id FROM consumer_complaints_raw WHERE complaint_id IN :ids")
+                            with engine.connect() as conn:
+                                result = conn.execute(query, {"ids": potential_ids})
+                                existing_ids_set = {row[0] for row in result}
 
-        # --- Sanitize all column names first ---
-        df.columns = [col.lower().replace(' ', '_').replace('?', '').replace('-', '_') for col in df.columns]
+                        df_new = df_chunk[~df_chunk["complaint_id"].isin(existing_ids_set)]
 
-        # --- Explicitly rename 'state' to 'state_code' to avoid SQL keyword conflicts ---
-        if 'state' in df.columns:
-            df.rename(columns={'state': 'state_code'}, inplace=True)
-            logging.info("Renamed 'state' column to 'state_code'.")
+                        # --- Ingest new records from the chunk ---
+                        if not df_new.empty:
+                            logging.info(f"Chunk {i+1}: Found {len(df_new)} new records to ingest.")
+                            df_new.to_sql("consumer_complaints_raw", con=engine, if_exists="append", index=False, chunksize=chunk_size_write)
+                            total_new_records += len(df_new)
+                        else:
+                            logging.info(f"Chunk {i+1}: No new records in this chunk.")
 
-        df["ingestion_date"] = ingestion_date
-        df["source_file_name"] = source_file_name
-        df["complaint_id"] = pd.to_numeric(df["complaint_id"], errors="coerce")
+                        # Handle user-defined limit
+                        if limit is not None and total_new_records >= limit:
+                            logging.warning(f"Reached user-defined limit of {limit} records. Stopping ingestion.")
+                            break
 
-        logging.info("Checking for existing complaint IDs...")
-        with engine.connect() as conn:
-            # Ensure the table exists before querying
-            if engine.dialect.has_table(conn, "consumer_complaints_raw"):
-                existing_ids = pd.read_sql("SELECT complaint_id FROM consumer_complaints_raw", conn)
-                existing_ids_set = set(existing_ids["complaint_id"].dropna().astype(int))
-            else:
-                existing_ids_set = set()
-
-        df_new = df[~df["complaint_id"].isin(existing_ids_set)]
-        logging.info(f"Found {len(df_new)} new records to ingest.")
-        log_db(engine, "Deduplication", "SUCCESS", f"{len(df_new)} new records identified")
-
-        start_ingest = time.time()
-        chunk_size = 10000  # Increased for better performance
-
-        if not df_new.empty:
-            logging.info("Ingesting new records...")
-            for i in tqdm(range(0, len(df_new), chunk_size), desc="Ingesting to MySQL"):
-                df_new.iloc[i:i+chunk_size].to_sql("consumer_complaints_raw", con=engine, if_exists="append", index=False)
-            end_ingest = time.time()
-            ingest_time = round(end_ingest - start_ingest, 2)
-            logging.info(f"Ingested {len(df_new)} records in {ingest_time} seconds.")
-            log_db(engine, "Ingest to MySQL", "SUCCESS", f"Ingested {len(df_new)} records", duration=ingest_time)
-        else:
-            logging.info("No new records to ingest.")
-            log_db(engine, "Ingest to MySQL", "SUCCESS", "No new records to ingest")
-
-        max_id = df["complaint_id"].dropna().astype(int).max()
-        record_ingestion_metadata(engine, file_hash, len(df_new), max_id, remote_last_modified)
+        log_db(engine, "Ingest to MySQL", "SUCCESS", f"Ingested a total of {total_new_records} new records.")
+        record_ingestion_metadata(engine, file_hash, total_new_records, max_complaint_id, remote_last_modified)
 
         logging.info("\nIngestion Summary:")
-        logging.info(f"- Total records in file: {len(df)}")
-        logging.info(f"- New records ingested: {len(df_new)}")
-        if not df_new.empty:
-            logging.info(f"- Ingestion time: {ingest_time} seconds")
+        logging.info(f"- New records ingested: {total_new_records}")
 
     except Exception as e:
         logging.error(f"Error: {str(e)}", exc_info=True)

@@ -14,19 +14,9 @@ def execute_sql_file(engine, script_path, label, incremental_clause=None, limit=
     try:
         with open(script_path, "r", encoding="utf-8") as file:
             sql_template = file.read()
-
-        # Replace placeholders
-        # For cleaning scripts: incremental_clause should be "AND cleaned_timestamp IS NULL" 
-        # For fact tables: incremental_clause should be "AND c.modeling_timestamp IS NULL"
-        if incremental_clause:
-            # If the clause starts with WHERE, it's for INSERT statements
-            # If it starts with AND, it's for UPDATE statements or additional WHERE conditions
-            sql_template = sql_template.replace("{incremental_clause}", incremental_clause)
-            sql_template = sql_template.replace("{incremental_where_clause}", incremental_clause)
-        else:
-            sql_template = sql_template.replace("{incremental_clause}", "")
-            sql_template = sql_template.replace("{incremental_where_clause}", "")
-            
+        
+        # Simplified placeholder replacement
+        sql_template = sql_template.replace("{incremental_clause}", incremental_clause if incremental_clause else "")
         sql_template = sql_template.replace("{limit_clause}", f"LIMIT {limit}" if limit else "")
 
         with engine.begin() as conn:
