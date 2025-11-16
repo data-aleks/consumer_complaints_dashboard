@@ -55,7 +55,7 @@ table 'cfpb dim_disputed'
 		mode: import
 		source =
 				let
-				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true, CreateNavigationProperties=false]),
 				    cfpb_dim_disputed = Source{[Schema="cfpb",Item="dim_disputed"]}[Data]
 				in
 				    cfpb_dim_disputed

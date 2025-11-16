@@ -316,7 +316,7 @@ table 'cfpb fact_complaints'
 		mode: import
 		source =
 				let
-				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true, CreateNavigationProperties=false]),
 				    cfpb_fact_complaints = Source{[Schema="cfpb",Item="fact_complaints"]}[Data],
 				    #"Removed Columns" = Table.RemoveColumns(cfpb_fact_complaints,{"consumer_complaint_narrative"}),
 				    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each ([company_key] <> 1 and [company_key] <> 2 and [company_key] <> 3))
