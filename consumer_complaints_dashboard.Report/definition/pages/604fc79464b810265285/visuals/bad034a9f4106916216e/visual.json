@@ -6,8 +6,7 @@
     "y": 78,
     "z": 500,
     "height": 306,
-    "width": 820,
-    "tabOrder": 1000
+    "width": 820
   },
   "visual": {
     "visualType": "barChart",
@@ -20,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "cfpb dim_sub_product"
+                      "Entity": "cfpb dim_issue"
                     }
                   },
-                  "Property": "sub_product_name"
+                  "Property": "issue_name"
                 }
               },
-              "queryRef": "cfpb dim_sub_product.sub_product_name",
-              "nativeQueryRef": "sub_product_name",
+              "queryRef": "cfpb dim_issue.issue_name",
+              "nativeQueryRef": "issue_name",
               "active": true
             }
           ]
@@ -39,15 +38,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "cfpb fact_complaints"
+                      "Entity": "cfpb dim_company_response"
                     }
                   },
-                  "Property": "Total_Complaints_Today"
+                  "Property": "Monetary Relief Complaints"
                 }
               },
-              "queryRef": "cfpb fact_complaints.Total_Complaints_Today",
-              "nativeQueryRef": "Total Complaints",
-              "displayName": "Total Complaints"
+              "queryRef": "cfpb dim_company_response.Monetary Relief Complaints",
+              "nativeQueryRef": "Monetary Relief Complaints"
             }
           ]
         }
@@ -59,10 +57,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "cfpb fact_complaints"
+                    "Entity": "cfpb dim_company_response"
                   }
                 },
-                "Property": "Total_Complaints_Today"
+                "Property": "Monetary Relief Complaints"
               }
             },
             "direction": "Descending"
@@ -264,15 +262,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9652c693581d39932345",
+        "name": "2d45c7bb4574c6140c31",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "cfpb dim_sub_product"
+                "Entity": "cfpb dim_issue"
               }
             },
-            "Property": "sub_product_name"
+            "Property": "issue_name"
           }
         },
         "type": "TopN",
@@ -287,8 +285,8 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "c2",
-                        "Entity": "cfpb dim_sub_product",
+                        "Name": "c3",
+                        "Entity": "cfpb dim_issue",
                         "Type": 0
                       },
                       {
@@ -302,10 +300,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "c2"
+                              "Source": "c3"
                             }
                           },
-                          "Property": "sub_product_name"
+                          "Property": "issue_name"
                         },
                         "Name": "field"
                       }
@@ -332,8 +330,8 @@
               "Type": 2
             },
             {
-              "Name": "c2",
-              "Entity": "cfpb dim_sub_product",
+              "Name": "c3",
+              "Entity": "cfpb dim_issue",
               "Type": 0
             }
           ],
@@ -346,10 +344,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "c2"
+                            "Source": "c3"
                           }
                         },
-                        "Property": "sub_product_name"
+                        "Property": "issue_name"
                       }
                     }
                   ],

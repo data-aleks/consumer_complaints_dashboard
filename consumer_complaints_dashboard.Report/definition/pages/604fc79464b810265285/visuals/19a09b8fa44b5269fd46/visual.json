@@ -6,7 +6,8 @@
     "y": 78,
     "z": 2000,
     "height": 694.44444444444446,
-    "width": 817.77777777777771
+    "width": 817.77777777777771,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -123,7 +124,17 @@
               "identityValues": [
                 {
                   "Literal": {
-                    "Value": "'Credit Card'"
+                    "Value": "'General Bank Service'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Deposit Account (Checking/Savings)'"
                   }
                 }
               ],
