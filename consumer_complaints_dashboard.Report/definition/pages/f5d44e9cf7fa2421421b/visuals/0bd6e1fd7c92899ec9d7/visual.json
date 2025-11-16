@@ -6,8 +6,7 @@
     "y": 78,
     "z": 500,
     "height": 306,
-    "width": 820,
-    "tabOrder": 1000
+    "width": 820
   },
   "visual": {
     "visualType": "columnChart",
@@ -20,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "cfpb dim_consent"
+                      "Entity": "cfpb dim_public_response"
                     }
                   },
-                  "Property": "consent_status"
+                  "Property": "response_text"
                 }
               },
-              "queryRef": "cfpb dim_consent.consent_status",
-              "nativeQueryRef": "consent_status",
+              "queryRef": "cfpb dim_public_response.response_text",
+              "nativeQueryRef": "response_text",
               "active": true
             }
           ]
@@ -42,12 +41,11 @@
                       "Entity": "cfpb fact_complaints"
                     }
                   },
-                  "Property": "Total_Complaints_Today"
+                  "Property": "Untimely Complaint Response Rate"
                 }
               },
-              "queryRef": "cfpb fact_complaints.Total_Complaints_Today",
-              "nativeQueryRef": "Total Complaints",
-              "displayName": "Total Complaints"
+              "queryRef": "cfpb fact_complaints.Untimely Complaint Response Rate",
+              "nativeQueryRef": "Untimely Complaint Response Rate"
             }
           ]
         }
@@ -62,7 +60,7 @@
                     "Entity": "cfpb fact_complaints"
                   }
                 },
-                "Property": "Total_Complaints_Today"
+                "Property": "Untimely Complaint Response Rate"
               }
             },
             "direction": "Descending"
@@ -253,5 +251,124 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "b73382c3bf70d1601a35"
+  "parentGroupName": "b73382c3bf70d1601a35",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "97ea89a00aa92305a6d6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "cfpb fact_complaints"
+              }
+            },
+            "Property": "Untimely Complaint Response Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "adecdea603be7abdde2b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "cfpb dim_public_response"
+              }
+            },
+            "Property": "response_text"
+          }
+        },
+        "type": "TopN",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "subquery",
+              "Expression": {
+                "Subquery": {
+                  "Query": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "c2",
+                        "Entity": "cfpb dim_public_response",
+                        "Type": 0
+                      },
+                      {
+                        "Name": "c",
+                        "Entity": "cfpb fact_complaints",
+                        "Type": 0
+                      }
+                    ],
+                    "Select": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c2"
+                            }
+                          },
+                          "Property": "response_text"
+                        },
+                        "Name": "field"
+                      }
+                    ],
+                    "OrderBy": [
+                      {
+                        "Direction": 2,
+                        "Expression": {
+                          "Measure": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "c"
+                              }
+                            },
+                            "Property": "Untimely Complaint Response Rate"
+                          }
+                        }
+                      }
+                    ],
+                    "Top": 5
+                  }
+                }
+              },
+              "Type": 2
+            },
+            {
+              "Name": "c2",
+              "Entity": "cfpb dim_public_response",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "c2"
+                          }
+                        },
+                        "Property": "response_text"
+                      }
+                    }
+                  ],
+                  "Table": {
+                    "SourceRef": {
+                      "Source": "subquery"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
 }

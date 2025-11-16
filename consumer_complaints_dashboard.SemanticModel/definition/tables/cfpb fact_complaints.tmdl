@@ -120,35 +120,23 @@ table 'cfpb fact_complaints'
 		formatString: 0
 		lineageTag: 6b916ab6-c629-41b5-9be8-d065ef9674ee
 
-	measure Timely_Response_Rate =
+	measure 'Untimely Response Complaints' =
 			
-			VAR t = CALCULATE(
+			CALCULATE(
 			    DISTINCTCOUNT('cfpb fact_complaints'[complaint_id]),
-			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response] = TRUE())
+			    FILTER(
+			        'cfpb fact_complaints',
+			        'cfpb fact_complaints'[timely_response] = FALSE()
+			    )
 			)
-			VAR total = CALCULATE(
-			    DISTINCTCOUNT('cfpb fact_complaints'[complaint_id])
-			)
-			RETURN
-			DIVIDE(t, total, 0)
+		formatString: 0
+		lineageTag: eb7418f0-caf9-4ffd-b53c-75257d5e0d93
+
+	measure 'Untimely Complaint Response Rate' =
+			
+			DIVIDE([Untimely Response Complaints], [Complaints], 0)
 		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: 1938fa06-398a-47c4-ba5f-80cc8d6bce2d
-
-	measure 'Timely Response Complaints' =
-			CALCULATE(
-			    [Complaints],
-			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response] = TRUE())
-			)
-		formatString: 0
-		lineageTag: 560954c1-5034-4a93-8a66-ddcf6a3d5f05
-
-	measure 'Not Timely Response Complaints' =
-			CALCULATE(
-			    [Complaints],
-			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response] = FALSE())
-			)
-		formatString: 0
-		lineageTag: 412a8d3e-5018-44bd-98d8-028b2010c071
+		lineageTag: 3e41d144-4850-4ea5-af85-3a560f179a63
 
 	column complaint_id
 		dataType: int64
