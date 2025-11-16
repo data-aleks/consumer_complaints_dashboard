@@ -1,4 +1,3 @@
--- Inserts new, cleaned records from the raw table into the cleaned table.
 -- Inserts new, cleaned records from the staging table into the cleaned table.
 -- It only inserts records that have been cleaned but not yet inserted.
 -- It also performs necessary type conversions during insertion.
@@ -28,7 +27,4 @@ SELECT
     s.company_response_to_consumer, s.company_response_to_consumer_standardized, s.consumer_disputed, s.consumer_disputed_standardized,
     s.complaint_id, s.ingestion_date, s.source_file_name
 FROM consumer_complaints_staging s
-WHERE
-    s.cleaned_timestamp IS NOT NULL
-    AND NOT EXISTS (SELECT 1 FROM consumer_complaints_cleaned c WHERE c.complaint_id = s.complaint_id)
-{limit_clause};
+WHERE s.cleaned_timestamp IS NOT NULL AND NOT EXISTS (SELECT 1 FROM consumer_complaints_cleaned c WHERE c.complaint_id = s.complaint_id) {limit_clause};

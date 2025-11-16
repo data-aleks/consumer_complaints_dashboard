@@ -1,8 +1,9 @@
 -- Populates the state dimension table with unique state codes from the cleaned data.
 -- INSERT IGNORE prevents errors if a state code already exists.
-INSERT IGNORE INTO dim_state (state_code, state_name)
+INSERT IGNORE INTO dim_state (state_code, state_name, country_code, country_name)
 SELECT DISTINCT
     c.state_code,
+    -- Map state codes to full state names
     CASE c.state_code
         WHEN 'AL' THEN 'Alabama'
         WHEN 'AK' THEN 'Alaska'
@@ -62,7 +63,25 @@ SELECT DISTINCT
         WHEN 'MP' THEN 'Northern Mariana Islands'
         WHEN 'PR' THEN 'Puerto Rico'
         WHEN 'VI' THEN 'U.S. Virgin Islands'
-        ELSE 'Unknown or Invalid'
-    END AS state_name
+        WHEN 'UM' THEN 'U.S. Minor Outlying Islands'
+        -- Armed Forces
+        WHEN 'AA' THEN 'Armed Forces Americas'
+        WHEN 'AE' THEN 'Armed Forces Europe'
+        WHEN 'AP' THEN 'Armed Forces Pacific'
+        ELSE 'N/A' -- Use N/A for codes that are not standard US states/territories
+    END AS state_name,
+    -- Add country code and name based on the state code
+    CASE
+        WHEN c.state_code IN (
+            -- States
+            'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
+            'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
+            'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY', 
+            -- Territories & Armed Forces
+            'AS', 'DC', 'GU', 'MP', 'PR', 'VI', 'UM', 'AA', 'AE', 'AP'
+        ) THEN 'US'
+        ELSE 'N/A'
+    END AS country_code,
+    CASE WHEN c.state_code IN ('N/A', 'Invalid Code') THEN 'N/A' ELSE 'United States' END AS country_name
 FROM consumer_complaints_cleaned c
 WHERE c.state_code IS NOT NULL AND TRIM(c.state_code) <> '' {incremental_clause};

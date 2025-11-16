@@ -1,14 +1,6 @@
 -- This single, consolidated script performs all cleaning operations in one pass for maximum performance.
--- This single, consolidated script performs all data cleaning and standardization operations in one pass for maximum performance.
 UPDATE consumer_complaints_staging
 SET
-    -- 1. Clean 'timely_response'
-    timely_response = CASE
-        WHEN UPPER(TRIM(timely_response)) = 'YES' THEN 1
-        WHEN UPPER(TRIM(timely_response)) = 'NO' THEN 0
-        ELSE NULL
-    END,
-
     -- 2. Clean 'state_code'
     state_code = CASE
         WHEN state_code IS NULL OR TRIM(state_code) = '' THEN 'N/A'
@@ -24,7 +16,7 @@ SET
     END,
 
     -- 3. Clean 'issue'
-    issue = CASE -- Standardize 'issue' into broader, more consistent categories.
+    issue_standardized = CASE -- Standardize 'issue' into broader, more consistent categories.
         WHEN issue IN (
             'Incorrect information on your report', 'Incorrect information on credit report',
             'Problem with a company''s investigation into an existing problem',
@@ -78,7 +70,7 @@ SET
         WHEN issue IS NULL OR TRIM(issue) = '' THEN 'N/A'
         ELSE 'Other/Miscellaneous'
     END,
-        sub_issue = CASE
+        sub_issue_standardized = CASE
         -- 🚨 FIX: Maps empty strings, NULL, and generic 'Unknown' values to 'Not available'
         WHEN TRIM(sub_issue) = '' OR sub_issue IS NULL OR sub_issue IN (
             'I do not know', 'Unknown', 'Other', 'Other service problem', 'Other transaction problem',
@@ -248,7 +240,7 @@ SET
         ELSE 'General/Miscellaneous'
     END,
     -- 4. Clean 'company_public_response'
-    company_public_response = CASE
+    company_public_response_standardized = CASE
         WHEN company_public_response IS NULL OR TRIM(company_public_response) = '' OR company_public_response = 'None' THEN 'N/A'
         WHEN company_public_response = 'Company believes complaint caused principally by actions of third party outside the control or direction of the company' THEN 'Third Party Responsibility'
         WHEN company_public_response = 'Company believes complaint is the result of an isolated error' THEN 'Isolated Error'
@@ -262,7 +254,7 @@ SET
         WHEN company_public_response = 'Company disputes the facts presented in the complaint' THEN 'Disputes Complaint Facts'
         ELSE company_public_response
     END,
-    company_response_to_consumer = CASE
+    company_response_to_consumer_standardized = CASE
     -- 1. Handle Null/Empty values first, mapping to 'N/A'
     WHEN company_response_to_consumer IS NULL 
     OR TRIM(company_response_to_consumer) = '' 
@@ -292,7 +284,7 @@ SET
     END,
 
     -- 7. Clean 'tags'
-    tags = CASE
+    tags_standardized = CASE
         WHEN tags IS NULL OR TRIM(tags) = '' THEN 'General'
         WHEN tags = 'Older American' THEN 'Older American'
         WHEN tags = 'Servicemember' THEN 'Servicemember'
@@ -301,7 +293,7 @@ SET
     END,
 
     -- 8. Clean 'consumer_consent_provided'
-    consumer_consent_provided = CASE
+    consumer_consent_provided_standardized = CASE
     -- 1. Handle Null, Empty, or N/A values first, mapping to 'N/A'
         WHEN consumer_consent_provided IS NULL 
         OR TRIM(consumer_consent_provided) = '' 
@@ -325,19 +317,13 @@ SET
     END,
 
     -- 9. Clean 'consumer_disputed'
-    consumer_disputed = IFNULL(NULLIF(TRIM(consumer_disputed), ''), 'N/A'),
+    consumer_disputed_standardized = IFNULL(NULLIF(TRIM(consumer_disputed), ''), 'N/A'),
 
     -- 10. Clean 'consumer_complaint_narrative'
     consumer_complaint_narrative = IFNULL(NULLIF(TRIM(consumer_complaint_narrative), ''), 'None'),
 
-    -- 11. Convert 'date_received' to DATE type
-    date_received = STR_TO_DATE(date_received, '%%Y-%%m-%%d'),
-
-    -- 12. Convert 'date_sent_to_company' to DATE type
-    date_sent_to_company = STR_TO_DATE(date_sent_to_company, '%%Y-%%m-%%d'),
-
     -- 13. Clean 'product'
-    product = CASE
+    product_standardized = CASE
         -- 1. Handle Null/Blank Values
         WHEN product IS NULL OR TRIM(product) = '' THEN 'N/A'
         
@@ -413,7 +399,7 @@ SET
     END,
 
     -- 14. Clean 'sub_product'
-    sub_product = CASE
+    sub_product_standardized = CASE
         -- 1. Handle Null/Empty/Generic Values First
         WHEN sub_product IS NULL OR TRIM(sub_product) = '' THEN 'N/A'
         WHEN sub_product = 'I do not know' THEN 'Unknown'
