@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "4711a8f4d18e4306692e",
   "position": {
-    "x": 14.181818181818159,
-    "y": 73.5151515151515,
+    "x": 32,
+    "y": 80,
     "z": 2000,
-    "height": 310,
-    "width": 819.090909090909,
-    "tabOrder": 4004
+    "height": 288,
+    "width": 784,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "shapeMap",
@@ -90,7 +90,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'#48A2A7'"
+                        "Value": "'#62D8DD'"
                       }
                     }
                   }
@@ -99,7 +99,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'#CDF5F7'"
+                        "Value": "'#E66C37'"
                       }
                     }
                   }
@@ -166,6 +166,49 @@
             }
           }
         }
+      ],
+      "defaultColors": [
+        {
+          "properties": {
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#252423'"
+                    }
+                  }
+                }
+              }
+            },
+            "borderThickness": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "defaultColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "defaultShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -198,37 +241,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "a384ebc03b5396bc6b7d",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4d34831ec8601ed2a177",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb dim_state"
-              }
-            },
-            "Property": "state_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "44e4e4c9537d5309a930",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb fact_complaints"
-              }
-            },
-            "Property": "Untimely Complaint Response Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "a384ebc03b5396bc6b7d"
 }

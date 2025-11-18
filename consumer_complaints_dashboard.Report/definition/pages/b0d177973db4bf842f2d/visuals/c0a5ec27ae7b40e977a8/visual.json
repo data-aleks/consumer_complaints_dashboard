@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "c0a5ec27ae7b40e977a8",
   "position": {
-    "x": 13.818181818181841,
-    "y": 86.651884700665192,
+    "x": 32,
+    "y": 80,
     "z": 625,
-    "height": 302.4390243902439,
-    "width": 820,
-    "tabOrder": 1000
+    "height": 288,
+    "width": 784,
+    "tabOrder": 2000
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "barChart",
     "query": {
       "queryState": {
         "Category": {
@@ -36,17 +36,37 @@
           "projections": [
             {
               "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "cfpb fact_complaints"
+                "Arithmetic": {
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb fact_complaints"
+                        }
+                      },
+                      "Property": "Complaints"
                     }
                   },
-                  "Property": "Complaints"
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "cfpb fact_complaints"
+                            }
+                          },
+                          "Property": "Complaints"
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
                 }
               },
               "queryRef": "cfpb fact_complaints.Complaints",
-              "nativeQueryRef": "Complaints"
+              "nativeQueryRef": "%GT Complaints"
             }
           ]
         }
@@ -55,13 +75,33 @@
         "sort": [
           {
             "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "cfpb fact_complaints"
+              "Arithmetic": {
+                "Left": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "cfpb fact_complaints"
+                      }
+                    },
+                    "Property": "Complaints"
                   }
                 },
-                "Property": "Complaints"
+                "Right": {
+                  "ScopedEval": {
+                    "Expression": {
+                      "Measure": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "cfpb fact_complaints"
+                          }
+                        },
+                        "Property": "Complaints"
+                      }
+                    },
+                    "Scope": []
+                  }
+                },
+                "Operator": 3
               }
             },
             "direction": "Descending"
@@ -101,6 +141,13 @@
                   "Value": "'''Segoe UI Light'', wf_segoe-ui_light, helvetica, arial, sans-serif'"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -125,14 +172,21 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "10D"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Light'', wf_segoe-ui_light, helvetica, arial, sans-serif'"
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -150,6 +204,72 @@
                       "Value": "'#205E61'"
                     }
                   }
+                }
+              }
+            },
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "borderSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#252423'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OutsideEnd'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

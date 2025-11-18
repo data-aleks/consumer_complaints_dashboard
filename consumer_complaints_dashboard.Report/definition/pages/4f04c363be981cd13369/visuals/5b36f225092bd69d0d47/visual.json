@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "5b36f225092bd69d0d47",
   "position": {
-    "x": 20,
-    "y": 12.545454545454533,
+    "x": 32,
+    "y": 32,
     "z": 3000,
-    "height": 70,
-    "width": 750,
-    "tabOrder": 1000
+    "height": 47.999999999999993,
+    "width": 752,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "textbox",
@@ -22,7 +22,7 @@
                     "value": "Geographical Complaint Distribution",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "28pt"
+                      "fontSize": "20pt"
                     }
                   }
                 ]

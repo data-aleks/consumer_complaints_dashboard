@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "5c8e2a9abb098eaed340",
   "position": {
-    "x": 10,
-    "y": 88.333333333333343,
+    "x": 32,
+    "y": 80,
     "z": 2000,
-    "height": 303.33333333333337,
-    "width": 821.66666666666674
+    "height": 288,
+    "width": 784,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "shapeMap",
@@ -60,7 +61,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'#CDF5F7'"
+                        "Value": "'#62D8DD'"
                       }
                     }
                   }
@@ -181,37 +182,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "6b8c2900236cbe70c326",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c6536ffdd60c3503007a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb dim_state"
-              }
-            },
-            "Property": "state_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "288ff49e040d934d978d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb fact_complaints"
-              }
-            },
-            "Property": "Complaints"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "6b8c2900236cbe70c326"
 }

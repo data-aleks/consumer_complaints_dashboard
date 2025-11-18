@@ -2,12 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "5605a8a40e007a8bbe16",
   "position": {
-    "x": 14,
-    "y": 9.3333333333333428,
+    "x": 32,
+    "y": 32,
     "z": 1000,
     "height": 64,
-    "width": 512,
-    "tabOrder": 2000
+    "width": 784
   },
   "visual": {
     "visualType": "textbox",
@@ -19,10 +18,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Complaints By Sub Product",
+                    "value": "Companies with Highest Share of Monetary Relief Complaints",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "28pt"
+                      "fontSize": "20pt"
                     }
                   }
                 ]
