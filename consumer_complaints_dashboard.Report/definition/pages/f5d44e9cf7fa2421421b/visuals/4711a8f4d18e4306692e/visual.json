@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "4711a8f4d18e4306692e",
   "position": {
     "x": 32,
@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 288,
     "width": 784,
-    "tabOrder": 1000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "shapeMap",
@@ -99,7 +99,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'#E66C37'"
+                        "Value": "'#4A9782'"
                       }
                     }
                   }

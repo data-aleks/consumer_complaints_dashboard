@@ -22,10 +22,6 @@ relationship AutoDetected_a2525ce2-2954-4f8d-9fcc-276fb257fb28
 	fromColumn: 'cfpb fact_complaints'.state_key
 	toColumn: 'cfpb dim_state'.state_key
 
-relationship AutoDetected_1647499e-0de1-4d84-8be6-f5f4f76e3a89
-	fromColumn: 'cfpb fact_complaints'.zip_code_key
-	toColumn: 'cfpb dim_zip_code'.zip_code_key
-
 relationship AutoDetected_da6184d4-4218-40f3-bfa4-6c40c069fdd9
 	fromColumn: 'cfpb fact_complaints'.origin_key
 	toColumn: 'cfpb dim_origin'.origin_key

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "30f8eaaad91322497ca7",
   "position": {
     "x": 32,
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Complaints Over Time",
+                    "value": "Complaints Over by Channel Time",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "20pt"

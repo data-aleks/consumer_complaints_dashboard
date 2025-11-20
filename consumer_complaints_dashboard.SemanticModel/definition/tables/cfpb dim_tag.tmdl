@@ -18,6 +18,14 @@ table 'cfpb dim_tag'
 
 		annotation SummarizationSetBy = Automatic
 
+	column tag_category = ```
+			IF('cfpb dim_tag'[tag_name] = "General", "General Segment", "Special Segment") 
+			```
+		lineageTag: 63352124-c929-4ccd-b229-a77f9003d939
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'cfpb dim_tag' = m
 		mode: import
 		source =

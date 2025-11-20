@@ -1612,94 +1612,6 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_dim_zip_code": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_zip_code"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "cfpb dim_zip_code": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "cfpb_dim_zip_code.zip_code": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_zip_code",
-			          "ConceptualProperty": "zip_code"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "zip code": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "zip_code": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "zip id": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "zip key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "location": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.54
-			          }
-			        },
-			        {
-			          "postcode": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.54
-			          }
-			        },
-			        {
-			          "post code": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.524
-			          }
-			        }
-			      ]
-			    },
 			    "cfpb_fact_complaint.complaint_fact_key": {
 			      "Definition": {
 			        "Binding": {
@@ -4990,7 +4902,7 @@ cultureInfo en-GB
 			    "cfpb_dim_disputed.disputed_complaints_rate": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_disputed",
+			          "ConceptualEntity": "cfpb fact_complaints",
 			          "ConceptualProperty": "Disputed Complaints Rate"
 			        }
 			      },
@@ -5118,7 +5030,7 @@ cultureInfo en-GB
 			    "cfpb_dim_disputed.not_disputed_complaints_rate": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_disputed",
+			          "ConceptualEntity": "cfpb fact_complaints",
 			          "ConceptualProperty": "Not Disputed Complaints Rate"
 			        }
 			      },
@@ -5234,7 +5146,7 @@ cultureInfo en-GB
 			    "cfpb_dim_disputed.disputed_not_available_complaints_rate": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_disputed",
+			          "ConceptualEntity": "cfpb fact_complaints",
 			          "ConceptualProperty": "Disputed Not Available Complaints Rate"
 			        }
 			      },
@@ -7030,141 +6942,6 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_dim_zip_code.zip_code_key": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_zip_code",
-			          "ConceptualProperty": "zip_code_key"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "zip code key": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "zip_code_key": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "key": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "code key": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "zip id key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "id key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "zip key key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "key key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "location key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.548
-			          }
-			        },
-			        {
-			          "postcode key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.548
-			          }
-			        },
-			        {
-			          "post code key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.537
-			          }
-			        },
-			        {
-			          "zip code solution": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "zip code explanation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "zip code basis": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        }
-			      ]
-			    },
 			    "cfpb_dim_company_response": {
 			      "Definition": {
 			        "Binding": {
@@ -8008,7 +7785,7 @@ cultureInfo en-GB
 			    "cfpb_dim_company_response.monetary_relief_complaints": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_company_response",
+			          "ConceptualEntity": "cfpb fact_complaints",
 			          "ConceptualProperty": "Monetary Relief Complaints"
 			        }
 			      },
@@ -9037,39 +8814,6 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_dim_zip_code_has_zip_code_key": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb dim_zip_code"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_dim_zip_code": {
-			          "Target": {
-			            "Entity": "cfpb_dim_zip_code"
-			          }
-			        },
-			        "cfpb_dim_zip_code.zip_code_key": {
-			          "Target": {
-			            "Entity": "cfpb_dim_zip_code.zip_code_key"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_dim_zip_code"
-			            },
-			            "Object": {
-			              "Role": "cfpb_dim_zip_code.zip_code_key"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_zip_codes_have_zip_code_keys"
-			        }
-			      ]
-			    },
 			    "cfpb_dim_tag_has_tag_name": {
 			      "Binding": {
 			        "ConceptualEntity": "cfpb dim_tag"
@@ -9994,39 +9738,6 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_dim_zip_code_has_zip_code": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb dim_zip_code"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_dim_zip_code": {
-			          "Target": {
-			            "Entity": "cfpb_dim_zip_code"
-			          }
-			        },
-			        "cfpb_dim_zip_code.zip_code": {
-			          "Target": {
-			            "Entity": "cfpb_dim_zip_code.zip_code"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_dim_zip_code"
-			            },
-			            "Object": {
-			              "Role": "cfpb_dim_zip_code.zip_code"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_zip_codes_have_zip_codes"
-			        }
-			      ]
-			    },
 			    "cfpb_dim_sub_product_has_sub_product_name": {
 			      "Binding": {
 			        "ConceptualEntity": "cfpb dim_sub_product"
@@ -10720,51 +10431,6 @@ cultureInfo en-GB
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "cfpb_dim_states_are_in_state_names"
-			        }
-			      ]
-			    },
-			    "cfpb_dim_zip_code_in_zip_code": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb dim_zip_code"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_dim_zip_code": {
-			          "Target": {
-			            "Entity": "cfpb_dim_zip_code"
-			          }
-			        },
-			        "cfpb_dim_zip_code.zip_code": {
-			          "Target": {
-			            "Entity": "cfpb_dim_zip_code.zip_code"
-			          }
-			        }
-			      },
-			      "SemanticSlots": {
-			        "Where": {
-			          "Role": "cfpb_dim_zip_code.zip_code"
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "cfpb_dim_zip_code"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "cfpb_dim_zip_code.zip_code"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_zip_codes_are_in_zip_codes"
 			        }
 			      ]
 			    },

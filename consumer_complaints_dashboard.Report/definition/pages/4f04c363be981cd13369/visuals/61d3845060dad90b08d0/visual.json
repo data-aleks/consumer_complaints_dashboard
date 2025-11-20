@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "71bcf5af560c41100b03",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "61d3845060dad90b08d0",
   "position": {
-    "x": 32,
-    "y": 32,
-    "z": 1000,
-    "height": 47.999999999999993,
-    "width": 672
+    "x": 32.333333333333258,
+    "y": 31.111111111111086,
+    "z": 2000,
+    "height": 48,
+    "width": 345.80000000000007,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "textbox",
@@ -18,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "5 Companies With Highest Complaint Share",
+                    "value": "Complaints Volume",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "20pt"
@@ -61,5 +62,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "e1dd20130457bb03e020"
+  "parentGroupName": "b0a0e8c0b799300c841a"
 }

@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 143.8177423002694,
-        "y": 0
+        "x": 143.1957276678591,
+        "y": 51.01823094107317
       },
       "nodes": [
         {
@@ -163,19 +163,6 @@
             "width": 234
           },
           "zIndex": 12
-        },
-        {
-          "location": {
-            "x": 162.79433298852564,
-            "y": 155.17189317185137
-          },
-          "nodeIndex": "cfpb dim_zip_code",
-          "nodeLineageTag": "961af87a-671f-4c7c-a4f5-c9dd06ac0497",
-          "size": {
-            "height": 128,
-            "width": 234
-          },
-          "zIndex": 13
         },
         {
           "location": {

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "bad034a9f4106916216e",
   "position": {
     "x": 32,
@@ -7,7 +7,7 @@
     "z": 500,
     "height": 288,
     "width": 784,
-    "tabOrder": 1000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "barChart",
@@ -41,7 +41,7 @@
                     "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "cfpb dim_company_response"
+                          "Entity": "cfpb fact_complaints"
                         }
                       },
                       "Property": "Monetary Relief Complaints"
@@ -53,7 +53,7 @@
                         "Measure": {
                           "Expression": {
                             "SourceRef": {
-                              "Entity": "cfpb dim_company_response"
+                              "Entity": "cfpb fact_complaints"
                             }
                           },
                           "Property": "Monetary Relief Complaints"
@@ -80,7 +80,7 @@
                   "Measure": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "cfpb dim_company_response"
+                        "Entity": "cfpb fact_complaints"
                       }
                     },
                     "Property": "Monetary Relief Complaints"
@@ -92,7 +92,7 @@
                       "Measure": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "cfpb dim_company_response"
+                            "Entity": "cfpb fact_complaints"
                           }
                         },
                         "Property": "Monetary Relief Complaints"
@@ -361,8 +361,8 @@
                         "Type": 0
                       },
                       {
-                        "Name": "c",
-                        "Entity": "cfpb dim_company_response",
+                        "Name": "c1",
+                        "Entity": "cfpb fact_complaints",
                         "Type": 0
                       }
                     ],
@@ -386,7 +386,7 @@
                           "Measure": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "c"
+                                "Source": "c1"
                               }
                             },
                             "Property": "Monetary Relief Complaints"

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "4b8c1baacbaa03469cd8",
   "position": {
     "x": 32,
@@ -42,11 +42,11 @@
                       "Entity": "cfpb dim_origin"
                     }
                   },
-                  "Property": "origin_method"
+                  "Property": "origin_category"
                 }
               },
-              "queryRef": "cfpb dim_origin.origin_method",
-              "nativeQueryRef": "origin_method"
+              "queryRef": "cfpb dim_origin.origin_category",
+              "nativeQueryRef": "origin_category"
             }
           ]
         },
@@ -157,26 +157,6 @@
           }
         }
       ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#205E61'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "cfpb fact_complaints.Complaints"
-          }
-        }
-      ],
       "legend": [
         {
           "properties": {
@@ -208,6 +188,90 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#205E61'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "cfpb dim_origin"
+                          }
+                        },
+                        "Property": "origin_category"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Web Channel'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4A9782'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "cfpb dim_origin"
+                          }
+                        },
+                        "Property": "origin_category"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'All Other Channels'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       ]

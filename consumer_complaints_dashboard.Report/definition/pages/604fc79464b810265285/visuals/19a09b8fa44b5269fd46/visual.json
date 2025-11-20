@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "19a09b8fa44b5269fd46",
   "position": {
     "x": 32,
     "y": 80,
     "z": 2000,
     "height": 704,
-    "width": 784.00000000000011
+    "width": 784.00000000000011,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -105,7 +106,7 @@
                     "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "cfpb dim_company_response"
+                          "Entity": "cfpb fact_complaints"
                         }
                       },
                       "Property": "Monetary Relief Complaints"
@@ -117,7 +118,7 @@
                         "Measure": {
                           "Expression": {
                             "SourceRef": {
-                              "Entity": "cfpb dim_company_response"
+                              "Entity": "cfpb fact_complaints"
                             }
                           },
                           "Property": "Monetary Relief Complaints"
@@ -332,8 +333,21 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#205E61'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
                     }
                   }
                 }
@@ -432,8 +446,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#90D1CA'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
                     }
                   }
                 }
@@ -443,8 +458,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#90D1CA'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
                     }
                   }
                 }
@@ -470,11 +486,18 @@
                         }
                       },
                       "FillRule": {
-                        "linearGradient2": {
+                        "linearGradient3": {
                           "min": {
                             "color": {
                               "Literal": {
-                                "Value": "'#90D1CA'"
+                                "Value": "'#FFFFFF'"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#E66C37'"
                               }
                             }
                           },
@@ -493,7 +516,7 @@
                             },
                             "color": {
                               "Literal": {
-                                "Value": "'#90D1CA'"
+                                "Value": "'#FFFFFF'"
                               }
                             }
                           }
@@ -534,11 +557,18 @@
                         }
                       },
                       "FillRule": {
-                        "linearGradient2": {
+                        "linearGradient3": {
                           "min": {
                             "color": {
                               "Literal": {
-                                "Value": "'#90D1CA'"
+                                "Value": "'#FFFFFF'"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#E66C37'"
                               }
                             }
                           },
@@ -557,7 +587,7 @@
                             },
                             "color": {
                               "Literal": {
-                                "Value": "'#90D1CA'"
+                                "Value": "'#FFFFFF'"
                               }
                             }
                           }
@@ -591,18 +621,25 @@
                         "Measure": {
                           "Expression": {
                             "SourceRef": {
-                              "Entity": "cfpb dim_company_response"
+                              "Entity": "cfpb fact_complaints"
                             }
                           },
                           "Property": "Monetary Relief Complaints"
                         }
                       },
                       "FillRule": {
-                        "linearGradient2": {
+                        "linearGradient3": {
                           "min": {
                             "color": {
                               "Literal": {
-                                "Value": "'#90D1CA'"
+                                "Value": "'#FFFFFF'"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#E66C37'"
                               }
                             }
                           },
@@ -621,7 +658,7 @@
                             },
                             "color": {
                               "Literal": {
-                                "Value": "'#90D1CA'"
+                                "Value": "'#FFFFFF'"
                               }
                             }
                           }
@@ -662,11 +699,18 @@
                         }
                       },
                       "FillRule": {
-                        "linearGradient2": {
+                        "linearGradient3": {
                           "min": {
                             "color": {
                               "Literal": {
-                                "Value": "'#90D1CA'"
+                                "Value": "'#FFFFFF'"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#E66C37'"
                               }
                             }
                           },
@@ -685,7 +729,7 @@
                             },
                             "color": {
                               "Literal": {
-                                "Value": "'#90D1CA'"
+                                "Value": "'#FFFFFF'"
                               }
                             }
                           }
@@ -737,8 +781,21 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#205E61'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
                     }
                   }
                 }
@@ -843,7 +900,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
