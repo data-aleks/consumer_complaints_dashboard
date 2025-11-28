@@ -2,7 +2,7 @@
 -- Inserts new, cleaned records from the staging table into the cleaned table.
 -- It only inserts records that have been cleaned but not yet inserted.
 -- It also performs necessary type conversions during insertion.
-INSERT INTO consumer_complaints_cleaned (
+INSERT IGNORE INTO consumer_complaints_cleaned (
     date_received, date_sent_to_company, timely_response,
     product, product_standardized,
     sub_product, sub_product_standardized,
@@ -19,16 +19,12 @@ INSERT INTO consumer_complaints_cleaned (
     complaint_id, ingestion_date, source_file_name
 )
 SELECT
-    STR_TO_DATE(s.date_received, '%%Y-%%m-%%d'),
-    STR_TO_DATE(s.date_sent_to_company, '%%Y-%%m-%%d'),
-    CASE WHEN UPPER(TRIM(s.timely_response)) = 'YES' THEN 1 WHEN UPPER(TRIM(s.timely_response)) = 'NO' THEN 0 ELSE NULL END,
+    s.date_received,
+    s.date_sent_to_company,
+    s.timely_response, -- This value is already standardized to '1' or '0' by the cleaning script.
     s.product, s.product_standardized, s.sub_product, s.sub_product_standardized, s.issue, s.issue_standardized, s.sub_issue, s.sub_issue_standardized,
     s.consumer_complaint_narrative, s.company_public_response, s.company_public_response_standardized, s.company, s.state_code, s.zip_code,
     s.tags, s.tags_standardized, s.consumer_consent_provided, s.consumer_consent_provided_standardized, s.submitted_via,
     s.company_response_to_consumer, s.company_response_to_consumer_standardized, s.consumer_disputed, s.consumer_disputed_standardized,
     s.complaint_id, s.ingestion_date, s.source_file_name
-FROM consumer_complaints_staging s
-WHERE
-    s.cleaned_timestamp IS NOT NULL
-    AND NOT EXISTS (SELECT 1 FROM consumer_complaints_cleaned c WHERE c.complaint_id = s.complaint_id)
-{limit_clause};
+FROM {staging_table} s

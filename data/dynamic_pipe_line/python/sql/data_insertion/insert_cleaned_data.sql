@@ -18,8 +18,14 @@ INSERT INTO consumer_complaints_cleaned (
     complaint_id, ingestion_date, source_file_name
 )
 SELECT
-    STR_TO_DATE(s.date_received, '%%Y-%%m-%%d'),
-    STR_TO_DATE(s.date_sent_to_company, '%%Y-%%m-%%d'),
+    -- Use a CASE statement to safely parse dates. If the format is invalid, insert NULL instead of erroring.
+    -- The REGEXP checks for a YYYY-MM-DD format.
+    CASE WHEN s.date_received REGEXP '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' 
+         THEN STR_TO_DATE(s.date_received, '%%Y-%%m-%%d') 
+         ELSE NULL END,
+    CASE WHEN s.date_sent_to_company REGEXP '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' 
+         THEN STR_TO_DATE(s.date_sent_to_company, '%%Y-%%m-%%d') 
+         ELSE NULL END,
     CASE WHEN UPPER(TRIM(s.timely_response)) = 'YES' THEN 1 WHEN UPPER(TRIM(s.timely_response)) = 'NO' THEN 0 ELSE NULL END,
     s.product, s.product_standardized, s.sub_product, s.sub_product_standardized, s.issue, s.issue_standardized, s.sub_issue, s.sub_issue_standardized,
     s.consumer_complaint_narrative, s.company_public_response, s.company_public_response_standardized, s.company, s.state_code, s.zip_code,

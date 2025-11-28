@@ -1,21 +1,29 @@
+"""
+Main entry point and orchestrator for the Consumer Complaints ETL pipeline.
+
+This script manages the execution of the entire ETL process. It handles:
+- Parsing command-line arguments to control pipeline execution.
+- Loading database credentials from a secure environment file.
+- Creating a pooled database connection engine for performance.
+- Orchestrating the execution of the ingestion, processing, and modeling steps.
+- Centralized timing and logging for each pipeline stage.
+"""
 import logging
 import sys
 import time
 import argparse
-from sqlalchemy import create_engine, inspect
+from sqlalchemy import create_engine
+from datetime import datetime
 from sqlalchemy.pool import QueuePool
-from dotenv import load_dotenv
 import os
-
-# === Import pipeline modules ===
 import dynamic_pipeline_data_ingestion as ingestion
-import dynamic_pipeline_data_clean as cleaning
-import dynamic_pipeline_data_insert as data_insert  # ✅ NEW
-from pipeline_logger import log_db
-from pipeline_utils import execute_sql_file
+import dynamic_pipeline_process_and_insert as process_and_insert
+from pipeline_logger import log_db, setup_logging
+from pipeline_utils import ensure_tables_exist, ensure_indexes_exist
 import dynamic_pipeline_data_modeling as modeling
+from dotenv import load_dotenv
 
-# === Load DB config ===
+# Load database configuration from a .env file for security and portability.
 load_dotenv(dotenv_path=".db_config.env")
 db_user = os.getenv("DB_USER")
 db_password = os.getenv("DB_PASSWORD")
@@ -23,36 +31,43 @@ db_host = os.getenv("DB_HOST")
 db_port = os.getenv("DB_PORT")
 db_name = os.getenv("DB_NAME")
 connection_string = f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+
+# --- Database Engine and Connection Pool Configuration ---
+# A connection pool is used to manage database connections efficiently, reducing the
+# overhead of establishing a new connection for every database operation.
+POOL_SIZE = 5
+MAX_OVERFLOW = 10
+POOL_TIMEOUT = 30
+POOL_RECYCLE_SECONDS = 3600
+
 engine = create_engine(
     connection_string,
+    connect_args={"local_infile": 1},
     poolclass=QueuePool,
-    pool_size=5,
-    max_overflow=10,
-    pool_pre_ping=True,  # Verify connections before using
-    pool_recycle=3600,   # Recycle connections after 1 hour
+    pool_size=POOL_SIZE,
+    max_overflow=MAX_OVERFLOW,
+    pool_pre_ping=True,  # Checks connection validity before use, preventing errors from stale connections.
+    pool_recycle=POOL_RECYCLE_SECONDS,  # Automatically replaces connections after 1 hour to prevent timeouts.
+    pool_timeout=POOL_TIMEOUT,  # Max time to wait for a connection from the pool.
+    pool_reset_on_return='rollback',  # Ensures transactions are rolled back when a connection is returned.
     echo=False
 )
 
-# === Logging setup ===
-log_file = "pipeline_run.log"
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[
-        logging.FileHandler(log_file, encoding='utf-8'),
-        logging.StreamHandler(sys.stdout) # StreamHandler uses stdout's encoding
-    ]
-)
-
-# === Duration tracker ===
+# Initialize the centralized logging system.
+setup_logging()
 step_durations = {}
 
-# === CLI argument parser ===
 def parse_args():
+    """
+    Configures and parses command-line arguments for controlling the pipeline.
+
+    Returns:
+        argparse.Namespace: An object containing the parsed command-line arguments.
+    """
     parser = argparse.ArgumentParser(description="Run CFPB ETL pipeline")
     parser.add_argument(
         "--step",
-        choices=["all", "ingest", "clean", "insert", "model"],  # ✅ UPDATED
+        choices=["all", "ingest", "process", "model"],
         default="all",
         help="Which pipeline step to run"
     )
@@ -62,152 +77,83 @@ def parse_args():
         default=None,
         help="Limit the number of records to ingest (for development)."
     )
+    parser.add_argument(
+        "--batch_size",
+        type=int,
+        default=100000,
+        help="Set the batch size for processing steps like staging and cleaning."
+    )
+    parser.add_argument(
+        "--skip-setup",
+        action="store_true",
+        help="Skip the initial database setup and migration checks for faster execution."
+    )
     return parser.parse_args()
 
-# === Timed execution wrapper ===
 def timed_step(label, func):
+    """
+    A decorator-like function that wraps a pipeline step to time its execution.
+
+    Args:
+        label (str): The name of the step, used for logging.
+        func (callable): The function representing the pipeline step to execute.
+    """
+    logging.info(f"--- {label} started ---")
     start = time.time()
-    logging.info(f"{label} started")
     func()
     duration = round(time.time() - start, 2)
     step_durations[label] = duration
-    logging.info(f"{label} completed in {duration} seconds")
+    logging.info(f"--- {label} completed in {duration} seconds ---")
 
-# === Schema migration for metadata table ===
-def ensure_metadata_schema():
-    inspector = inspect(engine)
-    columns = [col['name'] for col in inspector.get_columns('ingestion_metadata')]
-    if 'last_modified_date' not in columns:
-        logging.info("Adding 'last_modified_date' to 'ingestion_metadata' table...")
-        try:
-            with engine.connect() as conn:
-                conn.exec_driver_sql("ALTER TABLE ingestion_metadata ADD COLUMN last_modified_date DATETIME NULL;")
-            logging.info("Column 'last_modified_date' added.")
-        except Exception as e:
-            logging.error(f"Failed to add 'last_modified_date' column: {e}", exc_info=True)
-            sys.exit(1)
-
-def run_migrations():
+def initial_setup():
     """
-    A simple migration runner to add new columns if they don't exist.
+    Ensures all database tables, indexes, and schema migrations are in place.
+    Called once at the start of the pipeline run unless skipped.
     """
-    inspector = inspect(engine)
-    
-    # Migration for cleaned_timestamp
-    columns_raw = [col['name'] for col in inspector.get_columns('consumer_complaints_raw')]
-    if 'cleaned_timestamp' not in columns_raw:
-        if not execute_sql_file(engine, os.path.join("sql", "data_insertion", "add_cleaned_timestamp.sql"), "Migration: add_cleaned_timestamp"):
-            sys.exit(1)
+    logging.info("Starting database initial setup and migration check...")
+    ensure_tables_exist(engine)
+    ensure_indexes_exist(engine)
+    logging.info("Database setup and migration check complete.")
 
-    # Migration for modeling_timestamp
-    columns_cleaned = [col['name'] for col in inspector.get_columns('consumer_complaints_cleaned')]
-    if 'modeling_timestamp' not in columns_cleaned:
-        if not execute_sql_file(engine, os.path.join("sql", "data_insertion", "add_modeling_timestamp.sql"), "Migration: add_modeling_timestamp"):
-            sys.exit(1)
+def run_pipeline(step, limit=None, batch_size=100000, skip_setup=False):
+    """
+    The main orchestrator for the ETL pipeline.
 
-
-# === Run setup scripts if tables are missing ===
-def ensure_tables_and_indexes():
-    inspector = inspect(engine)
-    existing_tables = inspector.get_table_names()
-
-    setup_scripts = {
-        "consumer_complaints_staging": os.path.join("sql", "setup", "create_staging_data_table.sql"),
-        "consumer_complaints_raw": os.path.join("sql", "setup", "create_raw_data_table.sql"),
-        "consumer_complaints_cleaned": os.path.join("sql", "setup", "create_cleaned_data_table.sql"),
-        "ingestion_metadata": os.path.join("sql", "setup", "create_ingestion_metadata_table.sql"),
-        "pipeline_logs": os.path.join("sql", "setup", "create_pipeline_logs_table.sql"),
-        "datamodel_tables": os.path.join("sql", "setup", "create_datamodel_tables.sql") # Add model tables to setup
-    }
-
-    for table, script_path in setup_scripts.items():
-        if table not in existing_tables:
-            logging.info(f"Creating missing table: {table}")
-            if not execute_sql_file(engine, script_path, f"Create table: {table}"):
-                logging.error(f"Failed to create table {table}, exiting.")
-                sys.exit(1)
-        # Special case for datamodel_tables which is a script with many tables
-        elif table == "datamodel_tables":
-            logging.info("Ensuring data model tables exist...")
-            if not execute_sql_file(engine, script_path, "Create/Verify Data Model Tables"):
-                logging.error("Failed to create/verify data model tables, exiting.")
-                sys.exit(1)
-        else:
-            logging.info(f"Table exists: {table}")
-
-    # Run migrations now that we are sure the tables exist.
-    # This will add columns like 'cleaned_timestamp' if they are missing.
-    run_migrations()
-
-    # === Refactored Programmatic Index Creation ===
+    Args:
+        step (str): The pipeline step to run ('all', 'ingest', 'process', 'model').
+        limit (int, optional): Limits the number of records to process.
+        batch_size (int, optional): The size of batches for processing steps.
+        skip_setup (bool): If True, skips the initial database setup checks.
+    """
+    pipeline_start_time = time.time()
+    pipeline_succeeded = False
     try:
-        with engine.begin() as conn:
-            # Define all indexes that should exist in a structured way
-            indexes_to_ensure = {
-                'consumer_complaints_raw': {
-                    'idx_raw_complaint_id': 'complaint_id',
-                    'idx_raw_cleaned_timestamp': 'cleaned_timestamp' # Performance index
-                },
-                'consumer_complaints_staging': {
-                    'idx_staging_complaint_id': 'complaint_id',
-                    'idx_staging_cleaned_timestamp': 'cleaned_timestamp' # Performance index
-                },
-                'consumer_complaints_cleaned': {
-                    'idx_cleaned_complaint_id': 'complaint_id',
-                    'idx_cleaned_modeling_timestamp': 'modeling_timestamp' # Performance index
-                },
-            }
+        if not skip_setup:
+            timed_step("Initial DB Setup", initial_setup)
 
-            for table_name, indexes in indexes_to_ensure.items():
-                existing_indexes = [idx['name'] for idx in inspector.get_indexes(table_name)]
-                for index_name, column_name in indexes.items():
-                    if index_name not in existing_indexes:
-                        logging.info(f"Creating index '{index_name}' on table '{table_name}'...")
-                        conn.exec_driver_sql(f"CREATE INDEX {index_name} ON {table_name}({column_name});")
-                        logging.info(f"Created index: {index_name}")
-                    else:
-                        logging.info(f"Index already exists: {index_name}")
-
-    except Exception as e:
-        logging.error(f"Failed to create indexes: {e}", exc_info=True)
-        sys.exit(1)
-
-# === Main pipeline runner ===
-def run_pipeline(step, limit=None): # No changes here, just for context
-    try:
         if step in ["all", "ingest"]:
-            ensure_tables_and_indexes()
-            ensure_metadata_schema() # Check and update metadata table schema
-            timed_step("Data Ingestion", lambda: ingestion.run(engine, limit=limit))
-        
-        if step in ["all", "clean"]:
-            # New Staging Step: Move data from raw to staging before cleaning
-            logging.info("Staging data for cleaning...")
-            if not execute_sql_file(engine, os.path.join("sql", "data_insertion", "stage_raw_data.sql"), "Stage Raw Data", limit=limit):
-                raise Exception("Failed to stage data from raw to staging table.")
-            
-            timed_step("Data Cleaning", lambda: cleaning.run(engine, limit=limit))
-        
-        if step in ["all", "insert"]:
-            timed_step("Data Insert", lambda: data_insert.run(engine, limit=limit))
+            timed_step("Data Ingestion", lambda: ingestion.run(engine, limit=limit, batch_size=batch_size))
+
+        if step in ["all", "process"]:
+            timed_step("Process and Insert", lambda: process_and_insert.run(engine, limit=limit, batch_size=batch_size))
 
         if step in ["all", "model"]:
-            timed_step("Data Modeling", lambda: modeling.run(engine, limit=limit))
+            timed_step("Data Modeling", lambda: modeling.run(engine, limit=limit, batch_size=batch_size))
 
-        total_duration = sum(step_durations.values())
-        log_db(engine, "Pipeline", "SUCCESS", f"Pipeline completed successfully in {total_duration:.2f} seconds.", duration=total_duration, details=step_durations)
-
-        # Final summary
-        logging.info("\nPipeline Summary:")
-        for label, duration in step_durations.items():
-            logging.info(f"- {label}: {duration} seconds")
-
-    except Exception as e:
+        pipeline_succeeded = True
+    except BaseException as e:
         logging.error(f"Pipeline failed: {e}", exc_info=True)
-        log_db(engine, "Pipeline", "ERROR", f"Pipeline failed with error: {e}")
+        duration_on_fail = time.time() - pipeline_start_time
+        log_db(engine, "Pipeline", "ERROR", f"Pipeline failed with error: {e}", duration=duration_on_fail, details=step_durations)
         sys.exit(1)
+    finally:
+        if pipeline_succeeded:
+            total_duration = time.time() - pipeline_start_time
+            log_db(engine, "Pipeline", "SUCCESS", f"Pipeline completed successfully in {total_duration:.2f} seconds.", duration=total_duration, details=step_durations)
+            logging.info("\nPipeline Summary:")
+            for label, duration in step_durations.items():
+                logging.info(f"- {label}: {duration} seconds")
 
-# === Entry point ===
 if __name__ == "__main__":
     args = parse_args()
-    run_pipeline(args.step, args.limit)
+    run_pipeline(args.step, args.limit, args.batch_size, args.skip_setup)
