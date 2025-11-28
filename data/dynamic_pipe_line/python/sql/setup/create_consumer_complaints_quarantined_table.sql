@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS consumer_complaints_quarantined (
+    quarantine_id INT AUTO_INCREMENT PRIMARY KEY,
+    complaint_id VARCHAR(255),
+    date_received TEXT,
+    product TEXT,
+    sub_product TEXT,
+    issue TEXT,
+    sub_issue TEXT,
+    consumer_complaint_narrative TEXT,
+    company_public_response TEXT,
+    company TEXT,
+    state_code TEXT,
+    zip_code TEXT,
+    tags TEXT,
+    consumer_consent_provided TEXT,
+    submitted_via TEXT,
+    date_sent_to_company TEXT,
+    company_response_to_consumer TEXT,
+    timely_response TEXT,
+    consumer_disputed TEXT,
+    quarantine_reason VARCHAR(255),
+    quarantined_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

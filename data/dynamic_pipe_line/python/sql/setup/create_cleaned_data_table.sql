@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS consumer_complaints_cleaned (
     company_public_response TEXT,
     company VARCHAR(255),
     state_code VARCHAR(50),
-    zip_code VARCHAR(20), 
+    zip_code VARCHAR(10), 
     tags TEXT, -- Original value
     tags_standardized VARCHAR(255), -- Standardized category
     consumer_consent_provided VARCHAR(100), -- Original value
@@ -25,7 +25,6 @@ CREATE TABLE IF NOT EXISTS consumer_complaints_cleaned (
     consumer_disputed VARCHAR(100), -- Original value
     consumer_disputed_standardized VARCHAR(255), -- Standardized category
     company_public_response_standardized VARCHAR(255), -- Standardized category
-    complaint_id INT,
-    ingestion_date DATE,
-    source_file_name VARCHAR(255)
+    complaint_id INT PRIMARY KEY,    
+    content_hash VARCHAR(64)
 );
