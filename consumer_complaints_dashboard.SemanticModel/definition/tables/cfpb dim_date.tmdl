@@ -68,6 +68,103 @@ table 'cfpb dim_date'
 
 		annotation SummarizationSetBy = Automatic
 
+	column month_name
+		dataType: string
+		lineageTag: 33302670-558b-45fd-910a-0236829bb0cc
+		summarizeBy: none
+		sourceColumn: month_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_name
+		dataType: string
+		lineageTag: 8605fe15-b792-447c-9d13-125d6afad524
+		summarizeBy: none
+		sourceColumn: day_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_of_year
+		dataType: int64
+		formatString: 0
+		lineageTag: d7e32dc6-113f-4087-98c2-6ddf71623847
+		summarizeBy: none
+		sourceColumn: week_of_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 634976f6-8fef-4923-90dc-c8cd01a03769
+		summarizeBy: none
+		sourceColumn: day_of_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cb0aadeb-5568-4b8c-ac30-5fbdd9d2f41b
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_month_end
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6791e02d-80c4-4080-b9ff-55dcb5956796
+		summarizeBy: none
+		sourceColumn: is_month_end
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_quarter_end
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 71e1668a-a826-4bd8-bd9a-5f635456ed1e
+		summarizeBy: none
+		sourceColumn: is_quarter_end
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_year_end
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c23fc0b9-2df9-4c41-9669-5d5228ecc617
+		summarizeBy: none
+		sourceColumn: is_year_end
+
+		annotation SummarizationSetBy = Automatic
+
+	column fiscal_year
+		dataType: int64
+		formatString: 0
+		lineageTag: d5e7999d-da66-44f2-89bf-12458a3de64f
+		summarizeBy: none
+		sourceColumn: fiscal_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column fiscal_quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: d509ab14-c48e-4a1e-be07-2c29b33053f1
+		summarizeBy: none
+		sourceColumn: fiscal_quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column fiscal_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e539cf3-1d9a-4f3a-8044-4a9d8b1df326
+		summarizeBy: none
+		sourceColumn: fiscal_month
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'cfpb dim_date' = m
 		mode: import
 		source =
