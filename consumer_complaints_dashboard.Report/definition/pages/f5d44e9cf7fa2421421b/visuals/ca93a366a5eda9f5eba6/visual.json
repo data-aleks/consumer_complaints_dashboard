@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "ca93a366a5eda9f5eba6",
   "position": {
-    "x": 14,
-    "y": 9.3333333333333428,
+    "x": 32,
+    "y": 32,
     "z": 1000,
-    "height": 64,
-    "width": 512
+    "height": 48,
+    "width": 496,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "textbox",
@@ -18,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Complaints Consent",
+                    "value": "Reasons and Untimely Response Rate",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "28pt"
+                      "fontSize": "20pt"
                     }
                   }
                 ]

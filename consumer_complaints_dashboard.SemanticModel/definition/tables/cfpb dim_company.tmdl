@@ -24,9 +24,10 @@ table 'cfpb dim_company'
 				let
 				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true, CreateNavigationProperties=false]),
 				    cfpb_dim_company = Source{[Schema="cfpb",Item="dim_company"]}[Data],
-				    #"Filtered Rows" = Table.SelectRows(cfpb_dim_company, each true)
+				    #"Filtered Rows" = Table.SelectRows(cfpb_dim_company, each true),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Filtered Rows",{{"company_name", Text.Proper, type text}})
 				in
-				    #"Filtered Rows"
+				    #"Capitalized Each Word"
 
 	annotation PBI_NavigationStepName = Navigation
 

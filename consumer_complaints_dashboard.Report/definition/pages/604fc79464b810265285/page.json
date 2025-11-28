@@ -101,7 +101,7 @@
     {
       "source": "bad034a9f4106916216e",
       "target": "31c8de3221c0c0a013d2",
-      "type": "DataFilter"
+      "type": "NoFilter"
     },
     {
       "source": "31c8de3221c0c0a013d2",
@@ -111,7 +111,7 @@
     {
       "source": "31c8de3221c0c0a013d2",
       "target": "bad034a9f4106916216e",
-      "type": "DataFilter"
+      "type": "NoFilter"
     }
   ]
 }

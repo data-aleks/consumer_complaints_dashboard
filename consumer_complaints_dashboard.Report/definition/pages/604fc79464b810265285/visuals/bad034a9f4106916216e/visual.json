@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "bad034a9f4106916216e",
   "position": {
-    "x": 14,
-    "y": 78,
+    "x": 32,
+    "y": 80,
     "z": 500,
-    "height": 306,
-    "width": 820,
-    "tabOrder": 1000
+    "height": 288,
+    "width": 784,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "barChart",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "cfpb dim_sub_product"
+                      "Entity": "cfpb dim_company"
                     }
                   },
-                  "Property": "sub_product_name"
+                  "Property": "company_name"
                 }
               },
-              "queryRef": "cfpb dim_sub_product.sub_product_name",
-              "nativeQueryRef": "sub_product_name",
+              "queryRef": "cfpb dim_company.company_name",
+              "nativeQueryRef": "company_name",
               "active": true
             }
           ]
@@ -36,18 +36,37 @@
           "projections": [
             {
               "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "cfpb fact_complaints"
+                "Arithmetic": {
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb fact_complaints"
+                        }
+                      },
+                      "Property": "Monetary Relief Complaints"
                     }
                   },
-                  "Property": "Total_Complaints_Today"
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "cfpb fact_complaints"
+                            }
+                          },
+                          "Property": "Monetary Relief Complaints"
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
                 }
               },
-              "queryRef": "cfpb fact_complaints.Total_Complaints_Today",
-              "nativeQueryRef": "Total Complaints",
-              "displayName": "Total Complaints"
+              "queryRef": "cfpb dim_company_response.Monetary Relief Complaints",
+              "nativeQueryRef": "%GT Monetary Relief Complaints"
             }
           ]
         }
@@ -56,13 +75,33 @@
         "sort": [
           {
             "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "cfpb fact_complaints"
+              "Arithmetic": {
+                "Left": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "cfpb fact_complaints"
+                      }
+                    },
+                    "Property": "Monetary Relief Complaints"
                   }
                 },
-                "Property": "Total_Complaints_Today"
+                "Right": {
+                  "ScopedEval": {
+                    "Expression": {
+                      "Measure": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "cfpb fact_complaints"
+                          }
+                        },
+                        "Property": "Monetary Relief Complaints"
+                      }
+                    },
+                    "Scope": []
+                  }
+                },
+                "Operator": 3
               }
             },
             "direction": "Descending"
@@ -72,17 +111,6 @@
       }
     },
     "objects": {
-      "layout": [
-        {
-          "properties": {}
-        },
-        {
-          "properties": {},
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
       "categoryAxis": [
         {
           "properties": {
@@ -103,14 +131,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "10D"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Light'', wf_segoe-ui_light, helvetica, arial, sans-serif'"
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             },
@@ -154,6 +182,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -169,6 +204,40 @@
                       "Value": "'#205E61'"
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OutsideEnd'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -264,15 +333,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9652c693581d39932345",
+        "name": "2df1f5146ac0ea269670",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "cfpb dim_sub_product"
+                "Entity": "cfpb dim_company"
               }
             },
-            "Property": "sub_product_name"
+            "Property": "company_name"
           }
         },
         "type": "TopN",
@@ -287,12 +356,12 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "c2",
-                        "Entity": "cfpb dim_sub_product",
+                        "Name": "c3",
+                        "Entity": "cfpb dim_company",
                         "Type": 0
                       },
                       {
-                        "Name": "c",
+                        "Name": "c1",
                         "Entity": "cfpb fact_complaints",
                         "Type": 0
                       }
@@ -302,10 +371,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "c2"
+                              "Source": "c3"
                             }
                           },
-                          "Property": "sub_product_name"
+                          "Property": "company_name"
                         },
                         "Name": "field"
                       }
@@ -317,10 +386,10 @@
                           "Measure": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "c"
+                                "Source": "c1"
                               }
                             },
-                            "Property": "Complaints"
+                            "Property": "Monetary Relief Complaints"
                           }
                         }
                       }
@@ -332,8 +401,8 @@
               "Type": 2
             },
             {
-              "Name": "c2",
-              "Entity": "cfpb dim_sub_product",
+              "Name": "c3",
+              "Entity": "cfpb dim_company",
               "Type": 0
             }
           ],
@@ -346,10 +415,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "c2"
+                            "Source": "c3"
                           }
                         },
-                        "Property": "sub_product_name"
+                        "Property": "company_name"
                       }
                     }
                   ],
@@ -362,7 +431,8 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       }
     ]
   }

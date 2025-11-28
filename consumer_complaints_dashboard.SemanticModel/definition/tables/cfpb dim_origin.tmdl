@@ -18,6 +18,14 @@ table 'cfpb dim_origin'
 
 		annotation SummarizationSetBy = Automatic
 
+	column origin_category = ```
+			IF('cfpb dim_origin'[origin_method] = "Web", "Web Channel", "All Other Channels" ) 
+			```
+		lineageTag: 95d4e55e-ffb4-4a88-a7e6-a071e7f445b0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'cfpb dim_origin' = m
 		mode: import
 		source =

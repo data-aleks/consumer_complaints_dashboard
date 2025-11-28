@@ -120,35 +120,94 @@ table 'cfpb fact_complaints'
 		formatString: 0
 		lineageTag: 6b916ab6-c629-41b5-9be8-d065ef9674ee
 
-	measure Timely_Response_Rate =
+	measure 'Untimely Response Complaints' =
 			
-			VAR t = CALCULATE(
+			CALCULATE(
 			    DISTINCTCOUNT('cfpb fact_complaints'[complaint_id]),
-			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response] = TRUE())
+			    FILTER(
+			        'cfpb fact_complaints',
+			        'cfpb fact_complaints'[timely_response] = FALSE()
+			    )
 			)
-			VAR total = CALCULATE(
-			    DISTINCTCOUNT('cfpb fact_complaints'[complaint_id])
-			)
-			RETURN
-			DIVIDE(t, total, 0)
+		formatString: 0
+		displayFolder: [untimely response]
+		lineageTag: eb7418f0-caf9-4ffd-b53c-75257d5e0d93
+
+	measure 'Untimely Complaint Response Rate' =
+			
+			DIVIDE([Untimely Response Complaints], [Complaints], 0)
 		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: 1938fa06-398a-47c4-ba5f-80cc8d6bce2d
+		displayFolder: [untimely response]
+		lineageTag: 3e41d144-4850-4ea5-af85-3a560f179a63
 
-	measure 'Timely Response Complaints' =
-			CALCULATE(
-			    [Complaints],
-			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response] = TRUE())
-			)
-		formatString: 0
-		lineageTag: 560954c1-5034-4a93-8a66-ddcf6a3d5f05
+	measure 'Disputed Complaints Rate' = ```
+			
+			VAR c = [Complaints]
+			VAR cd = CALCULATE([Complaints], FILTER('cfpb dim_disputed', 'cfpb dim_disputed'[disputed_status] = "Yes"))
+			VAR cdr = DIVIDE(cd, c, 0)
+			RETURN 
+			    IF(ISBLANK(cdr), "N/A", cdr)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: [disputed]
+		lineageTag: 395e05ff-03db-4895-ae4c-ff49ba3f4d06
 
-	measure 'Not Timely Response Complaints' =
-			CALCULATE(
-			    [Complaints],
-			    FILTER('cfpb fact_complaints', 'cfpb fact_complaints'[timely_response] = FALSE())
-			)
+	measure 'Disputed Not Available Complaints Rate' = ```
+			
+			VAR c = [Complaints]
+			VAR cd = CALCULATE([Complaints], FILTER('cfpb dim_disputed', 'cfpb dim_disputed'[disputed_status] = "N/A"))
+			VAR cdr = DIVIDE(cd, c, 0)
+			RETURN 
+			    IF(ISBLANK(cdr), "N/A", cdr)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: [Disputed]
+		lineageTag: c8c00c65-88a3-45a1-a897-839f570bfb8b
+
+	measure 'Not Disputed Complaints Rate' = ```
+			
+			VAR c = [Complaints]
+			VAR cd = CALCULATE([Complaints], FILTER('cfpb dim_disputed', 'cfpb dim_disputed'[disputed_status] = "No"))
+			VAR cdr = DIVIDE(cd, c, 0)
+			RETURN 
+			    IF(ISBLANK(cdr), "N/A", cdr)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: [Disputed]
+		lineageTag: ecdfdce2-4381-4c43-9257-5a11285148ad
+
+	measure 'Monetary Relief Complaints' = CALCULATE(DISTINCTCOUNT('cfpb fact_complaints'[complaint_id]), FILTER('cfpb dim_company_response', 'cfpb dim_company_response'[response_description] = "Monetary Relief"))
 		formatString: 0
-		lineageTag: 412a8d3e-5018-44bd-98d8-028b2010c071
+		lineageTag: 9710cfc2-9098-4639-9283-5b42136a2767
+
+	measure 'General Segment' = CALCULATE([Complaints], FILTER('cfpb dim_tag', 'cfpb dim_tag'[tag_name] = "General"))
+		formatString: 0
+		displayFolder: [tag]
+		lineageTag: e66dc80f-201c-4240-86d0-ba4bf52b24ec
+
+	measure 'Special Segment' =
+			
+			VAR service_member = CALCULATE([Complaints], FILTER('cfpb dim_tag', 'cfpb dim_tag'[tag_name] = "Servicemember"))
+			VAR older_american = CALCULATE([Complaints], FILTER('cfpb dim_tag', 'cfpb dim_tag'[tag_name] = "Older American"))
+			VAR older_servicemember = CALCULATE([Complaints], FILTER('cfpb dim_tag', 'cfpb dim_tag'[tag_name] = "Older American & Servicemember"))
+			VAR special_segment = service_member + older_american + older_servicemember
+			RETURN
+			    special_segment
+		formatString: 0
+		displayFolder: [Tag]
+		lineageTag: 74594a28-eefd-4c26-bbb3-53490ad93ff4
+
+	measure 'All Other Channels' = ```
+			
+			VAR phone_origin = CALCULATE([Complaints], FILTER('cfpb dim_origin', 'cfpb dim_origin'[origin_method] = "Phone"))
+			VAR referral_origin= CALCULATE([Complaints], FILTER('cfpb dim_origin', 'cfpb dim_origin'[origin_method] = "Referral"))
+			VAR postal_mail = CALCULATE([Complaints], FILTER('cfpb dim_origin', 'cfpb dim_origin'[origin_method] = "Postal mail"))
+			VAR other_origin = phone_origin + referral_origin + postal_mail
+			RETURN 
+			    other_origin
+			```
+		formatString: 0
+		lineageTag: 0adbaedc-e291-44c8-b4d0-3f0f690ca0cd
 
 	column complaint_id
 		dataType: int64
@@ -244,7 +303,7 @@ table 'cfpb fact_complaints'
 		dataType: int64
 		formatString: 0
 		lineageTag: 68812a4b-1123-41b4-bd90-75c50dd33ed6
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: zip_code_key
 
 		annotation SummarizationSetBy = Automatic

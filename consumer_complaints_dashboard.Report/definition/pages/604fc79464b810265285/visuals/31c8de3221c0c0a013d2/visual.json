@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "31c8de3221c0c0a013d2",
   "position": {
-    "x": 13.139692025391803,
-    "y": 81.46486312239648,
+    "x": 32,
+    "y": 80,
     "z": 2000,
-    "height": 303.27464788732391,
-    "width": 819.19014084507035,
-    "tabOrder": 1000
+    "height": 288,
+    "width": 784,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "barChart",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "cfpb dim_sub_issue"
+                      "Entity": "cfpb dim_company"
                     }
                   },
-                  "Property": "sub_issue_name"
+                  "Property": "company_name"
                 }
               },
-              "queryRef": "cfpb dim_sub_issue.sub_issue_name",
-              "nativeQueryRef": "sub_issue_name",
+              "queryRef": "cfpb dim_company.company_name",
+              "nativeQueryRef": "company_name",
               "active": true
             }
           ]
@@ -36,17 +36,37 @@
           "projections": [
             {
               "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "cfpb fact_complaints"
+                "Arithmetic": {
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb fact_complaints"
+                        }
+                      },
+                      "Property": "Complaints"
                     }
                   },
-                  "Property": "Complaints"
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "cfpb fact_complaints"
+                            }
+                          },
+                          "Property": "Complaints"
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
                 }
               },
-              "queryRef": "cfpb fact_complaints.Complaints",
-              "nativeQueryRef": "Complaints"
+              "queryRef": "Divide(cfpb fact_complaints.Complaints, ScopedEval(cfpb fact_complaints.Complaints, []))",
+              "nativeQueryRef": "%GT Complaints"
             }
           ]
         }
@@ -55,13 +75,33 @@
         "sort": [
           {
             "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "cfpb fact_complaints"
+              "Arithmetic": {
+                "Left": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "cfpb fact_complaints"
+                      }
+                    },
+                    "Property": "Complaints"
                   }
                 },
-                "Property": "Complaints"
+                "Right": {
+                  "ScopedEval": {
+                    "Expression": {
+                      "Measure": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "cfpb fact_complaints"
+                          }
+                        },
+                        "Property": "Complaints"
+                      }
+                    },
+                    "Scope": []
+                  }
+                },
+                "Operator": 3
               }
             },
             "direction": "Descending"
@@ -94,6 +134,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -111,14 +158,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "10D"
                 }
               }
             },
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Light'', wf_segoe-ui_light, helvetica, arial, sans-serif'"
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             },
@@ -142,6 +189,31 @@
       "dataPoint": [
         {
           "properties": {
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#252423'"
+                    }
+                  }
+                }
+              }
+            },
+            "borderSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
             "fill": {
               "solid": {
                 "color": {
@@ -154,6 +226,18 @@
               }
             }
           }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ]
+          }
         }
       ],
       "ribbonBands": [
@@ -163,6 +247,40 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OutsideEnd'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -204,15 +322,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "b06d7ed205b8e7637fb9",
+        "name": "5e9b03e70ab517ba06e0",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "cfpb dim_sub_issue"
+                "Entity": "cfpb dim_company"
               }
             },
-            "Property": "sub_issue_name"
+            "Property": "company_name"
           }
         },
         "type": "TopN",
@@ -227,12 +345,12 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "c",
-                        "Entity": "cfpb dim_sub_issue",
+                        "Name": "c2",
+                        "Entity": "cfpb dim_company",
                         "Type": 0
                       },
                       {
-                        "Name": "c1",
+                        "Name": "c",
                         "Entity": "cfpb fact_complaints",
                         "Type": 0
                       }
@@ -242,10 +360,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "c"
+                              "Source": "c2"
                             }
                           },
-                          "Property": "sub_issue_name"
+                          "Property": "company_name"
                         },
                         "Name": "field"
                       }
@@ -257,7 +375,7 @@
                           "Measure": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "c1"
+                                "Source": "c"
                               }
                             },
                             "Property": "Complaints"
@@ -272,8 +390,8 @@
               "Type": 2
             },
             {
-              "Name": "c",
-              "Entity": "cfpb dim_sub_issue",
+              "Name": "c2",
+              "Entity": "cfpb dim_company",
               "Type": 0
             }
           ],
@@ -286,10 +404,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "c"
+                            "Source": "c2"
                           }
                         },
-                        "Property": "sub_issue_name"
+                        "Property": "company_name"
                       }
                     }
                   ],

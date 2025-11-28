@@ -1,16 +1,17 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "789758ddbb3298315818",
   "position": {
-    "x": 1064,
-    "y": 136,
-    "z": 7000,
+    "x": 192,
+    "y": 554,
+    "z": 3000,
     "height": 400,
-    "width": 848,
-    "tabOrder": 2000
+    "width": 848.33333333333337,
+    "tabOrder": 3000
   },
   "visualGroup": {
     "displayName": "dashboard_section",
     "groupMode": "ScaleMode"
-  }
+  },
+  "isHidden": true
 }

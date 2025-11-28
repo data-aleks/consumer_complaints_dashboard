@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "01a4f39a0d9d43bab932",
+  "position": {
+    "x": 191.66666666666669,
+    "y": 135,
+    "z": 6000,
+    "height": 400,
+    "width": 411.66666666666669,
+    "tabOrder": 7000
+  },
+  "visualGroup": {
+    "displayName": "dashboard_section",
+    "groupMode": "ScaleMode"
+  }
+}
