@@ -18,11 +18,35 @@ table 'cfpb dim_state'
 
 		annotation SummarizationSetBy = Automatic
 
+	column state_name
+		dataType: string
+		lineageTag: 31a3e40e-e69a-4755-942a-4be41bb16a0a
+		summarizeBy: none
+		sourceColumn: state_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code
+		dataType: string
+		lineageTag: 0374815c-a48c-4037-9625-e2e1f8895122
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name
+		dataType: string
+		lineageTag: 6335110f-3122-4cc1-bc5c-36e12d03c0b5
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'cfpb dim_state' = m
 		mode: import
 		source =
 				let
-				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true, CreateNavigationProperties=false]),
 				    cfpb_dim_state = Source{[Schema="cfpb",Item="dim_state"]}[Data]
 				in
 				    cfpb_dim_state

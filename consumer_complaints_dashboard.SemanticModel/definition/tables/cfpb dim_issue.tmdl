@@ -22,7 +22,7 @@ table 'cfpb dim_issue'
 		mode: import
 		source =
 				let
-				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true, CreateNavigationProperties=false]),
 				    cfpb_dim_issue = Source{[Schema="cfpb",Item="dim_issue"]}[Data]
 				in
 				    cfpb_dim_issue

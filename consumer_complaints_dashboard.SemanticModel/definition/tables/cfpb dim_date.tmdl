@@ -72,7 +72,7 @@ table 'cfpb dim_date'
 		mode: import
 		source =
 				let
-				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true, CreateNavigationProperties=false]),
 				    cfpb_dim_date = Source{[Schema="cfpb",Item="dim_date"]}[Data],
 				    #"Sorted Rows" = Table.Sort(cfpb_dim_date,{{"full_date", Order.Descending}}),
 				    #"Filtered Rows" = Table.SelectRows(#"Sorted Rows", each true)

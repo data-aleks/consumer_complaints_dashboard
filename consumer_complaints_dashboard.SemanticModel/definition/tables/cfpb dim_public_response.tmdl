@@ -22,7 +22,7 @@ table 'cfpb dim_public_response'
 		mode: import
 		source =
 				let
-				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true, CreateNavigationProperties=false]),
 				    cfpb_dim_public_response = Source{[Schema="cfpb",Item="dim_public_response"]}[Data]
 				in
 				    cfpb_dim_public_response
