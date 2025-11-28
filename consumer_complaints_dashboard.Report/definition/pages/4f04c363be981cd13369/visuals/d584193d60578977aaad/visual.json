@@ -149,7 +149,7 @@
                 "content": {
                   "expr": {
                     "ResourcePackageItem": {
-                      "PackageName": "SharedResources",
+                      "PackageName": "ShapeMap",
                       "PackageType": 2,
                       "ItemName": "usa.states.topo"
                     }
@@ -201,6 +201,19 @@
               }
             },
             "defaultShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "autoZoom": {
               "expr": {
                 "Literal": {
                   "Value": "true"
