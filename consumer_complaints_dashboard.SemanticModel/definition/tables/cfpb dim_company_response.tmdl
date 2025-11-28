@@ -1,10 +1,6 @@
 table 'cfpb dim_company_response'
 	lineageTag: f5bbc4a7-5c51-4048-ac73-734cd26d9688
 
-	measure 'Monetary Relief Complaints' = CALCULATE(DISTINCTCOUNT('cfpb fact_complaints'[complaint_id]), FILTER('cfpb dim_company_response', 'cfpb dim_company_response'[response_description] = "Monetary Relief"))
-		formatString: 0
-		lineageTag: 9710cfc2-9098-4639-9283-5b42136a2767
-
 	column response_key
 		dataType: int64
 		formatString: 0

@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "30f8eaaad91322497ca7",
   "position": {
-    "x": 14,
-    "y": 9.3333333333333428,
+    "x": 32,
+    "y": 32,
     "z": 1000,
-    "height": 64,
+    "height": 48,
     "width": 512,
     "tabOrder": 3000
   },
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Complaints Over Time",
+                    "value": "Complaints Over by Channel Time",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "28pt"
+                      "fontSize": "20pt"
                     }
                   }
                 ]

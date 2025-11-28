@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "5c8e2a9abb098eaed340",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "d584193d60578977aaad",
   "position": {
-    "x": 10,
-    "y": 88.333333333333343,
+    "x": 32,
+    "y": 80,
     "z": 2000,
-    "height": 303.33333333333337,
-    "width": 821.66666666666674
+    "height": 288,
+    "width": 784,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "shapeMap",
@@ -40,27 +41,56 @@
                       "Entity": "cfpb fact_complaints"
                     }
                   },
-                  "Property": "Complaints"
+                  "Property": "Untimely Complaint Response Rate"
                 }
               },
-              "queryRef": "cfpb fact_complaints.Complaints",
-              "nativeQueryRef": "Complaints"
+              "queryRef": "cfpb fact_complaints.Untimely Complaint Response Rate",
+              "nativeQueryRef": "Untimely Complaint Response Rate"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "cfpb fact_complaints"
+                  }
+                },
+                "Property": "Untimely Complaint Response Rate"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
       "dataPoint": [
         {
           "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#205E61'"
+                    }
+                  }
+                }
+              }
+            },
             "fillRule": {
               "linearGradient3": {
                 "min": {
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'#CDF5F7'"
+                        "Value": "'#62D8DD'"
                       }
                     }
                   }
@@ -69,7 +99,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'#E66C37'"
+                        "Value": "'#4A9782'"
                       }
                     }
                   }
@@ -119,7 +149,7 @@
                 "content": {
                   "expr": {
                     "ResourcePackageItem": {
-                      "PackageName": "SharedResources",
+                      "PackageName": "ShapeMap",
                       "PackageType": 2,
                       "ItemName": "usa.states.topo"
                     }
@@ -140,7 +170,50 @@
       "defaultColors": [
         {
           "properties": {
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#252423'"
+                    }
+                  }
+                }
+              }
+            },
+            "borderThickness": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "defaultColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
             "defaultShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "autoZoom": {
               "expr": {
                 "Literal": {
                   "Value": "true"
@@ -181,37 +254,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "6b8c2900236cbe70c326",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c6536ffdd60c3503007a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb dim_state"
-              }
-            },
-            "Property": "state_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "288ff49e040d934d978d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb fact_complaints"
-              }
-            },
-            "Property": "Complaints"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "d6d79758347832e50ba0"
 }

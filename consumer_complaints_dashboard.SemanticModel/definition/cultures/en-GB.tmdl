@@ -195,16 +195,6 @@ cultureInfo en-GB
 			            },
 			            "Weight": 0.591
 			          }
-			        },
-			        {
-			          "Total Complaints": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -1424,16 +1414,6 @@ cultureInfo en-GB
 			            },
 			            "Weight": 0.582
 			          }
-			        },
-			        {
-			          "country code": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
 			        }
 			      ]
 			    },
@@ -1628,94 +1608,6 @@ cultureInfo en-GB
 			        {
 			          "cfpb dim_tag": {
 			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "cfpb_dim_zip_code": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_zip_code"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "cfpb dim_zip_code": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "cfpb_dim_zip_code.zip_code": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_zip_code",
-			          "ConceptualProperty": "zip_code"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "zip code": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "zip_code": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "zip id": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "zip key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "location": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.54
-			          }
-			        },
-			        {
-			          "postcode": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.54
-			          }
-			        },
-			        {
-			          "post code": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.524
 			          }
 			        }
 			      ]
@@ -5010,7 +4902,7 @@ cultureInfo en-GB
 			    "cfpb_dim_disputed.disputed_complaints_rate": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_disputed",
+			          "ConceptualEntity": "cfpb fact_complaints",
 			          "ConceptualProperty": "Disputed Complaints Rate"
 			        }
 			      },
@@ -5138,7 +5030,7 @@ cultureInfo en-GB
 			    "cfpb_dim_disputed.not_disputed_complaints_rate": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_disputed",
+			          "ConceptualEntity": "cfpb fact_complaints",
 			          "ConceptualProperty": "Not Disputed Complaints Rate"
 			        }
 			      },
@@ -5254,7 +5146,7 @@ cultureInfo en-GB
 			    "cfpb_dim_disputed.disputed_not_available_complaints_rate": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_disputed",
+			          "ConceptualEntity": "cfpb fact_complaints",
 			          "ConceptualProperty": "Disputed Not Available Complaints Rate"
 			        }
 			      },
@@ -7050,141 +6942,6 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_dim_zip_code.zip_code_key": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "cfpb dim_zip_code",
-			          "ConceptualProperty": "zip_code_key"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "zip code key": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "zip_code_key": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "key": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "code key": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "zip id key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "id key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "zip key key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "key key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "location key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.548
-			          }
-			        },
-			        {
-			          "postcode key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.548
-			          }
-			        },
-			        {
-			          "post code key": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.537
-			          }
-			        },
-			        {
-			          "zip code solution": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "zip code explanation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "zip code basis": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        }
-			      ]
-			    },
 			    "cfpb_dim_company_response": {
 			      "Definition": {
 			        "Binding": {
@@ -7457,9 +7214,1020 @@ cultureInfo en-GB
 			          }
 			        }
 			      ]
+			    },
+			    "cfpb_fact_complaint.untimely_response_complaints": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb fact_complaints",
+			          "ConceptualProperty": "Untimely Response Complaints"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "untimely response complaints": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "response complaints": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "untimely response grievance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "untimely response criticism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "untimely response objection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "response grievance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "response criticism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "response objection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "untimely response protest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "untimely response grumble": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "untimely response moan": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "response protest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint.untimely_complaint_response_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb fact_complaints",
+			          "ConceptualProperty": "Untimely Complaint Response Rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "untimely complaint response rate": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "rate": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "response rate": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "complaint response rate": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "untimely complaint response degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "untimely complaint response frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "untimely complaint response percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "untimely complaint response ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "untimely complaint response quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "complaint response degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "complaint response frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "complaint response percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "complaint response ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "complaint response quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "Untimely Response Rate (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_state.state_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_state",
+			          "ConceptualProperty": "state_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "state name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "state_name": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "state": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "province": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "territory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "nation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "state nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "state title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "state label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "state tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "condition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "location name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_state.country_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_state",
+			          "ConceptualProperty": "country_code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "country code": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "country_code": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "country id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "country key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "nation code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "location code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_state.country_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_state",
+			          "ConceptualProperty": "country_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "country name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "country_name": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "country": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "nation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "country nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "country title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "country label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "country tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "nation name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "location name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_company_response.monetary_relief_complaints": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb fact_complaints",
+			          "ConceptualProperty": "Monetary Relief Complaints"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "monetary relief complaints": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "relief complaints": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "monetary relief grievance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "monetary relief criticism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "monetary relief objection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "relief grievance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "relief criticism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "relief objection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "monetary relief protest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "monetary relief grumble": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "monetary relief moan": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "relief protest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "cfpb_fact_complaint_has_cfpb_dim_public_response": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_dim_public_response": {
+			          "Target": {
+			            "Entity": "cfpb_dim_public_response"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_public_response"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_cfpb_dim_public_responses"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_public_response"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_public_responses_have_cfpb_fact_complaints"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_cfpb_dim_company_response": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_dim_company_response": {
+			          "Target": {
+			            "Entity": "cfpb_dim_company_response"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_company_response"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_cfpb_dim_company_responses"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_company_response"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_company_responses_have_cfpb_fact_complaints"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_cfpb_dim_date": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_cfpb_dim_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_dates_have_cfpb_fact_complaints"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_cfpb_dim_disputed": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_dim_disputed": {
+			          "Target": {
+			            "Entity": "cfpb_dim_disputed"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_disputed"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_cfpb_dim_disputeds"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_disputed"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_disputeds_have_cfpb_fact_complaints"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_cfpb_dim_tag": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_dim_tag": {
+			          "Target": {
+			            "Entity": "cfpb_dim_tag"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_tag"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_cfpb_dim_tags"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_tag"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_tags_have_cfpb_fact_complaints"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_cfpb_dim_consent": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_dim_consent": {
+			          "Target": {
+			            "Entity": "cfpb_dim_consent"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_consent"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_cfpb_dim_consents"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_consent"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_consents_have_cfpb_fact_complaints"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_cfpb_dim_origin": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_dim_origin": {
+			          "Target": {
+			            "Entity": "cfpb_dim_origin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_origin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_cfpb_dim_origins"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_origin"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_origins_have_cfpb_fact_complaints"
+			        }
+			      ]
+			    },
 			    "cfpb_fact_complaint_has_cfpb_dim_zip_code": {
 			      "Binding": {
 			        "ConceptualEntity": "cfpb fact_complaints"
@@ -7782,6 +8550,204 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
+			    "cfpb_fact_complaint_has_cfpb_dim_company_response_monetary_relief_complaints": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_dim_company_response.monetary_relief_complaints": {
+			          "Target": {
+			            "Entity": "cfpb_dim_company_response.monetary_relief_complaints"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_company_response.monetary_relief_complaints"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_monetary_relief_complaints"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_state_has_country_name": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_state"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_state": {
+			          "Target": {
+			            "Entity": "cfpb_dim_state"
+			          }
+			        },
+			        "cfpb_dim_state.country_name": {
+			          "Target": {
+			            "Entity": "cfpb_dim_state.country_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_state"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_state.country_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_states_have_country_names"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_state_has_country_code": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_state"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_state": {
+			          "Target": {
+			            "Entity": "cfpb_dim_state"
+			          }
+			        },
+			        "cfpb_dim_state.country_code": {
+			          "Target": {
+			            "Entity": "cfpb_dim_state.country_code"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_state"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_state.country_code"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_states_have_country_codes"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_state_has_state_name": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_state"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_state": {
+			          "Target": {
+			            "Entity": "cfpb_dim_state"
+			          }
+			        },
+			        "cfpb_dim_state.state_name": {
+			          "Target": {
+			            "Entity": "cfpb_dim_state.state_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_state"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_state.state_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_states_have_state_names"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_untimely_complaint_response_rate": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_fact_complaint.untimely_complaint_response_rate": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint.untimely_complaint_response_rate"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint.untimely_complaint_response_rate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_untimely_complaint_response_rate"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_untimely_response_complaints": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_fact_complaint.untimely_response_complaints": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint.untimely_response_complaints"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint.untimely_response_complaints"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_untimely_response_complaints"
+			        }
+			      ]
+			    },
 			    "cfpb_dim_company_response_has_response_description": {
 			      "Binding": {
 			        "ConceptualEntity": "cfpb dim_company_response"
@@ -7845,39 +8811,6 @@ cultureInfo en-GB
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "cfpb_dim_company_responses_have_response_keys"
-			        }
-			      ]
-			    },
-			    "cfpb_dim_zip_code_has_zip_code_key": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb dim_zip_code"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_dim_zip_code": {
-			          "Target": {
-			            "Entity": "cfpb_dim_zip_code"
-			          }
-			        },
-			        "cfpb_dim_zip_code.zip_code_key": {
-			          "Target": {
-			            "Entity": "cfpb_dim_zip_code.zip_code_key"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_dim_zip_code"
-			            },
-			            "Object": {
-			              "Role": "cfpb_dim_zip_code.zip_code_key"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_zip_codes_have_zip_code_keys"
 			        }
 			      ]
 			    },
@@ -8673,105 +9606,6 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_fact_complaint_has_not_timely_response_complaints": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb fact_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_fact_complaint": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint"
-			          }
-			        },
-			        "cfpb_fact_complaint.not_timely_response_complaints": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint.not_timely_response_complaints"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_fact_complaint"
-			            },
-			            "Object": {
-			              "Role": "cfpb_fact_complaint.not_timely_response_complaints"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_fact_complaints_have_not_timely_response_complaints"
-			        }
-			      ]
-			    },
-			    "cfpb_fact_complaint_has_timely_response_complaints": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb fact_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_fact_complaint": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint"
-			          }
-			        },
-			        "cfpb_fact_complaint.timely_response_complaints": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint.timely_response_complaints"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_fact_complaint"
-			            },
-			            "Object": {
-			              "Role": "cfpb_fact_complaint.timely_response_complaints"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_fact_complaints_have_timely_response_complaints"
-			        }
-			      ]
-			    },
-			    "cfpb_fact_complaint_has_timely_response_rate": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb fact_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_fact_complaint": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint"
-			          }
-			        },
-			        "cfpb_fact_complaint.timely_response_rate": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint.timely_response_rate"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_fact_complaint"
-			            },
-			            "Object": {
-			              "Role": "cfpb_fact_complaint.timely_response_rate"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_fact_complaints_have_timely_response_rate"
-			        }
-			      ]
-			    },
 			    "cfpb_fact_complaint_has_complaints": {
 			      "Binding": {
 			        "ConceptualEntity": "cfpb fact_complaints"
@@ -8901,39 +9735,6 @@ cultureInfo en-GB
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "cfpb_fact_complaints_have_complaint_fact_keys"
-			        }
-			      ]
-			    },
-			    "cfpb_dim_zip_code_has_zip_code": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb dim_zip_code"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_dim_zip_code": {
-			          "Target": {
-			            "Entity": "cfpb_dim_zip_code"
-			          }
-			        },
-			        "cfpb_dim_zip_code.zip_code": {
-			          "Target": {
-			            "Entity": "cfpb_dim_zip_code.zip_code"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_dim_zip_code"
-			            },
-			            "Object": {
-			              "Role": "cfpb_dim_zip_code.zip_code"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_zip_codes_have_zip_codes"
 			        }
 			      ]
 			    },
@@ -9498,33 +10299,33 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_dim_zip_code_in_zip_code": {
+			    "cfpb_dim_state_in_country_name": {
 			      "Binding": {
-			        "ConceptualEntity": "cfpb dim_zip_code"
+			        "ConceptualEntity": "cfpb dim_state"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "cfpb_dim_zip_code": {
+			        "cfpb_dim_state": {
 			          "Target": {
-			            "Entity": "cfpb_dim_zip_code"
+			            "Entity": "cfpb_dim_state"
 			          }
 			        },
-			        "cfpb_dim_zip_code.zip_code": {
+			        "cfpb_dim_state.country_name": {
 			          "Target": {
-			            "Entity": "cfpb_dim_zip_code.zip_code"
+			            "Entity": "cfpb_dim_state.country_name"
 			          }
 			        }
 			      },
 			      "SemanticSlots": {
 			        "Where": {
-			          "Role": "cfpb_dim_zip_code.zip_code"
+			          "Role": "cfpb_dim_state.country_name"
 			        }
 			      },
 			      "Phrasings": [
 			        {
 			          "Preposition": {
 			            "Subject": {
-			              "Role": "cfpb_dim_zip_code"
+			              "Role": "cfpb_dim_state"
 			            },
 			            "Prepositions": [
 			              {
@@ -9534,12 +10335,102 @@ cultureInfo en-GB
 			              }
 			            ],
 			            "Object": {
-			              "Role": "cfpb_dim_zip_code.zip_code"
+			              "Role": "cfpb_dim_state.country_name"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "cfpb_dim_zip_codes_are_in_zip_codes"
+			          "ID": "cfpb_dim_states_are_in_country_names"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_state_in_country_code": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_state"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_state": {
+			          "Target": {
+			            "Entity": "cfpb_dim_state"
+			          }
+			        },
+			        "cfpb_dim_state.country_code": {
+			          "Target": {
+			            "Entity": "cfpb_dim_state.country_code"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "cfpb_dim_state.country_code"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "cfpb_dim_state"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "cfpb_dim_state.country_code"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_states_are_in_country_codes"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_state_in_state_name": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_state"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_state": {
+			          "Target": {
+			            "Entity": "cfpb_dim_state"
+			          }
+			        },
+			        "cfpb_dim_state.state_name": {
+			          "Target": {
+			            "Entity": "cfpb_dim_state.state_name"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "cfpb_dim_state.state_name"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "cfpb_dim_state"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "cfpb_dim_state.state_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_states_are_in_state_names"
 			        }
 			      ]
 			    },
@@ -9585,328 +10476,6 @@ cultureInfo en-GB
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "cfpb_dim_states_are_in_state_codes"
-			        }
-			      ]
-			    },
-			    "cfpb_fact_complaint_has_cfpb_dim_origin": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb fact_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_fact_complaint": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint"
-			          }
-			        },
-			        "cfpb_dim_origin": {
-			          "Target": {
-			            "Entity": "cfpb_dim_origin"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_fact_complaint"
-			            },
-			            "Object": {
-			              "Role": "cfpb_dim_origin"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_fact_complaints_have_cfpb_dim_origins"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_dim_origin"
-			            },
-			            "Object": {
-			              "Role": "cfpb_fact_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_origins_have_cfpb_fact_complaints"
-			        }
-			      ]
-			    },
-			    "cfpb_fact_complaint_has_cfpb_dim_consent": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb fact_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_fact_complaint": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint"
-			          }
-			        },
-			        "cfpb_dim_consent": {
-			          "Target": {
-			            "Entity": "cfpb_dim_consent"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_fact_complaint"
-			            },
-			            "Object": {
-			              "Role": "cfpb_dim_consent"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_fact_complaints_have_cfpb_dim_consents"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_dim_consent"
-			            },
-			            "Object": {
-			              "Role": "cfpb_fact_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_consents_have_cfpb_fact_complaints"
-			        }
-			      ]
-			    },
-			    "cfpb_fact_complaint_has_cfpb_dim_tag": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb fact_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_fact_complaint": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint"
-			          }
-			        },
-			        "cfpb_dim_tag": {
-			          "Target": {
-			            "Entity": "cfpb_dim_tag"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_fact_complaint"
-			            },
-			            "Object": {
-			              "Role": "cfpb_dim_tag"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_fact_complaints_have_cfpb_dim_tags"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_dim_tag"
-			            },
-			            "Object": {
-			              "Role": "cfpb_fact_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_tags_have_cfpb_fact_complaints"
-			        }
-			      ]
-			    },
-			    "cfpb_fact_complaint_has_cfpb_dim_disputed": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb fact_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_fact_complaint": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint"
-			          }
-			        },
-			        "cfpb_dim_disputed": {
-			          "Target": {
-			            "Entity": "cfpb_dim_disputed"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_fact_complaint"
-			            },
-			            "Object": {
-			              "Role": "cfpb_dim_disputed"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_fact_complaints_have_cfpb_dim_disputeds"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_dim_disputed"
-			            },
-			            "Object": {
-			              "Role": "cfpb_fact_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_disputeds_have_cfpb_fact_complaints"
-			        }
-			      ]
-			    },
-			    "cfpb_fact_complaint_has_cfpb_dim_date": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb fact_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_fact_complaint": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint"
-			          }
-			        },
-			        "cfpb_dim_date": {
-			          "Target": {
-			            "Entity": "cfpb_dim_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_fact_complaint"
-			            },
-			            "Object": {
-			              "Role": "cfpb_dim_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_fact_complaints_have_cfpb_dim_dates"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_dim_date"
-			            },
-			            "Object": {
-			              "Role": "cfpb_fact_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_dates_have_cfpb_fact_complaints"
-			        }
-			      ]
-			    },
-			    "cfpb_fact_complaint_has_cfpb_dim_company_response": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb fact_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_fact_complaint": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint"
-			          }
-			        },
-			        "cfpb_dim_company_response": {
-			          "Target": {
-			            "Entity": "cfpb_dim_company_response"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_fact_complaint"
-			            },
-			            "Object": {
-			              "Role": "cfpb_dim_company_response"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_fact_complaints_have_cfpb_dim_company_responses"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_dim_company_response"
-			            },
-			            "Object": {
-			              "Role": "cfpb_fact_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_company_responses_have_cfpb_fact_complaints"
-			        }
-			      ]
-			    },
-			    "cfpb_fact_complaint_has_cfpb_dim_public_response": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb fact_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_fact_complaint": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint"
-			          }
-			        },
-			        "cfpb_dim_public_response": {
-			          "Target": {
-			            "Entity": "cfpb_dim_public_response"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_fact_complaint"
-			            },
-			            "Object": {
-			              "Role": "cfpb_dim_public_response"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_fact_complaints_have_cfpb_dim_public_responses"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_dim_public_response"
-			            },
-			            "Object": {
-			              "Role": "cfpb_fact_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_public_responses_have_cfpb_fact_complaints"
 			        }
 			      ]
 			    }
