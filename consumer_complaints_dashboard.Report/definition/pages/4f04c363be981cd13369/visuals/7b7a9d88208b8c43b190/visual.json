@@ -302,6 +302,20 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "valueFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "cfpb fact_complaints.Complaints"
+          }
         }
       ]
     },

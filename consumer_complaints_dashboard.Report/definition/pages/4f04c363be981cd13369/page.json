@@ -81,5 +81,27 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "d584193d60578977aaad",
+      "target": "1de8cf6ebe832c052c0c",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d584193d60578977aaad",
+      "target": "029d6663ba880b44cb65",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d584193d60578977aaad",
+      "target": "f0644e4db1cd0022094d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "1de8cf6ebe832c052c0c",
+      "target": "029d6663ba880b44cb65",
+      "type": "DataFilter"
+    }
+  ]
 }

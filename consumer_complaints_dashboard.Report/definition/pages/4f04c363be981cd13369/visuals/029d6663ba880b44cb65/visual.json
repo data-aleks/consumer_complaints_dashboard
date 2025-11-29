@@ -433,6 +433,54 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "6bea6503621d606880c1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "cfpb dim_company"
+              }
+            },
+            "Property": "company_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "dc9d38eadb12beceb301",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "cfpb fact_complaints"
+                  }
+                },
+                "Property": "Monetary Relief Complaints"
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "cfpb fact_complaints"
+                      }
+                    },
+                    "Property": "Monetary Relief Complaints"
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
