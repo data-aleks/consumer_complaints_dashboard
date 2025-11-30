@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 288,
     "width": 345.80000000000007,
-    "tabOrder": 1000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "donutChart",
@@ -278,6 +278,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'2e9fc1fa7ced193d0cac'"
                 }
               }
             }

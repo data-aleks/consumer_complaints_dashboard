@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "89009d8c8ab69b1a4acc",
+  "name": "bf67be92d7701d34e699",
   "position": {
-    "x": 32,
-    "y": 80,
-    "z": 2000,
-    "height": 288,
-    "width": 784,
-    "tabOrder": 2000
+    "x": 12,
+    "y": 32,
+    "z": 0,
+    "height": 191,
+    "width": 295,
+    "tabOrder": 0
   },
   "visual": {
-    "visualType": "barChart",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -27,46 +27,23 @@
                 }
               },
               "queryRef": "cfpb dim_product.product_name",
-              "nativeQueryRef": "product_name",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
+              "nativeQueryRef": "Products",
+              "displayName": "Products"
+            },
             {
               "field": {
-                "Arithmetic": {
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "cfpb fact_complaints"
-                        }
-                      },
-                      "Property": "Complaints"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cfpb fact_complaints"
                     }
                   },
-                  "Right": {
-                    "ScopedEval": {
-                      "Expression": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "cfpb fact_complaints"
-                            }
-                          },
-                          "Property": "Complaints"
-                        }
-                      },
-                      "Scope": []
-                    }
-                  },
-                  "Operator": 3
+                  "Property": "Untimely Complaint Response Rate"
                 }
               },
-              "queryRef": "cfpb fact_complaints.Complaints",
-              "nativeQueryRef": "%GT Complaints"
+              "queryRef": "cfpb fact_complaints.Untimely Complaint Response Rate",
+              "nativeQueryRef": "Untimely Response Rate",
+              "displayName": "Untimely Response Rate"
             }
           ]
         }
@@ -75,90 +52,63 @@
         "sort": [
           {
             "field": {
-              "Arithmetic": {
-                "Left": {
-                  "Measure": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "cfpb fact_complaints"
-                      }
-                    },
-                    "Property": "Complaints"
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "cfpb fact_complaints"
                   }
                 },
-                "Right": {
-                  "ScopedEval": {
-                    "Expression": {
-                      "Measure": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "cfpb fact_complaints"
-                          }
-                        },
-                        "Property": "Complaints"
-                      }
-                    },
-                    "Scope": []
-                  }
-                },
-                "Operator": 3
+                "Property": "Untimely Complaint Response Rate"
               }
             },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {
-      "valueAxis": [
+      "general": [
+        {
+          "properties": {}
+        }
+      ],
+      "columnWidth": [
         {
           "properties": {
-            "showAxisTitle": {
+            "value": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "gridlineShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Light'', wf_segoe-ui_light, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "90D"
                 }
               }
             }
+          },
+          "selector": {
+            "metadata": "cfpb fact_complaints.Untimely Complaint Response Rate"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "191D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "cfpb dim_product.product_name"
           }
         }
       ],
-      "categoryAxis": [
+      "values": [
         {
           "properties": {
-            "showAxisTitle": {
+            "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "8D"
                 }
               }
             },
@@ -169,93 +119,36 @@
                 }
               }
             },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "maxMarginFactor": {
-              "expr": {
-                "Literal": {
-                  "Value": "30L"
-                }
-              }
-            },
-            "innerPadding": {
-              "expr": {
-                "Literal": {
-                  "Value": "5L"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#205E61'"
-                    }
-                  }
-                }
-              }
-            },
-            "borderShow": {
+            "wordWrap": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
-            },
-            "borderColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#252423'"
-                    }
-                  }
-                }
-              }
-            },
-            "borderSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "2D"
-                }
-              }
             }
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "cfpb fact_complaints.Untimely Complaint Response Rate"
           }
         }
       ],
-      "labels": [
+      "columnHeaders": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "labelPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "'OutsideEnd'"
-                }
-              }
-            },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "8D"
                 }
               }
             },
@@ -263,6 +156,39 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -271,13 +197,13 @@
       ]
     },
     "visualContainerObjects": {
-      "title": [
+      "stylePreset": [
         {
           "properties": {
-            "show": {
+            "name": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "'Minimal'"
                 }
               }
             }
@@ -293,6 +219,77 @@
                   "Value": "false"
                 }
               }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#90D1CA'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 5 Untimely Response Products'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Bold'', wf_segoe-ui_bold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
             }
           }
         }
@@ -300,11 +297,27 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "789758ddbb3298315818",
   "filterConfig": {
     "filters": [
       {
-        "name": "f56d48edaa50abc23178",
+        "name": "c8220472fb90a953c376",
+        "ordinal": 0,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "cfpb fact_complaints"
+              }
+            },
+            "Property": "Complaints"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "63ede5183378336c7512",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
@@ -360,7 +373,7 @@
                                 "Source": "c1"
                               }
                             },
-                            "Property": "Complaints"
+                            "Property": "Untimely Complaint Response Rate"
                           }
                         }
                       }
@@ -403,7 +416,24 @@
             }
           ]
         }
+      },
+      {
+        "name": "a2bf08d8151a9b5eb05f",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "cfpb dim_issue"
+              }
+            },
+            "Property": "issue_name"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }

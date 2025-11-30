@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "964c772d264058ee0a03",
   "position": {
-    "x": 31.989192840256674,
-    "y": 78.87772194304857,
+    "x": 31.962174940898347,
+    "y": 79.731993299832482,
     "z": 2000,
-    "height": 283.95979899497485,
-    "width": 783.7352245862885,
+    "height": 287.03517587939695,
+    "width": 783.07328605200951,
     "tabOrder": 1000
   },
   "visual": {
@@ -221,9 +221,54 @@
             }
           }
         }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'7d7a167050c6878eb934'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "7003a8501da0d796a3e5"
+  "parentGroupName": "7003a8501da0d796a3e5",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "531d196cb9ecca8ceea8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "cfpb dim_state"
+              }
+            },
+            "Property": "state_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6f437293b7e6e21d4c15",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "cfpb fact_complaints"
+              }
+            },
+            "Property": "Complaints"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

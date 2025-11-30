@@ -1,0 +1,80 @@
+table 'cfpb ingestion_metadata'
+	lineageTag: 974d295b-6b5b-46ae-9a90-69043e144c98
+
+	measure 'Latest Data Info' =
+			
+			VAR LatestDate =
+			    MAX ( 'cfpb ingestion_metadata'[ingested_at] )
+			
+			RETURN
+			    "Latest data from "
+			        & FORMAT ( LatestDate, "yyyy-MM-dd HH:mm:ss" )
+		lineageTag: deca6ae3-cb4e-41cb-9255-a6e2df5a462f
+
+	measure 'Data Source Link' =
+			
+			"https://www.consumerfinance.gov/data-research/consumer-complaints/"
+		lineageTag: 92a9e59f-921e-444d-ac07-99d50c2e5959
+		dataCategory: WebUrl
+
+	column source_file_name
+		dataType: string
+		lineageTag: a09380c9-d214-4f3a-aba6-9139e756a21a
+		summarizeBy: none
+		sourceColumn: source_file_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column file_hash
+		dataType: string
+		lineageTag: 1f5b9f09-29c1-4544-8c9a-f9d0ff9a7ce5
+		summarizeBy: none
+		sourceColumn: file_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column row_count
+		dataType: int64
+		formatString: 0
+		lineageTag: b8f4fc1b-c9ac-479d-bde3-9bc938a782ad
+		summarizeBy: sum
+		sourceColumn: row_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_complaint_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 45f3bda7-ab57-407d-aafa-42dad66210b5
+		summarizeBy: sum
+		sourceColumn: max_complaint_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ingested_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6d549333-f72e-4631-b459-d71832d2ee38
+		summarizeBy: none
+		sourceColumn: ingested_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_modified_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: aefc5c27-7233-404f-bb7b-7374475413ea
+		summarizeBy: none
+		sourceColumn: last_modified_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'cfpb ingestion_metadata' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost", "cfpb", [ReturnSingleDatabase=true]),
+				    cfpb_ingestion_metadata = Source{[Schema="cfpb",Item="ingestion_metadata"]}[Data]
+				in
+				    cfpb_ingestion_metadata
+

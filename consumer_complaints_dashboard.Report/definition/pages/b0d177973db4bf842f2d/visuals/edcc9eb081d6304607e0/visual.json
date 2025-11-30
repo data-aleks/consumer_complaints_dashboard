@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "edcc9eb081d6304607e0",
   "position": {
-    "x": 577.79220779220771,
-    "y": 327.14285714285705,
+    "x": 577.30420761670746,
+    "y": 330.6859205776172,
     "z": 2500,
-    "height": 35.454545454545453,
-    "width": 238.18181818181816,
-    "tabOrder": 6002
+    "height": 35.838529701345585,
+    "width": 237.98065110565108,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "textbox",
@@ -60,6 +60,21 @@
                 "horizontalTextAlignment": "center"
               }
             ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ]

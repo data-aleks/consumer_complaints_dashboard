@@ -680,6 +680,16 @@ cultureInfo en-GB
 			            },
 			            "Weight": 0.45
 			          }
+			        },
+			        {
+			          "Vs 30 Days": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1212,22 +1222,6 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "product": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "artifact": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
 			          "product nickname": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -1268,36 +1262,6 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "item": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "merchandise": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "produce": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
 			          "artifact name": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -1315,6 +1279,46 @@ cultureInfo en-GB
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "merchandise name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "produce name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "Product": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Products": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -1484,12 +1488,6 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "product": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "sub product": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -1546,16 +1544,6 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "artifact": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
 			          "sub item": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -1586,13 +1574,23 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "item": {
+			          "sub artifact name": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.714
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "sub item name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
 			          }
 			        }
 			      ]
@@ -2796,9 +2794,6 @@ cultureInfo en-GB
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "zip code key": {
@@ -4418,16 +4413,6 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "category": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
 			          "importance": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -4469,6 +4454,16 @@ cultureInfo en-GB
 			        },
 			        {
 			          "consent class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "consent grade": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4838,16 +4833,6 @@ cultureInfo en-GB
 			          }
 			        },
 			        {
-			          "category": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
 			          "importance": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -4896,10 +4881,20 @@ cultureInfo en-GB
 			            },
 			            "Weight": 0.727
 			          }
+			        },
+			        {
+			          "disputed grade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
 			        }
 			      ]
 			    },
-			    "cfpb_dim_disputed.disputed_complaints_rate": {
+			    "cfpb_fact_complaint.disputed_complaints_rate": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "cfpb fact_complaints",
@@ -5027,7 +5022,7 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_dim_disputed.not_disputed_complaints_rate": {
+			    "cfpb_fact_complaint.not_disputed_complaints_rate": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "cfpb fact_complaints",
@@ -5143,7 +5138,7 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_dim_disputed.disputed_not_available_complaints_rate": {
+			    "cfpb_fact_complaint.disputed_not_available_complaints_rate": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "cfpb fact_complaints",
@@ -6939,6 +6934,16 @@ cultureInfo en-GB
 			            },
 			            "Weight": 0.476
 			          }
+			        },
+			        {
+			          "Segment": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -7478,6 +7483,26 @@ cultureInfo en-GB
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Untimely Rate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Untimely Response Rate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -7782,7 +7807,7 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_dim_company_response.monetary_relief_complaints": {
+			    "cfpb_fact_complaint.monetary_relief_complaints": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "cfpb fact_complaints",
@@ -7900,6 +7925,2493 @@ cultureInfo en-GB
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "Complaints": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint.general_segment": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb fact_complaints",
+			          "ConceptualProperty": "General Segment"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "general segment": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "general division": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "general subdivision": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "general section": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "general sector": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "general bit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "general fragment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "general part": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "general piece": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "general portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "general slice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint.special_segment": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb fact_complaints",
+			          "ConceptualProperty": "Special Segment"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "special segment": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "special division": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "special subdivision": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "special section": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "special sector": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "special bit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "special fragment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "special part": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "special piece": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "special portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "special slice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint.all_other_channels": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb fact_complaints",
+			          "ConceptualProperty": "All Other Channels"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "all other channels": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "channels": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "other channels": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "all other frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "other frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "all other station": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "all other network": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "other station": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "other network": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "all other conduit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "all other waterway": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "station": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint.monetary_relief_complaint_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb fact_complaints",
+			          "ConceptualProperty": "Monetary Relief Complaint Rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "monetary relief complaint rate": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "rate": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "complaint rate": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "relief complaint rate": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "monetary relief complaint degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "monetary relief complaint frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "monetary relief complaint percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "monetary relief complaint ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "monetary relief complaint quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "relief complaint degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "relief complaint frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "relief complaint percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "relief complaint ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "relief complaint quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "Monetary Rate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date.month_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_date",
+			          "ConceptualProperty": "month_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month_name": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "month nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "month title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "month label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "month tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "mth name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date.day_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_date",
+			          "ConceptualProperty": "day_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day_name": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "day nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "day title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "day label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "day tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date.week_of_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_date",
+			          "ConceptualProperty": "week_of_year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "week of year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "week_of_year": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "week of yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date.day_of_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_date",
+			          "ConceptualProperty": "day_of_year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "day of year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day_of_year": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "day of yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date.is_weekend": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_date",
+			          "ConceptualProperty": "is_weekend"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is weekend": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "is_weekend": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "weekend": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date.is_month_end": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_date",
+			          "ConceptualProperty": "is_month_end"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is month end": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "is_month_end": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "end": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "month end": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "is month completion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "is month conclusion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "is month expiration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "month completion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "month conclusion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "month expiration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "is month close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "is month finish": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "is month last": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "is month stop": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date.is_quarter_end": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_date",
+			          "ConceptualProperty": "is_quarter_end"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is quarter end": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "is_quarter_end": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "end": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "quarter end": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "is quarter completion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "is quarter conclusion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "is quarter expiration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "quarter completion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "quarter conclusion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "quarter expiration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "is quarter close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "is quarter finish": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "is quarter last": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "is quarter stop": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date.is_year_end": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_date",
+			          "ConceptualProperty": "is_year_end"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is year end": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "is_year_end": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "end": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "year end": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "is year completion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "is year conclusion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "is year expiration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "year completion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "year conclusion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "year expiration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "is year close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "is year finish": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "is year last": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "is year stop": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date.fiscal_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_date",
+			          "ConceptualProperty": "fiscal_year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fiscal year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fiscal_year": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "fiscal yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "fisc year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "accounting year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "budget year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "fiscal date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "fiscal day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "tax year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "cfpb_dim_date.fiscal_quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_date",
+			          "ConceptualProperty": "fiscal_quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fiscal quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fiscal_quarter": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "fiscal qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.833
+			          }
+			        },
+			        {
+			          "fisc quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "fiscal qrt": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "fiscal qrtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date.fiscal_month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_date",
+			          "ConceptualProperty": "fiscal_month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fiscal month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fiscal_month": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "fiscal mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "fisc month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_origin.origin_category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_origin",
+			          "ConceptualProperty": "origin_category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "origin category": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "origin_category": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "category": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "origin classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "origin class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "origin group": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "origin type": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "origin grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "origin kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "type": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_dim_tag.tag_category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb dim_tag",
+			          "ConceptualProperty": "tag_category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tag category": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tag_category": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "category": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "tag classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "tag class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "tag group": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "tag type": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "tag grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "tag kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "type": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb ingestion_metadata"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cfpb ingestion_metadata": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata.source_file_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb ingestion_metadata",
+			          "ConceptualProperty": "source_file_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "source file name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "source_file_name": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "file": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "source file": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "file name": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "source file nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "source file title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "source file label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "source file tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "file nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "file title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "file label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "file tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "source folder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "source dossier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata.file_hash": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb ingestion_metadata",
+			          "ConceptualProperty": "file_hash"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "file hash": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "file_hash": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "hash": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "file confusion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "file hodge-podge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "file hodgepodge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "file hotchpotch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "confusion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "hodge-podge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "hodgepodge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "hotchpotch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "file muddle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "file mess": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata.row_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb ingestion_metadata",
+			          "ConceptualProperty": "row_count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "row count": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "row_count": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "row amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "line count": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata.max_complaint_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb ingestion_metadata",
+			          "ConceptualProperty": "max_complaint_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "max complaint id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "max_complaint_id": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "complaint": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max complaint": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max complaint identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "max complaint identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "max complaint identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "max complaint credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "maximum complaint id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "maximum complaint": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "max grievance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "max criticism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "max objection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "grievance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata.ingested_at": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb ingestion_metadata",
+			          "ConceptualProperty": "ingested_at"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ingested at": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ingested_at": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "cfpb_ingestion_metadata.last_modified_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb ingestion_metadata",
+			          "ConceptualProperty": "last_modified_date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "last modified date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "last_modified_date": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "last modified moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "last modified period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "end modified date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "final modified date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "closing modified date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "concluding modified date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "finishing modified date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "former modified date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "latest modified date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "latter modified date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "cfpb_ingestion_metadata.latest_data_info": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb ingestion_metadata",
+			          "ConceptualProperty": "Latest Data Info"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "latest data info": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "info": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "data info": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "latest information info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "latest fact info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "latest info info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "latest statistic info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "information info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "fact info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "info info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "statistic info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "latest document info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "latest figure info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata.data_source_link": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "cfpb ingestion_metadata",
+			          "ConceptualProperty": "Data Source Link"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data source link": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "link": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "source link": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "data origin link": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.615
+			          }
+			        },
+			        {
+			          "data resource link": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.615
+			          }
+			        },
+			        {
+			          "data src link": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.615
+			          }
+			        },
+			        {
+			          "data supplier link": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.615
+			          }
+			        },
+			        {
+			          "database source link": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.615
+			          }
+			        },
+			        {
+			          "information source link": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "fact source link": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "info source link": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "statistic source link": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "document source link": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
 			          }
 			        }
 			      ]
@@ -8228,52 +10740,6 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_fact_complaint_has_cfpb_dim_zip_code": {
-			      "Binding": {
-			        "ConceptualEntity": "cfpb fact_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "cfpb_fact_complaint": {
-			          "Target": {
-			            "Entity": "cfpb_fact_complaint"
-			          }
-			        },
-			        "cfpb_dim_zip_code": {
-			          "Target": {
-			            "Entity": "cfpb_dim_zip_code"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_fact_complaint"
-			            },
-			            "Object": {
-			              "Role": "cfpb_dim_zip_code"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_fact_complaints_have_cfpb_dim_zip_codes"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "cfpb_dim_zip_code"
-			            },
-			            "Object": {
-			              "Role": "cfpb_fact_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cfpb_dim_zip_codes_have_cfpb_fact_complaints"
-			        }
-			      ]
-			    },
 			    "cfpb_fact_complaint_has_cfpb_dim_state": {
 			      "Binding": {
 			        "ConceptualEntity": "cfpb fact_complaints"
@@ -8550,7 +11016,700 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_fact_complaint_has_cfpb_dim_company_response_monetary_relief_complaints": {
+			    "cfpb_ingestion_metadata_has_data_source_link": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb ingestion_metadata"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_ingestion_metadata": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata"
+			          }
+			        },
+			        "cfpb_ingestion_metadata.data_source_link": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata.data_source_link"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_ingestion_metadata"
+			            },
+			            "Object": {
+			              "Role": "cfpb_ingestion_metadata.data_source_link"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_ingestion_metadatas_have_data_source_link"
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata_has_latest_data_info": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb ingestion_metadata"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_ingestion_metadata": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata"
+			          }
+			        },
+			        "cfpb_ingestion_metadata.latest_data_info": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata.latest_data_info"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_ingestion_metadata"
+			            },
+			            "Object": {
+			              "Role": "cfpb_ingestion_metadata.latest_data_info"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_ingestion_metadatas_have_latest_data_info"
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata_has_last_modified_date": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb ingestion_metadata"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_ingestion_metadata": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata"
+			          }
+			        },
+			        "cfpb_ingestion_metadata.last_modified_date": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata.last_modified_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_ingestion_metadata"
+			            },
+			            "Object": {
+			              "Role": "cfpb_ingestion_metadata.last_modified_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_ingestion_metadatas_have_last_modified_dates"
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata_has_ingested_at": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb ingestion_metadata"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_ingestion_metadata": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata"
+			          }
+			        },
+			        "cfpb_ingestion_metadata.ingested_at": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata.ingested_at"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_ingestion_metadata"
+			            },
+			            "Object": {
+			              "Role": "cfpb_ingestion_metadata.ingested_at"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_ingestion_metadatas_have_ingested_at"
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata_has_max_complaint_id": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb ingestion_metadata"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_ingestion_metadata": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata"
+			          }
+			        },
+			        "cfpb_ingestion_metadata.max_complaint_id": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata.max_complaint_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_ingestion_metadata"
+			            },
+			            "Object": {
+			              "Role": "cfpb_ingestion_metadata.max_complaint_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_ingestion_metadatas_have_max_complaint_ids"
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata_has_row_count": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb ingestion_metadata"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_ingestion_metadata": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata"
+			          }
+			        },
+			        "cfpb_ingestion_metadata.row_count": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata.row_count"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_ingestion_metadata"
+			            },
+			            "Object": {
+			              "Role": "cfpb_ingestion_metadata.row_count"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_ingestion_metadatas_have_row_counts"
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata_has_file_hash": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb ingestion_metadata"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_ingestion_metadata": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata"
+			          }
+			        },
+			        "cfpb_ingestion_metadata.file_hash": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata.file_hash"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_ingestion_metadata"
+			            },
+			            "Object": {
+			              "Role": "cfpb_ingestion_metadata.file_hash"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_ingestion_metadatas_have_file_hashes"
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata_has_source_file_name": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb ingestion_metadata"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_ingestion_metadata": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata"
+			          }
+			        },
+			        "cfpb_ingestion_metadata.source_file_name": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata.source_file_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_ingestion_metadata"
+			            },
+			            "Object": {
+			              "Role": "cfpb_ingestion_metadata.source_file_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_ingestion_metadatas_have_source_file_names"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_tag_has_tag_category": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_tag"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_tag": {
+			          "Target": {
+			            "Entity": "cfpb_dim_tag"
+			          }
+			        },
+			        "cfpb_dim_tag.tag_category": {
+			          "Target": {
+			            "Entity": "cfpb_dim_tag.tag_category"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_tag"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_tag.tag_category"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_tags_have_tag_categories"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_origin_has_origin_category": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_origin"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_origin": {
+			          "Target": {
+			            "Entity": "cfpb_dim_origin"
+			          }
+			        },
+			        "cfpb_dim_origin.origin_category": {
+			          "Target": {
+			            "Entity": "cfpb_dim_origin.origin_category"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_origin"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_origin.origin_category"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_origins_have_origin_categories"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date_has_fiscal_month": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        },
+			        "cfpb_dim_date.fiscal_month": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date.fiscal_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_date.fiscal_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_dates_have_fiscal_months"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date_has_fiscal_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        },
+			        "cfpb_dim_date.fiscal_quarter": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date.fiscal_quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_date.fiscal_quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_dates_have_fiscal_quarters"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date_has_fiscal_year": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        },
+			        "cfpb_dim_date.fiscal_year": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date.fiscal_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_date.fiscal_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_dates_have_fiscal_years"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date_has_is_year_end": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        },
+			        "cfpb_dim_date.is_year_end": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date.is_year_end"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_date.is_year_end"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_dates_have_is_year_ends"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date_has_is_quarter_end": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        },
+			        "cfpb_dim_date.is_quarter_end": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date.is_quarter_end"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_date.is_quarter_end"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_dates_have_is_quarter_ends"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date_has_is_month_end": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        },
+			        "cfpb_dim_date.is_month_end": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date.is_month_end"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_date.is_month_end"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_dates_have_is_month_ends"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date_has_is_weekend": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        },
+			        "cfpb_dim_date.is_weekend": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date.is_weekend"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_date.is_weekend"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_dates_have_is_weekends"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date_has_day_of_year": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        },
+			        "cfpb_dim_date.day_of_year": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date.day_of_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_date.day_of_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_dates_have_day_of_year"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date_has_week_of_year": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        },
+			        "cfpb_dim_date.week_of_year": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date.week_of_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_date.week_of_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_dates_have_week_of_year"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date_has_day_name": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        },
+			        "cfpb_dim_date.day_name": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date.day_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_date.day_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_dates_have_day_names"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date_has_month_name": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        },
+			        "cfpb_dim_date.month_name": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date.month_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Object": {
+			              "Role": "cfpb_dim_date.month_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_dim_dates_have_month_names"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_monetary_relief_complaint_rate": {
 			      "Binding": {
 			        "ConceptualEntity": "cfpb fact_complaints"
 			      },
@@ -8561,9 +11720,9 @@ cultureInfo en-GB
 			            "Entity": "cfpb_fact_complaint"
 			          }
 			        },
-			        "cfpb_dim_company_response.monetary_relief_complaints": {
+			        "cfpb_fact_complaint.monetary_relief_complaint_rate": {
 			          "Target": {
-			            "Entity": "cfpb_dim_company_response.monetary_relief_complaints"
+			            "Entity": "cfpb_fact_complaint.monetary_relief_complaint_rate"
 			          }
 			        }
 			      },
@@ -8574,7 +11733,139 @@ cultureInfo en-GB
 			              "Role": "cfpb_fact_complaint"
 			            },
 			            "Object": {
-			              "Role": "cfpb_dim_company_response.monetary_relief_complaints"
+			              "Role": "cfpb_fact_complaint.monetary_relief_complaint_rate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_monetary_relief_complaint_rate"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_all_other_channels": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_fact_complaint.all_other_channels": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint.all_other_channels"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint.all_other_channels"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_all_other_channels"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_special_segment": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_fact_complaint.special_segment": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint.special_segment"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint.special_segment"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_special_segment"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_general_segment": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_fact_complaint.general_segment": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint.general_segment"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint.general_segment"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_general_segment"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_monetary_relief_complaints": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_fact_complaint.monetary_relief_complaints": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint.monetary_relief_complaints"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint.monetary_relief_complaints"
 			            }
 			          },
 			          "State": "Generated",
@@ -9243,7 +12534,7 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_fact_complaint_has_cfpb_dim_disputed_disputed_not_available_complaints_rate": {
+			    "cfpb_fact_complaint_has_disputed_not_available_complaints_rate": {
 			      "Binding": {
 			        "ConceptualEntity": "cfpb fact_complaints"
 			      },
@@ -9254,9 +12545,9 @@ cultureInfo en-GB
 			            "Entity": "cfpb_fact_complaint"
 			          }
 			        },
-			        "cfpb_dim_disputed.disputed_not_available_complaints_rate": {
+			        "cfpb_fact_complaint.disputed_not_available_complaints_rate": {
 			          "Target": {
-			            "Entity": "cfpb_dim_disputed.disputed_not_available_complaints_rate"
+			            "Entity": "cfpb_fact_complaint.disputed_not_available_complaints_rate"
 			          }
 			        }
 			      },
@@ -9267,7 +12558,7 @@ cultureInfo en-GB
 			              "Role": "cfpb_fact_complaint"
 			            },
 			            "Object": {
-			              "Role": "cfpb_dim_disputed.disputed_not_available_complaints_rate"
+			              "Role": "cfpb_fact_complaint.disputed_not_available_complaints_rate"
 			            }
 			          },
 			          "State": "Generated",
@@ -9276,7 +12567,7 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_fact_complaint_has_cfpb_dim_disputed_not_disputed_complaints_rate": {
+			    "cfpb_fact_complaint_has_not_disputed_complaints_rate": {
 			      "Binding": {
 			        "ConceptualEntity": "cfpb fact_complaints"
 			      },
@@ -9287,9 +12578,9 @@ cultureInfo en-GB
 			            "Entity": "cfpb_fact_complaint"
 			          }
 			        },
-			        "cfpb_dim_disputed.not_disputed_complaints_rate": {
+			        "cfpb_fact_complaint.not_disputed_complaints_rate": {
 			          "Target": {
-			            "Entity": "cfpb_dim_disputed.not_disputed_complaints_rate"
+			            "Entity": "cfpb_fact_complaint.not_disputed_complaints_rate"
 			          }
 			        }
 			      },
@@ -9300,7 +12591,7 @@ cultureInfo en-GB
 			              "Role": "cfpb_fact_complaint"
 			            },
 			            "Object": {
-			              "Role": "cfpb_dim_disputed.not_disputed_complaints_rate"
+			              "Role": "cfpb_fact_complaint.not_disputed_complaints_rate"
 			            }
 			          },
 			          "State": "Generated",
@@ -9309,7 +12600,7 @@ cultureInfo en-GB
 			        }
 			      ]
 			    },
-			    "cfpb_fact_complaint_has_cfpb_dim_disputed_disputed_complaints_rate": {
+			    "cfpb_fact_complaint_has_disputed_complaints_rate": {
 			      "Binding": {
 			        "ConceptualEntity": "cfpb fact_complaints"
 			      },
@@ -9320,9 +12611,9 @@ cultureInfo en-GB
 			            "Entity": "cfpb_fact_complaint"
 			          }
 			        },
-			        "cfpb_dim_disputed.disputed_complaints_rate": {
+			        "cfpb_fact_complaint.disputed_complaints_rate": {
 			          "Target": {
-			            "Entity": "cfpb_dim_disputed.disputed_complaints_rate"
+			            "Entity": "cfpb_fact_complaint.disputed_complaints_rate"
 			          }
 			        }
 			      },
@@ -9333,7 +12624,7 @@ cultureInfo en-GB
 			              "Role": "cfpb_fact_complaint"
 			            },
 			            "Object": {
-			              "Role": "cfpb_dim_disputed.disputed_complaints_rate"
+			              "Role": "cfpb_fact_complaint.disputed_complaints_rate"
 			            }
 			          },
 			          "State": "Generated",
@@ -9669,6 +12960,39 @@ cultureInfo en-GB
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "cfpb_fact_complaints_have_timely_responses"
+			        }
+			      ]
+			    },
+			    "cfpb_fact_complaint_has_zip_code_key": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb fact_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_fact_complaint": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint"
+			          }
+			        },
+			        "cfpb_fact_complaint.zip_code_key": {
+			          "Target": {
+			            "Entity": "cfpb_fact_complaint.zip_code_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "cfpb_fact_complaint"
+			            },
+			            "Object": {
+			              "Role": "cfpb_fact_complaint.zip_code_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cfpb_fact_complaints_have_zip_code_keys"
 			        }
 			      ]
 			    },
@@ -10476,6 +13800,140 @@ cultureInfo en-GB
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "cfpb_dim_states_are_in_state_codes"
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata_is_modified_on_last_modified_date": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb ingestion_metadata"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_ingestion_metadata": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata"
+			          }
+			        },
+			        "cfpb_ingestion_metadata.last_modified_date": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata.last_modified_date"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "When": {
+			          "Role": "cfpb_ingestion_metadata.last_modified_date"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "modify": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "cfpb_ingestion_metadata"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.9,
+			          "ID": "cfpb_ingestion_metadatas_are_modified_on_last_modified_dates"
+			        }
+			      ]
+			    },
+			    "cfpb_ingestion_metadata_is_ingested_on_ingested_at": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb ingestion_metadata"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_ingestion_metadata": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata"
+			          }
+			        },
+			        "cfpb_ingestion_metadata.ingested_at": {
+			          "Target": {
+			            "Entity": "cfpb_ingestion_metadata.ingested_at"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "When": {
+			          "Role": "cfpb_ingestion_metadata.ingested_at"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "ingest": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "cfpb_ingestion_metadata"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.9,
+			          "ID": "cfpb_ingestion_metadatas_are_ingested_on_ingested_at"
+			        }
+			      ]
+			    },
+			    "cfpb_dim_date_is_weekend": {
+			      "Binding": {
+			        "ConceptualEntity": "cfpb dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cfpb_dim_date": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date"
+			          }
+			        },
+			        "cfpb_dim_date.is_weekend": {
+			          "Target": {
+			            "Entity": "cfpb_dim_date.is_weekend"
+			          }
+			        }
+			      },
+			      "Conditions": [
+			        {
+			          "Target": {
+			            "Role": "cfpb_dim_date.is_weekend"
+			          },
+			          "Operator": "Equals",
+			          "Value": {
+			            "Boolean": [
+			              true
+			            ]
+			          }
+			        }
+			      ],
+			      "Phrasings": [
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "cfpb_dim_date"
+			            },
+			            "Adjectives": [
+			              {
+			                "weekend": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "some_cfpb_dim_dates_are_weekend_cfpb_dim_dates"
 			        }
 			      ]
 			    }

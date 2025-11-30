@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["cfpb fact_complaints","cfpb dim_company","cfpb dim_consent","cfpb dim_date","cfpb dim_disputed","cfpb dim_issue","cfpb dim_origin","cfpb dim_product","cfpb dim_state","cfpb dim_public_response","cfpb dim_sub_issue","cfpb dim_sub_product","cfpb dim_tag","cfpb dim_company_response"]
+annotation PBI_QueryOrder = ["cfpb fact_complaints","cfpb dim_company","cfpb dim_consent","cfpb dim_date","cfpb dim_disputed","cfpb dim_issue","cfpb dim_origin","cfpb dim_product","cfpb dim_state","cfpb dim_public_response","cfpb dim_sub_issue","cfpb dim_sub_product","cfpb dim_tag","cfpb dim_company_response","cfpb ingestion_metadata"]
 
 ref table 'cfpb fact_complaints'
 ref table 'cfpb dim_company'
@@ -26,6 +26,7 @@ ref table 'cfpb dim_sub_issue'
 ref table 'cfpb dim_sub_product'
 ref table 'cfpb dim_tag'
 ref table 'cfpb dim_company_response'
+ref table 'cfpb ingestion_metadata'
 
 ref cultureInfo en-GB
 

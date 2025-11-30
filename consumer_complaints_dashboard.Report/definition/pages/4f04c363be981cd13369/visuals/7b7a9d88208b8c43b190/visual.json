@@ -7,7 +7,7 @@
     "z": 9001,
     "height": 288,
     "width": 352,
-    "tabOrder": 0
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -225,6 +225,20 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "cfpb fact_complaints.Complaints"
+          }
         }
       ],
       "divider": [
@@ -301,6 +315,20 @@
           },
           "selector": {
             "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "valueFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "cfpb fact_complaints.Complaints"
           }
         }
       ]
