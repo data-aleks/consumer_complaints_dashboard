@@ -219,6 +219,18 @@
               "cfpb dim_issue.issue_name"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cfpb dim_issue"
+                    }
+                  },
+                  "Property": "issue_name"
+                }
+              }
+            ],
             "isPinned": true
           }
         ],

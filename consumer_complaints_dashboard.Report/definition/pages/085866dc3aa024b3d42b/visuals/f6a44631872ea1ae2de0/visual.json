@@ -449,48 +449,6 @@
         },
         "type": "Categorical",
         "howCreated": "User"
-      },
-      {
-        "name": "fe6789c5cb9e5891d901",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb dim_product"
-              }
-            },
-            "Property": "product_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b4f15447d9b0a77ad904",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb fact_complaints"
-              }
-            },
-            "Property": "Monetary Relief Complaint Rate"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "de1ec695bbc6dc228909",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb fact_complaints"
-              }
-            },
-            "Property": "Monetary Relief Complaints"
-          }
-        },
-        "type": "Advanced"
       }
     ],
     "filterSortOrder": "Custom"

@@ -238,37 +238,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "7003a8501da0d796a3e5",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "531d196cb9ecca8ceea8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb dim_state"
-              }
-            },
-            "Property": "state_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6f437293b7e6e21d4c15",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb fact_complaints"
-              }
-            },
-            "Property": "Complaints"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "7003a8501da0d796a3e5"
 }

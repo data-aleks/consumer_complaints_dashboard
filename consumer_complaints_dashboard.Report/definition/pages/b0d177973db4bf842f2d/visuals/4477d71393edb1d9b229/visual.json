@@ -542,40 +542,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "5df161d24e3c596904d0",
-        "field": {
-          "Arithmetic": {
-            "Left": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "cfpb fact_complaints"
-                  }
-                },
-                "Property": "Complaints"
-              }
-            },
-            "Right": {
-              "ScopedEval": {
-                "Expression": {
-                  "Measure": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "cfpb fact_complaints"
-                      }
-                    },
-                    "Property": "Complaints"
-                  }
-                },
-                "Scope": []
-              }
-            },
-            "Operator": 3
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
