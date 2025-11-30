@@ -2,7 +2,16 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmarksMetadata/1.0.0/schema.json",
   "items": [
     {
-      "name": "a9f681471a435a34b872"
+      "name": "95546a56c5c7052a7dc2"
+    },
+    {
+      "name": "4b7af8c3216781051960"
+    },
+    {
+      "name": "862d98cb5e49aa31c89a"
+    },
+    {
+      "name": "7e5fb0fe23be3a01ca39"
     }
   ]
 }

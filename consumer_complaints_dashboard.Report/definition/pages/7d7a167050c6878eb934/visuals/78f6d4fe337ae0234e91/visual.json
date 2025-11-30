@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "78f6d4fe337ae0234e91",
   "position": {
-    "x": 12,
-    "y": 32,
+    "x": 13,
+    "y": 13,
     "z": 0,
-    "height": 191,
+    "height": 194,
     "width": 295,
     "tabOrder": 0
   },
@@ -32,37 +32,17 @@
             },
             {
               "field": {
-                "Arithmetic": {
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "cfpb fact_complaints"
-                        }
-                      },
-                      "Property": "Complaints"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cfpb fact_complaints"
                     }
                   },
-                  "Right": {
-                    "ScopedEval": {
-                      "Expression": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "cfpb fact_complaints"
-                            }
-                          },
-                          "Property": "Complaints"
-                        }
-                      },
-                      "Scope": []
-                    }
-                  },
-                  "Operator": 3
+                  "Property": "Complaints"
                 }
               },
               "queryRef": "cfpb fact_complaints.Complaints",
-              "nativeQueryRef": "Complaints",
+              "nativeQueryRef": "Complaints1",
               "displayName": "Complaints"
             }
           ]
@@ -72,33 +52,13 @@
         "sort": [
           {
             "field": {
-              "Arithmetic": {
-                "Left": {
-                  "Measure": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "cfpb fact_complaints"
-                      }
-                    },
-                    "Property": "Complaints"
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "cfpb fact_complaints"
                   }
                 },
-                "Right": {
-                  "ScopedEval": {
-                    "Expression": {
-                      "Measure": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "cfpb fact_complaints"
-                          }
-                        },
-                        "Property": "Complaints"
-                      }
-                    },
-                    "Scope": []
-                  }
-                },
-                "Operator": 3
+                "Property": "Complaints"
               }
             },
             "direction": "Descending"
@@ -215,7 +175,7 @@
             "totals": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -300,7 +260,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Products Driving Complaints'"
+                  "Value": "'5 Key Products Driving Complaints'"
                 }
               }
             },

@@ -3,7 +3,7 @@
   "name": "2213a000b097c5836874",
   "position": {
     "x": 12,
-    "y": 32,
+    "y": 13,
     "z": 0,
     "height": 191,
     "width": 295,
@@ -32,37 +32,17 @@
             },
             {
               "field": {
-                "Arithmetic": {
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "cfpb fact_complaints"
-                        }
-                      },
-                      "Property": "Complaints"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cfpb fact_complaints"
                     }
                   },
-                  "Right": {
-                    "ScopedEval": {
-                      "Expression": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "cfpb fact_complaints"
-                            }
-                          },
-                          "Property": "Complaints"
-                        }
-                      },
-                      "Scope": []
-                    }
-                  },
-                  "Operator": 3
+                  "Property": "Complaints"
                 }
               },
               "queryRef": "cfpb fact_complaints.Complaints",
-              "nativeQueryRef": "Complaints",
+              "nativeQueryRef": "Complaints1",
               "displayName": "Complaints"
             }
           ]
@@ -132,7 +112,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "206D"
+                  "Value": "197D"
                 }
               }
             }
@@ -215,7 +195,7 @@
             "totals": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }

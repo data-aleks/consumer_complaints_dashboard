@@ -1,0 +1,731 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "Volume",
+  "name": "4b7af8c3216781051960",
+  "options": {
+    "targetVisualNames": []
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "b0d177973db4bf842f2d",
+    "sections": {
+      "b0d177973db4bf842f2d": {
+        "visualContainers": {
+          "4ac13d8418915de700c5": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c0a5ec27ae7b40e977a8": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b9c2afc0db412c122446",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_tag"
+                        }
+                      },
+                      "Property": "tag_category"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f2e974466a269706c080",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb fact_complaints"
+                        }
+                      },
+                      "Property": "Complaints"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb fact_complaints"
+                        }
+                      },
+                      "Property": "Complaints"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_tag"
+                        }
+                      },
+                      "Property": "tag_category"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "f1d31a873036800e0108": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "1debccc11177c9d6a3a2": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "4668d8491dcf59fb8ce3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "7365caec4b4dcb32ec00",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_origin"
+                        }
+                      },
+                      "Property": "origin_category"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a7fbfc440a0808174209",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb fact_complaints"
+                        }
+                      },
+                      "Property": "Complaints"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb fact_complaints"
+                        }
+                      },
+                      "Property": "Complaints"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_origin"
+                        }
+                      },
+                      "Property": "origin_category"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "4903d4bd061af4b6f7bf": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "440a16877c09e650162d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ded3cb8e90605b9ec260",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_date"
+                        }
+                      },
+                      "Property": "year"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_date"
+                        }
+                      },
+                      "Property": "year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "44b64ce0a842cd398e81": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "25c08b83ae6076bb0342",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb ingestion_metadata"
+                        }
+                      },
+                      "Property": "Latest Data Info"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "30f8eaaad91322497ca7": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "4b8c1baacbaa03469cd8": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5c5a89a91270a9ea72c5",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_date"
+                        }
+                      },
+                      "Property": "year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "369d68e6429db4a45b01",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_origin"
+                        }
+                      },
+                      "Property": "origin_category"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a2ce5ba4493a021e6ec1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb fact_complaints"
+                        }
+                      },
+                      "Property": "Complaints"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb fact_complaints"
+                        }
+                      },
+                      "Property": "Complaints"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_date"
+                        }
+                      },
+                      "Property": "year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "8b9676ba0c076dc388ff": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "8b23d14390b0c014e4e4": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "964c772d264058ee0a03": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5d2866de4d0b809ee0b0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_state"
+                        }
+                      },
+                      "Property": "state_name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "43a043ab456b399432b1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb fact_complaints"
+                        }
+                      },
+                      "Property": "Complaints"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "shapeMap",
+              "objects": {}
+            }
+          },
+          "d041e607a126a2006156": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "edcc9eb081d6304607e0": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "a32af1b5a944ba5a6c80": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "a92ddbc7a8506f472ce2": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "f1e9349c74dac7d54d19": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "4477d71393edb1d9b229": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ed82a3bfd46b4381c1a4",
+                  "type": "TopN",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "subquery",
+                        "Expression": {
+                          "Subquery": {
+                            "Query": {
+                              "Version": 2,
+                              "From": [
+                                {
+                                  "Name": "c",
+                                  "Entity": "cfpb dim_product",
+                                  "Type": 0
+                                },
+                                {
+                                  "Name": "c1",
+                                  "Entity": "cfpb fact_complaints",
+                                  "Type": 0
+                                }
+                              ],
+                              "Select": [
+                                {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "c"
+                                      }
+                                    },
+                                    "Property": "product_name"
+                                  },
+                                  "Name": "field"
+                                }
+                              ],
+                              "OrderBy": [
+                                {
+                                  "Direction": 2,
+                                  "Expression": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "c1"
+                                        }
+                                      },
+                                      "Property": "Complaints"
+                                    }
+                                  }
+                                }
+                              ],
+                              "Top": 5
+                            }
+                          }
+                        },
+                        "Type": 2
+                      },
+                      {
+                        "Name": "c",
+                        "Entity": "cfpb dim_product",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "c"
+                                    }
+                                  },
+                                  "Property": "product_name"
+                                }
+                              }
+                            ],
+                            "Table": {
+                              "SourceRef": {
+                                "Source": "subquery"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_product"
+                        }
+                      },
+                      "Property": "product_name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6f67baf90081bb9c71a6",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "c",
+                        "Entity": "cfpb dim_origin",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "c"
+                                    }
+                                  },
+                                  "Property": "origin_method"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Web'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_origin"
+                        }
+                      },
+                      "Property": "origin_method"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "759b746027697020de2e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Arithmetic": {
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "cfpb fact_complaints"
+                            }
+                          },
+                          "Property": "Complaints"
+                        }
+                      },
+                      "Right": {
+                        "ScopedEval": {
+                          "Expression": {
+                            "Measure": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "cfpb fact_complaints"
+                                }
+                              },
+                              "Property": "Complaints"
+                            }
+                          },
+                          "Scope": []
+                        }
+                      },
+                      "Operator": 3
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "barChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Arithmetic": {
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "cfpb fact_complaints"
+                            }
+                          },
+                          "Property": "Complaints"
+                        }
+                      },
+                      "Right": {
+                        "ScopedEval": {
+                          "Expression": {
+                            "Measure": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "cfpb fact_complaints"
+                                }
+                              },
+                              "Property": "Complaints"
+                            }
+                          },
+                          "Scope": []
+                        }
+                      },
+                      "Operator": 3
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "cfpb dim_product"
+                        }
+                      },
+                      "Property": "product_name"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "9fd1b1363cc40b1e5db6": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "ad2676f39a39b725bb52": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

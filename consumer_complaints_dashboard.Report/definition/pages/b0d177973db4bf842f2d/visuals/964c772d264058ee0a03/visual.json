@@ -193,6 +193,26 @@
             }
           }
         }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "showTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -228,7 +248,7 @@
             "section": {
               "expr": {
                 "Literal": {
-                  "Value": "'7d7a167050c6878eb934'"
+                  "Value": "'0d8c3a90e070c156c870'"
                 }
               }
             }
@@ -238,37 +258,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "7003a8501da0d796a3e5",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "531d196cb9ecca8ceea8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb dim_state"
-              }
-            },
-            "Property": "state_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6f437293b7e6e21d4c15",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "cfpb fact_complaints"
-              }
-            },
-            "Property": "Complaints"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "7003a8501da0d796a3e5"
 }

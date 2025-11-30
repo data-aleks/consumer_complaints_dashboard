@@ -257,7 +257,7 @@
             "section": {
               "expr": {
                 "Literal": {
-                  "Value": "'b6ffaae4e0927e80cea7'"
+                  "Value": "'79c4d5c8183a051d9751'"
                 }
               }
             }
@@ -267,5 +267,37 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "d6d79758347832e50ba0"
+  "parentGroupName": "d6d79758347832e50ba0",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "668ca0721db2a036c5c6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "cfpb dim_state"
+              }
+            },
+            "Property": "state_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "95f8595ad4d48e0dcea4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "cfpb fact_complaints"
+              }
+            },
+            "Property": "Untimely Complaint Response Rate"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

@@ -1,0 +1,196 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "dc9b3609990983e98c96",
+  "displayName": "[Drillthrough] State",
+  "displayOption": "FitToPage",
+  "height": 1020,
+  "width": 1980,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1794beb6be64a2657990",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "cfpb dim_state"
+              }
+            },
+            "Property": "state_name"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "cfpb dim_state",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "c"
+                          }
+                        },
+                        "Property": "state_name"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Oklahoma'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "d73e5e7773878eb70528",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "97be478cc889c6e9bb04",
+        "boundFilter": "1794beb6be64a2657990",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "cfpb dim_state"
+              }
+            },
+            "Property": "state_name"
+          }
+        }
+      }
+    ]
+  },
+  "objects": {
+    "outspace": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'background.jpg'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "background2749094998263324.jpg"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "90D"
+              }
+            }
+          },
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#FBFBFB'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "6c211222d93d36e63ac0",
+      "target": "f7650394045031ec0a0b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6c211222d93d36e63ac0",
+      "target": "de0f244bca101c39205c",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6c211222d93d36e63ac0",
+      "target": "940a0c57b177be326d07",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e186e52a6a7180112b4e",
+      "target": "de0f244bca101c39205c",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e186e52a6a7180112b4e",
+      "target": "f7650394045031ec0a0b",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e186e52a6a7180112b4e",
+      "target": "6c211222d93d36e63ac0",
+      "type": "DataFilter"
+    }
+  ]
+}
