@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 520,
-        "y": 254
+        "x": 490,
+        "y": 231.70103684941705
       },
       "nodes": [
         {
@@ -189,10 +189,23 @@
             "width": 234
           },
           "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 3940.5304651488113,
+            "y": 0
+          },
+          "nodeIndex": "cfpb ingestion_metadata",
+          "nodeLineageTag": "974d295b-6b5b-46ae-9a90-69043e144c98",
+          "size": {
+            "height": 304,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
-      "zoomValue": 50,
+      "zoomValue": 60,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

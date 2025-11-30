@@ -209,6 +209,12 @@ table 'cfpb fact_complaints'
 		formatString: 0
 		lineageTag: 0adbaedc-e291-44c8-b4d0-3f0f690ca0cd
 
+	measure 'Monetary Relief Complaint Rate' =
+			
+			DIVIDE([Monetary Relief Complaints], [Complaints], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d28b8a55-7fb3-4675-8de8-3a586f3b8b1b
+
 	column complaint_id
 		dataType: int64
 		formatString: 0

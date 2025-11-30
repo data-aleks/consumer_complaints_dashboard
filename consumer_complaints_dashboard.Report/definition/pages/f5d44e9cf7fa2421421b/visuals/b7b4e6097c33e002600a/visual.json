@@ -6,7 +6,8 @@
     "y": 80,
     "z": 500,
     "height": 288,
-    "width": 784
+    "width": 784,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "barChart",
@@ -315,6 +316,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'89862c89020bde8349be'"
                 }
               }
             }

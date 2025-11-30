@@ -6,7 +6,8 @@
     "y": 80,
     "z": 9001,
     "height": 288,
-    "width": 352
+    "width": 352,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -223,6 +224,20 @@
           },
           "selector": {
             "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "cfpb fact_complaints.Complaints"
           }
         }
       ],

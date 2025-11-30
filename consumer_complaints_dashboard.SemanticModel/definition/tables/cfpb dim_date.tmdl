@@ -73,6 +73,9 @@ table 'cfpb dim_date'
 		lineageTag: 33302670-558b-45fd-910a-0236829bb0cc
 		summarizeBy: none
 		sourceColumn: month_name
+		sortByColumn: month
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 

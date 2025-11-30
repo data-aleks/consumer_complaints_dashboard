@@ -6,7 +6,8 @@
     "y": 80,
     "z": 2000,
     "height": 288,
-    "width": 784
+    "width": 784,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "shapeMap",
@@ -244,6 +245,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'b6ffaae4e0927e80cea7'"
                 }
               }
             }

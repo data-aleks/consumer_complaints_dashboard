@@ -6,7 +6,8 @@
     "y": 330.6859205776172,
     "z": 2500,
     "height": 35.838529701345585,
-    "width": 237.98065110565108
+    "width": 237.98065110565108,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "textbox",
@@ -59,6 +60,21 @@
                 "horizontalTextAlignment": "center"
               }
             ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ]

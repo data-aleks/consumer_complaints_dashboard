@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "085866dc3aa024b3d42b",
+  "displayName": "[Tooltip] Company Monetary Relief Complaint Drivers",
+  "displayOption": "ActualSize",
+  "height": 240,
+  "width": 320,
+  "pageBinding": {
+    "name": "7695e0f2151a14e73716",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "displayArea": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Middle'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

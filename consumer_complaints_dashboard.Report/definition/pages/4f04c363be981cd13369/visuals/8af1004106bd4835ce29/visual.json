@@ -4,10 +4,10 @@
   "position": {
     "x": 193,
     "y": 135,
-    "z": 4000,
+    "z": 3000,
     "height": 398,
     "width": 846,
-    "tabOrder": 8000
+    "tabOrder": 7000
   },
   "visualGroup": {
     "displayName": "dashboard_section",

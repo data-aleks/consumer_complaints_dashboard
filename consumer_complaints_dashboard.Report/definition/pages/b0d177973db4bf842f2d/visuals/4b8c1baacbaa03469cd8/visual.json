@@ -6,7 +6,8 @@
     "y": 80,
     "z": 2000,
     "height": 288,
-    "width": 784
+    "width": 784,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "lineChart",
@@ -296,6 +297,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'89862c89020bde8349be'"
                 }
               }
             }
