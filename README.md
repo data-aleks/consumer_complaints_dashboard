@@ -107,6 +107,26 @@ Data model is created from complaints data inside MySQL instead of Power BI
 
 This is how it looks like when imported in to Power BI via MySQL connector:
 
+## Data Engineering & ETL Pipeline
+To power the dashboard, a dynamic and incremental ETL (Extract, Transform, Load) pipeline was engineered to handle the large and continuously updated Consumer Complaint Database. The entire process is automated using Python and SQL, ensuring the data is efficiently ingested, cleaned, and modeled for analysis.
+
+The pipeline was built to be modular and resilient, addressing the challenges of processing a dataset with over 12 million records, which occupies approximately 8 GB of database storage.
+
+### Pipeline Architecture
+The process is broken down into four distinct, idempotent steps. Each step is logged to a database, and metadata is used to track progress, meaning the pipeline only processes new or unprocessed records on each run. This makes it highly efficient for recurring updates.
+
+1.  **Data Ingestion (`ingest`)**: The pipeline first checks the source data for updates by comparing file metadata. If new data is available, it downloads the ~1.6 GB compressed file, extracts it, and loads only new records into a raw data table (`consumer_complaints_raw`) in MySQL. This step prevents duplicate data ingestion.
+
+2.  **Data Cleaning (`clean`)**: Once new data is ingested, a series of SQL scripts are executed to perform in-place cleaning. This includes standardizing date formats, correcting state codes, and handling `NULL` values to ensure data consistency. Each cleaned row is timestamped to avoid reprocessing.
+
+3.  **Data Insertion (`insert`)**: Cleaned records are moved from the raw table to a separate, structured table (`consumer_complaints_cleaned`). This separation ensures that the raw data remains immutable for auditing while providing a clean, reliable source for the next step.
+
+4.  **Data Modeling (`model`)**: The final step transforms the flat, cleaned data into a star schema, which is ideal for Power BI analytics. This involves:
+    -   Populating dimension tables (`dim_product`, `dim_company`, `dim_date`, etc.) with unique values from the new data.
+    -   Creating records in the `fact_complaints` table by joining the cleaned data with the corresponding dimension keys.
+
+This star schema is then connected to Power BI, enabling fast and intuitive data exploration and visualization in the dashboard. The entire pipeline can be executed via a command-line interface, allowing for full runs or execution of specific steps for development and testing.
+
 ## Credits
 Image used in dashboard background is a photo by <a href="https://unsplash.com/@steve_j?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Steve Johnson</a> on <a href="https://unsplash.com/photos/abstract-white-geometric-shapes-with-shadows-3uts-IJslMs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
       
