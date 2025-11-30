@@ -25,14 +25,14 @@
                           "Entity": "cfpb dim_tag"
                         }
                       },
-                      "Property": "tag_name"
+                      "Property": "tag_category"
                     }
                   },
                   "Function": 3
                 }
               },
-              "queryRef": "Min(cfpb dim_tag.tag_name)",
-              "nativeQueryRef": "First tag_name"
+              "queryRef": "Min(cfpb dim_tag.tag_category)",
+              "nativeQueryRef": "First tag_category"
             }
           ]
         }

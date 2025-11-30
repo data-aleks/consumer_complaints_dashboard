@@ -49,7 +49,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Special Segment'"
+                          "Value": "'General Segment'"
                         }
                       }
                     ]
@@ -160,5 +160,12 @@
       }
     ]
   },
-  "visibility": "HiddenInViewMode"
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "7e559ed955d8534aa0c1",
+      "target": "27166a32a11a291d0698",
+      "type": "DataFilter"
+    }
+  ]
 }
