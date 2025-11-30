@@ -38,10 +38,10 @@ Response timeliness remains a critical service gap. Student Loans show the highe
 ![Resolution Performance](./images/screenshots/resolution_performance_page.png "Resolution Performance View")
 
 ### Drill Through Pages
-![Channel Drillthrough](./images/screenshots/channel_drillthrough_page.png "Channel Drillthrough")
-![Company Drillthrough](./images/screenshots/company_drillthrough_page.png "Company Drillthrough View")
+![Channel Drillthrough](./images/screenshots/channel_drillthough_page.png "Channel Drillthrough")
+![Company Drillthrough](./images/screenshots/company_drillthroug_page.png "Company Drillthrough View")
 ![Segment Drillthrough](./images/screenshots/segment_drillthrough_page.png "Segment Drillthrough View")
-![State Drillthrough](./images/screenshots/state_drillthrough_page.png "State Drillthrough View")
+![State Drillthrough](./images/screenshots/state_drillthough_page.png "State Drillthrough View")
 
 ### Data Model 
 ![Dashboard Data Model](./images/screenshots/star_schema_data_model.png "Dashboard Data Model")
