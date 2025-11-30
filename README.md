@@ -16,6 +16,34 @@ By surfacing friction points across products and geographies, the dashboard enab
 
 **This project uses real data from the Consumer Complaint Database maintained by the Consumer Financial Protection Bureau.**
 
+## Key Insights From Data
+
+### Rationale for Excluding Credit Reference Agencies
+Credit reference agencies (CRAs) act as data intermediaries, not direct financial service providers. They do not engage in customer-facing operations like lending, servicing, or account management. In 2025, CRAs accounted for over 85% of all credit reporting complaints, primarily related to data accuracy and identity theft. Including them would skew complaint distribution and obscure patterns from operationally relevant institutions. Our goal is to help financial institutions — banks, lenders, and servicers. Identify service gaps and improve customer satisfaction. CRA complaints reflect systemic data issues, not service delivery failures. By excluding CRAs, we ensure the dashboard surfaces actionable insights tied to customer experience, dispute resolution, and operational agility, areas where institutions can directly intervene.
+
+### What is the current consumer complaints landscape?
+As of November 29, 2025, the consumer complaints landscape for financial institutions is characterized by a high volume of submissions and critical risks in resolution, even after excluding complaints from major credit reporting agencies (Experian, TransUnion, Equifax).
+
+### Scale and Volume
+The year 2025 has seen a significant and steady increase in consumer complaints recorded against financial institutions, reaching 666,468 records as of the end of November. This volume is overwhelmingly driven by the general demographic, which accounts for 89.97% of complaints, with the remaining 10.03% originating from special demographic segments (older customers, service members, and older service members).
+
+### Submission Channels and Product Hotspots
+Web Channel dominates the submission landscape, accounting for 96.57% of all complaints. Only 3.43% are received via traditional channels (referral, postal mail, phone, fax). The largest single area of complaint volume is Credit Reporting & Investigation, which takes the top spot with 195,535 complaints (a 29.34% share). This volume primarily relates to Credit Reporting / Repair Services provided by the in-scope financial institutions.
+
+### Resolution Risk and Financial Harm
+#### A review of complaint closures highlights acute financial and regulatory risk concentration: 
+Monetary Relief Benchmarks
+Bank of America is the leading institution in complaints closed with monetary relief, responsible for 34.36% of all monetary relief complaints. Citibank follows closely at 28.86%, with Wells Fargo in third place at 13.43%.
+High Financial Harm Issues: 
+The highest risk of financial harm is concentrated in two key operational areas: 
+- 24.60% of complaints related to Deposit Accounts and Card Management Access resulted in monetary relief.
+- 21.47% of complaints related to Credit Card Credit Reporting & Investigation also required monetary relief.
+
+### Service Failure and Untimeliness
+#### Response timeliness remains a critical service gap
+Untimely Response: Student Loans show the highest volume of untimely complaints, with a substantial 29.20% of their complaints failing to meet response deadlines.
+Process Breakdown Root Cause: The most severe failure point is observed in policy management, where the untimely response rate spikes to 40% when dealing with complaints specifically concerning a Discontinued Policy or Procedure.
+
 ## Dashboard Design
 ### Main Dashboard View
 ![Main Dashboard](./images/screenshots/main_page.png "Main Dashboard View")
@@ -78,28 +106,6 @@ Data model is created from complaints data inside MySQL instead of Power BI
 | fact_complaints            | complaints fact table                      |
 
 This is how it looks like when imported in to Power BI via MySQL connector:
-![Dashboard Data Model](./screenshots/star_schema_data_model.png "Dashboard star schema data model")
-
-## Key Insights From Data
-
-### Rationale for Excluding Credit Reference Agencies
-Credit reference agencies (CRAs) act as data intermediaries, not direct financial service providers. They do not engage in customer-facing operations like lending, servicing, or account management. In 2025, CRAs accounted for over 85% of all credit reporting complaints, primarily related to data accuracy and identity theft. Including them would skew complaint distribution and obscure patterns from operationally relevant institutions. Our goal is to help financial institutions — banks, lenders, and servicers. Identify service gaps and improve customer satisfaction. CRA complaints reflect systemic data issues, not service delivery failures. By excluding CRAs, we ensure the dashboard surfaces actionable insights tied to customer experience, dispute resolution, and operational agility, areas where institutions can directly intervene.
-
-### What is the current consumer complaints landscape.
-Establishes the scale and urgency of consumer dissatisfaction, helping stakeholders understand the broader context and prioritize response strategies.
-
-### Which complaint areas have the highest volume of consumer complaints.
-Highlights operational hotspots and risk-prone areas, enabling targeted service improvements and resource allocation.
-
-### What are the key issues being experienced by consumers.
-Reveals root causes of dissatisfaction, guiding process redesign, staff training, and customer communication strategies.
-
-### What are current complaint resolution, response timeliness and consumer complaint satisfaction benchmarks.
-Supports performance benchmarking, regulatory compliance, and continuous improvement in customer experience and operational agility.
-
-## Business Recommendation
-
-
 
 ## Credits
 Image used in dashboard background is a photo by <a href="https://unsplash.com/@steve_j?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Steve Johnson</a> on <a href="https://unsplash.com/photos/abstract-white-geometric-shapes-with-shadows-3uts-IJslMs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
