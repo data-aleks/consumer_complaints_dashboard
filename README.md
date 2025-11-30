@@ -2,7 +2,7 @@
 
 A business intelligence case study using Power BI, a dynamic ETL pipeline, and data analytics to uncover insights from the CFPB Consumer Complaint Database.
 
-An end-to-end business intelligence solution using Power BI, Python, and SQL. This project engineers a dynamic ETL pipeline to process millions of consumer complaints, analyzes key risk areas across products and geographies, and delivers strategic insights to help financial institutions mitigate regulatory risk. It’s a complete solution—from automated data engineering and modeling to interactive dashboard design and actionable intelligence.
+An end-to-end business intelligence solution using Power BI, Python, and SQL. This project engineers a dynamic ETL pipeline to process millions of consumer complaints, analyzes key risk areas across products and geographies, and delivers strategic insights to help financial institutions mitigate regulatory risk. It’s a complete solution from automated data engineering and modeling to interactive dashboard design and actionable intelligence.
 
 ![Main Dashboard](./images/screenshots/main_page.png "Main Dashboard View")
 
