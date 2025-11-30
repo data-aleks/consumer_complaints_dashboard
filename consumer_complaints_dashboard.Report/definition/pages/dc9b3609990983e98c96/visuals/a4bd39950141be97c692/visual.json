@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "1e37d0dc658a0bd7e501",
+  "name": "a4bd39950141be97c692",
   "position": {
-    "x": 17.079710369347197,
-    "y": 31.465484028814419,
-    "z": 1000,
-    "height": 48.503496503496507,
-    "width": 298.15384615384619,
-    "tabOrder": 0
+    "x": 191.42857142857144,
+    "y": 972.85714285714289,
+    "z": 10002,
+    "height": 41.428571428571431,
+    "width": 532.85714285714289,
+    "tabOrder": 6007
   },
   "visual": {
     "visualType": "textbox",
@@ -19,11 +19,20 @@
               {
                 "textRuns": [
                   {
-                    "value": "Complaints Volume",
+                    "value": "Data Source",
                     "textStyle": {
-                      "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "20pt"
+                      "fontSize": "16pt"
                     }
+                  },
+                  {
+                    "value": ": "
+                  },
+                  {
+                    "value": "CFPB Consumer Complaints Database",
+                    "textStyle": {
+                      "fontSize": "16pt"
+                    },
+                    "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/"
                   }
                 ]
               }
@@ -52,7 +61,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'page_title'"
+                  "Value": "'Datasource Link'"
                 }
               }
             }
@@ -61,6 +70,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "parentGroupName": "e30f2c908ec27b5412cc"
+  }
 }

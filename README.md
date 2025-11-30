@@ -1,8 +1,10 @@
 # Consumer Complaint Intelligence Dashboard
 A business intelligence case study using Power BI and data analytics
+![Main Dashboard](./images/screenshots/main_page.png "Main Dashboard View")
 
 ## Table of Contents
 - [Executive Summary](#executive-summary)
+- [Dashboard Preview](#dashboard-preview)
 - [Dataset Information](#dataset-information)
 - [Key Insights From Data](#key-insights-from-data)
 - [Business Recommendation](#business-recommendation)
@@ -13,6 +15,22 @@ This project delivers a Power BI dashboard designed to help financial service in
 By surfacing friction points across products and geographies, the dashboard enables stakeholders to prioritize service improvements, enhance customer communication, and mitigate reputational and regulatory risk. The goal is to transform reactive compliance into strategic foresight - strengthening customer satisfaction and positioning institutions as proactive, data-driven leaders in consumer protection.
 
 **This project uses real data from the Consumer Complaint Database maintained by the Consumer Financial Protection Bureau.**
+
+## Dashboard Design
+### Main Dashboard View
+![Main Dashboard](./images/screenshots/main_page.png "Main Dashboard View")
+![Volume Insights](./images/screenshots/complaint_volume_page.png "Volume Insights View")
+![Key Risk Areas](./images/screenshots/key_risk_areas_page.png "Key Risk Areas View")
+![Resolution Performance](./images/screenshots/resolution_performance_page.png "Resolution Performance View")
+
+### Drill Through Pages
+![Channel Drillthrough](./images/screenshots/channel_drillthough_page.png "Channel Drillthrough")
+![Company Drillthrough](./images/screenshots/company_drillthroug_page.png "Company Drillthrough View")
+![Segment Drillthrough](./images/screenshots/segment_drillthrough_page.png "Segment Drillthrough View")
+![State Drillthrough](./images/screenshots/state_drillthough_page.png "State Drillthrough View")
+
+### Data Model 
+![Dashboard Data Model](./images/screenshots/segment_drillthrough_page.png "Dashboard Data Model")
 
 ## Dataset Information 
 This is real world data sourced via [Consumer Financial Protection Bureau](https://www.consumerfinance.gov/data-research/consumer-complaints/#get-the-data). The data is downloaded as bulk CSV file, added to a local MySQL server to then be imported in to Power BI. 
