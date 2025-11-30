@@ -156,33 +156,13 @@
         "sort": [
           {
             "field": {
-              "Arithmetic": {
-                "Left": {
-                  "Measure": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "cfpb fact_complaints"
-                      }
-                    },
-                    "Property": "Monetary Relief Complaints"
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "cfpb fact_complaints"
                   }
                 },
-                "Right": {
-                  "ScopedEval": {
-                    "Expression": {
-                      "Measure": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "cfpb fact_complaints"
-                          }
-                        },
-                        "Property": "Monetary Relief Complaints"
-                      }
-                    },
-                    "Scope": []
-                  }
-                },
-                "Operator": 3
+                "Property": "Complaints"
               }
             },
             "direction": "Descending"

@@ -193,6 +193,26 @@
             }
           }
         }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "showTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -228,7 +248,7 @@
             "section": {
               "expr": {
                 "Literal": {
-                  "Value": "'7d7a167050c6878eb934'"
+                  "Value": "'0d8c3a90e070c156c870'"
                 }
               }
             }

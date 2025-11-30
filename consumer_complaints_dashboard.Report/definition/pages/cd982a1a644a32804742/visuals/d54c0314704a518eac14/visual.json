@@ -3,9 +3,9 @@
   "name": "d54c0314704a518eac14",
   "position": {
     "x": 12,
-    "y": 32,
+    "y": 11,
     "z": 0,
-    "height": 191,
+    "height": 182,
     "width": 295,
     "tabOrder": 0
   },
@@ -32,37 +32,17 @@
             },
             {
               "field": {
-                "Arithmetic": {
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "cfpb fact_complaints"
-                        }
-                      },
-                      "Property": "Complaints"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cfpb fact_complaints"
                     }
                   },
-                  "Right": {
-                    "ScopedEval": {
-                      "Expression": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "cfpb fact_complaints"
-                            }
-                          },
-                          "Property": "Complaints"
-                        }
-                      },
-                      "Scope": []
-                    }
-                  },
-                  "Operator": 3
+                  "Property": "Complaints"
                 }
               },
               "queryRef": "cfpb fact_complaints.Complaints",
-              "nativeQueryRef": "Complaints",
+              "nativeQueryRef": "Complaints1",
               "displayName": "Complaints"
             }
           ]
@@ -215,7 +195,7 @@
             "totals": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -300,7 +280,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Issues Driving Complaints Volume'"
+                  "Value": "'5 Key Issues Driving Complaints Volume'"
                 }
               }
             },
